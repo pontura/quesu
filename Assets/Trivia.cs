@@ -5,10 +5,13 @@ using UnityEngine;
 public class Trivia : MonoBehaviour
 {
 	public TriviaPairButtons pairButton;
-	public int totalPairs = 10;
-	public int separation = 700;
+	int totalPairs = 3;
+	public int serieID = 0;
+	int separationY = 148;
+	int separation = 370;
 	public Transform container;
-
+	public TimerManager timerManager;
+	int itemId;
 	void Start()
 	{
 		LoopUntilReady ();
@@ -20,13 +23,28 @@ public class Trivia : MonoBehaviour
 			return;
 		}
 		Invoke ("LoopUntilReady", 0.1f);
+		timerManager.Init (60);
 	}
-	int id = 0;
 	public void Init()
 	{
-		for (int a = 0; a < totalPairs; a++)
+		LoadNewSerie ();
+		serieID++;
+	}
+	public void LoadNewSerie()
+	{
+		Utils.RemoveAllChildsIn (container);
+		container.transform.localPosition = new Vector2(0,container.transform.localPosition.y);
+		StartCoroutine (LoadRoutine ());
+	}
+	IEnumerator LoadRoutine()
+	{
+		pairID = 0;
+		for (int a = 0; a < totalPairs; a++) {
 			LoadPair ();
-		id = 0;
+			yield return new WaitForSeconds (0.2f);
+		}
+		timerManager.SetState(true);
+		yield return null;
 	}
 	int pairID;
 	public void LoadPair()
@@ -34,7 +52,7 @@ public class Trivia : MonoBehaviour
 		TriviaPairButtons newPairButton = Instantiate (pairButton);
 		newPairButton.transform.SetParent (container);
 		newPairButton.transform.localScale = Vector3.one;
-		newPairButton.transform.localPosition = new Vector3 (separation*pairID, 0, 0);
+		newPairButton.transform.localPosition = new Vector3 (0, -separationY*pairID, 0);
 		ItemData data1 = GetNext ();
 		ItemData data2 = GetNext ();
 		newPairButton.Init (this, data1, data2);
@@ -42,20 +60,35 @@ public class Trivia : MonoBehaviour
 	}
 	ItemData GetNext()
 	{
-		if (Data.Instance.triviaData.triviaContent.all.Length <= id)
-			id = 0;
-		ItemData data =  Data.Instance.triviaData.triviaContent.all[id]; 
-		id ++;
+		if (Data.Instance.triviaData.triviaContent.all.Length <= itemId)
+			itemId = 0;
+		ItemData data =  Data.Instance.triviaData.triviaContent.all[itemId]; 
+		itemId ++;
 		return data;
 	}
-	public void Next()
+	int pairDone = 0;
+	public void PairDone()
 	{
-		id++;
+		pairDone++;
+		if (pairDone >= totalPairs) {
+			timerManager.SetState(false);
+			Invoke("Next", 2);
+			pairDone = 0;
+		}
+	}
+	void Next()
+	{
+		
 		iTween.MoveTo(container.gameObject, iTween.Hash(
-			"x", id*-separation, 
+			"x", -separation, 
 			"islocal", true,
-			"time", 1
-
+			"time", 1,
+			"oncomplete", "OnAnimationReady",
+			"oncompletetarget", this.gameObject
 		));
+	}
+	void OnAnimationReady()
+	{
+		Invoke("Init", 0.1f);
 	}
 }

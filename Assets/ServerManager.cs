@@ -23,7 +23,7 @@ public class ServerManager : MonoBehaviour
 		else {
 			string result = www.text;
 			Data.Instance.tagsData.SetData( JsonUtility.FromJson<TagsData.Tags> (result) );
-			LoadTrivia (4, 4);
+			LoadTrivia (4, 20);
 		}
 	}
 	public void LoadTrivia(int tagID, int limit)
