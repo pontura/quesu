@@ -5,6 +5,7 @@ using System;
 
 public class TagsData : MonoBehaviour
 {
+	public Tags tagsSimple;
 	public Tags tags;
 	public bool loaded;
 

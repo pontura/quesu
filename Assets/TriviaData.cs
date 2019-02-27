@@ -14,7 +14,10 @@ public class TriviaData : MonoBehaviour
 		public int tagID;
 		public ItemData[] all;
 	}
-
+	public void EmptyData()
+	{
+		triviaContent.all = new ItemData[0];
+	}
 	public void SetData(TriviaContent _trivia, int tagID)
 	{
 		triviaContent = _trivia;

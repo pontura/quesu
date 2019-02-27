@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : MainScreen
 {
 	public void PlaySingleMode()
 	{
-		Data.Instance.LoadLevel ("01_Game");
+		LoadScreen(1, true);
 	}
 }

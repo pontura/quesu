@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UserData : MonoBehaviour
 {
+	const string PREFAB_PATH = "UserData";   
 	static UserData mInstance = null;
 	public string userID;
 	public string username;
@@ -15,6 +16,12 @@ public class UserData : MonoBehaviour
 			if (mInstance == null)
 			{
 				mInstance = FindObjectOfType<UserData>();
+
+				if (mInstance == null)
+				{
+					GameObject go = Instantiate(Resources.Load<GameObject>(PREFAB_PATH)) as GameObject;
+					mInstance = go.GetComponent<UserData>();
+				}
 			}
 			return mInstance;
 		}
@@ -23,6 +30,11 @@ public class UserData : MonoBehaviour
 	{
 		if (!mInstance)
 			mInstance = this;
+		else
+		{
+			Destroy(this.gameObject);
+			return;
+		}
 
 		username = PlayerPrefs.GetString ("username");
 		userID = PlayerPrefs.GetString ("userID");

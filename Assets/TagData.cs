@@ -4,6 +4,6 @@ using System;
 [Serializable]
 public class TagData
 {
-	public string id;
+	public int id;
 	public string name;
 }

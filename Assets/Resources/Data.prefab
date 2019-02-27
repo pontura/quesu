@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &288194331046675986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 288194331046675985}
+  - component: {fileID: 288194331046675984}
+  - component: {fileID: 288194331046675987}
+  - component: {fileID: 288194331046675991}
+  - component: {fileID: 288194331046675990}
+  - component: {fileID: 288194331046675988}
+  m_Layer: 0
+  m_Name: Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &288194331046675985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288194331046675986}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 788, y: 492.33603, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &288194331046675984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288194331046675986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c4abbddebb33dc4ea332e8df4756a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  build: 0
+  score: 0
+  serverManager: {fileID: 0}
+  triviaData: {fileID: 0}
+  tagsData: {fileID: 0}
+  settings: {fileID: 0}
+  currentLevel: 
+--- !u!114 &288194331046675987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288194331046675986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917c9f244dfd76a4199e1d10cbfe1f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GetTrivia: getTrivia.php
+  GetTags: getTags.php
+  serverURL: http://pontura.com/quesu/
+--- !u!114 &288194331046675991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288194331046675986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0843ceda57018c148b418d34dc604d26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagsSimple:
+    all:
+    - id: 1
+      name: Historia
+    - id: 2
+      name: Rock Nacional
+    - id: 3
+      name: "Pel\xEDculas"
+  tags:
+    all: []
+  loaded: 0
+--- !u!114 &288194331046675990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288194331046675986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb547aed08cbeb34ba808b299211f8c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triviaContent:
+    tagID: 0
+    all: []
+  loaded: 0
+--- !u!114 &288194331046675988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288194331046675986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddd72a8181e667499082ac20dde01d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonOkColor: {r: 0.037201855, g: 0.7169812, b: 0.16977985, a: 1}
+  buttonWrongColor: {r: 0.754717, g: 0.0035599943, b: 0.0035599943, a: 1}

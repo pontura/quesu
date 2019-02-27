@@ -21,20 +21,27 @@ public class Data : MonoBehaviour
 	public TagsData tagsData;
 	public Settings settings;
 
-    public static Data Instance
-    {
-        get
-        {
-            if (mInstance == null)
-            {
-                mInstance = FindObjectOfType<Data>();
-            }
-            return mInstance;
-        }
-    }
+	public static Data Instance
+	{
+		get
+		{
+			if (mInstance == null)
+			{
+				mInstance = FindObjectOfType<Data>();
+
+				if (mInstance == null)
+				{
+					GameObject go = Instantiate(Resources.Load<GameObject>(PREFAB_PATH)) as GameObject;
+					mInstance = go.GetComponent<Data>();
+				}
+			}
+			return mInstance;
+		}
+	}
     public string currentLevel;
     public void LoadLevel(string aLevelName)
     {
+		print ("goto " + aLevelName);
         this.currentLevel = aLevelName;
         SceneManager.LoadScene(aLevelName);
     }
