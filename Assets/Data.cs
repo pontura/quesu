@@ -20,6 +20,8 @@ public class Data : MonoBehaviour
 	public TriviaData triviaData;
 	public TagsData tagsData;
 	public Settings settings;
+	public ResultsData resultsData;
+	public string triviaName;
 
 	public static Data Instance
 	{
@@ -59,6 +61,7 @@ public class Data : MonoBehaviour
 		triviaData = GetComponent<TriviaData> ();
 		tagsData = GetComponent<TagsData> ();
 		settings = GetComponent<Settings> ();
+		resultsData = GetComponent<ResultsData> ();
     }
 
 }

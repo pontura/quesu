@@ -47,10 +47,12 @@ public class TriviaButton : MonoBehaviour
 	}
 	void Win()
 	{		
+		Events.OnAnswer (true);
 		anim.Play ("buttonWin");
 	}
 	void Lose()
 	{		
+		Events.OnAnswer (false);
 		anim.Play ("buttonLose");
 	}
 	public void DisableButton()

@@ -15,7 +15,7 @@ public class ButtonStandard : MonoBehaviour
 	}
 	public void Clicked()
 	{
-		Events.OnButtonClicked (id);
+		Events.OnButtonClicked (this);
 	}
 
 }

@@ -12,4 +12,5 @@ public class ItemData
 	public int year;
 	public string description;
 	public Texture2D texture;
+	public bool usedInGame;
 }

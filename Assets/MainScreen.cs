@@ -23,6 +23,7 @@ public class MainScreen : MonoBehaviour
 	}
 	public void SetInitialPosition(bool toRight)
 	{
+		OnEnabled ();
 		float destination = screenWidth;
 		if (!toRight)
 			destination = -screenWidth;
@@ -37,7 +38,7 @@ public class MainScreen : MonoBehaviour
 		iTween.MoveTo (gameObject, iTween.Hash (
 			"x", destination,
 			"islocal", true,
-			"time", 3	,
+			"time", 1	,
 			"oncomplete", "TransitionDone",
 			"oncompletetarget", this.gameObject
 		));
@@ -48,21 +49,23 @@ public class MainScreen : MonoBehaviour
 	}
 	void TransitionDone()
 	{
-
+		screensManager.OnTransitionDone ();
 	}
 	void OnEnable()
 	{		
 		Events.OnButtonClicked += OnButtonClicked;
+
 	}
 	void OnDisable()
 	{
 		Events.OnButtonClicked -= OnButtonClicked;
 	}
-	public virtual void OnButtonClicked(int tagID)
-	{
-	}
 	public void Back()
 	{		
 		screensManager.LoadScreen (backScreenID, false);
 	}
+	public virtual void OnEnabled() { }
+	public virtual void OnButtonClicked(ButtonStandard button) { }
+	public virtual void OnInit() 	{ }
+	public virtual void OnReset() 	{ }
 }

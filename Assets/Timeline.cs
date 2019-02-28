@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Timeline : MonoBehaviour
+public class Timeline : MainScreen
 {
 	public ItemData[] all;
 	public TimelineItem item;
 	public TimelineItem emptyItem;
+	public TimelineItem emptyIinitialItem;
 	int totalPairs = 3;
 	public int serieID = 0;
 	int separationY = 148;
@@ -15,9 +16,15 @@ public class Timeline : MonoBehaviour
 	public Transform container;
 	int itemId;
 
-	void Start()
+	public override void OnInit()
 	{
 		LoopUntilReady ();
+		GetComponent<Results> ().OnInit ();
+	}
+	public override void OnReset()
+	{
+		Utils.RemoveAllChildsIn (container);
+		all = new ItemData[0];
 	}
 	void LoopUntilReady()
 	{
@@ -36,20 +43,26 @@ public class Timeline : MonoBehaviour
 	void LoadItems()
 	{
 		int id = 0;
+		AddEmptyInitialItem ();
+		bool startedDisplaying = false;
 		foreach(ItemData data in all)
 		{
-			AddItem (data);
+			if (data.usedInGame) {
+				startedDisplaying = true;
+				AddItem (data);
+			}			
 			id++;
-			if (id >= all.Length - 1)
-				return;
-			else {
-				ItemData nextItem = all [id];
-				if(nextItem.year != data.year)
-					AddYears (data.year + 1, nextItem.year - 1);
+			if (startedDisplaying) {
+				if (id >= all.Length - 1)
+					return;
+				else {
+					ItemData nextItem = all [id];
+					if (nextItem.year != data.year)
+						AddYears (data.year + 1, nextItem.year - 1);
+				}
 			}
-
 		}
-
+		AddEmptyInitialItem ();
 	}
 	void AddYears(int year1, int year2)
 	{
@@ -70,6 +83,12 @@ public class Timeline : MonoBehaviour
 		newPairButton.transform.SetParent (container);
 		newPairButton.transform.localScale = Vector3.one;
 		newPairButton.InitEmpty (year);
+	}
+	void AddEmptyInitialItem()
+	{
+		TimelineItem newPairButton = Instantiate (emptyIinitialItem);
+		newPairButton.transform.SetParent (container);
+		newPairButton.transform.localScale = Vector3.one; 
 	}
 
 }

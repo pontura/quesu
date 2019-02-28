@@ -7,6 +7,7 @@ public class TriviaData : MonoBehaviour
 {
 	public TriviaContent triviaContent;
 	public bool loaded;
+	public string triviaName;
 
 	[Serializable]
 	public class TriviaContent
@@ -22,7 +23,6 @@ public class TriviaData : MonoBehaviour
 	{
 		triviaContent = _trivia;
 		triviaContent.tagID = tagID;
-
 		foreach (ItemData id in triviaContent.all)
 			StartCoroutine(LoadImage (id, id.image));
 

@@ -120,5 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ddd72a8181e667499082ac20dde01d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triviaDuration: 20
   buttonOkColor: {r: 0.037201855, g: 0.7169812, b: 0.16977985, a: 1}
   buttonWrongColor: {r: 0.754717, g: 0.0035599943, b: 0.0035599943, a: 1}

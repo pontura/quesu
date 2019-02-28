@@ -27,15 +27,16 @@ public class CategoriesSelector : MainScreen
 			b.transform.localScale = Vector3.one;
 		}
 	}
-	public override void OnButtonClicked(int tagID)
+	public override void OnButtonClicked(ButtonStandard button)
 	{
-		if (tagID == 1) {
+		if (button.id == 1) {
 			Data.Instance.serverManager.LoadTriviaByCategory ("historia", 40);
-		} else if (tagID == 2) {
+		} else if (button.id == 2) {
 			Data.Instance.serverManager.LoadTrivia (9, 40);
-		} else if (tagID == 3) {
+		} else if (button.id == 3) {
 			Data.Instance.serverManager.LoadTrivia (11, 40);
 		}
-		LoadScreen (0, false);
+		Data.Instance.triviaData.triviaName = button.field.text;
+		LoadScreen (2, true);
 	}
 }

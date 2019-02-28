@@ -36,6 +36,8 @@ public class TimerManager : MonoBehaviour
 		{
 			timer = 0;
 			isOn = false;
+			StopAllCoroutines ();
+			GetComponent<Trivia> ().TimeOver ();
 		}
 		bar.fillAmount = 1-(timer / totalTimer);
 

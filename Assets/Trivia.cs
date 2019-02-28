@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trivia : MonoBehaviour
+public class Trivia : MainScreen
 {
 	public TriviaPairButtons pairButton;
 	int totalPairs = 3;
@@ -12,21 +12,28 @@ public class Trivia : MonoBehaviour
 	public Transform container;
 	public TimerManager timerManager;
 	int itemId;
-	void Start()
+
+	public override void OnInit()
 	{
+		Events.OnResetTrivia ();
+		itemId = 0;
+		timerManager.Init (Data.Instance.settings.triviaDuration);
 		LoopUntilReady ();
+	}
+	public override void OnReset()
+	{
+		Utils.RemoveAllChildsIn (container);
 	}
 	void LoopUntilReady()
 	{
-		if (Data.Instance.triviaData.loaded) {
+		if (Data.Instance.triviaData.loaded) {				
 			Init ();
 			return;
 		}
 		Invoke ("LoopUntilReady", 0.1f);
-		timerManager.Init (60);
 	}
 	public void Init()
-	{
+	{		
 		LoadNewSerie ();
 		serieID++;
 	}
@@ -60,9 +67,11 @@ public class Trivia : MonoBehaviour
 	}
 	ItemData GetNext()
 	{
+		print ("pairID " + pairID + "  itemId " + itemId + " length: "+ Data.Instance.triviaData.triviaContent.all.Length);
 		if (Data.Instance.triviaData.triviaContent.all.Length <= itemId)
 			itemId = 0;
 		ItemData data =  Data.Instance.triviaData.triviaContent.all[itemId]; 
+		data.usedInGame = true;
 		itemId ++;
 		return data;
 	}
@@ -77,10 +86,9 @@ public class Trivia : MonoBehaviour
 		}
 	}
 	void Next()
-	{
-		
+	{		
 		iTween.MoveTo(container.gameObject, iTween.Hash(
-			"x", -separation, 
+			"x", -separation,
 			"islocal", true,
 			"time", 1,
 			"oncomplete", "OnAnimationReady",
@@ -90,5 +98,11 @@ public class Trivia : MonoBehaviour
 	void OnAnimationReady()
 	{
 		Invoke("Init", 0.1f);
+	}
+	public void TimeOver()
+	{
+		StopAllCoroutines ();
+		CancelInvoke ();
+		LoadScreen (4, true);
 	}
 }

@@ -6,7 +6,10 @@ public class ScreensManager : MonoBehaviour
 {
 	public MainScreen[] all;
 
-	public MainScreen activeScreen;
+	MainScreen activeScreen;
+	MainScreen lastActiveScreen;
+
+	bool loading;
 
 	void Start()
 	{
@@ -20,15 +23,31 @@ public class ScreensManager : MonoBehaviour
 	}
 	public void LoadScreen(int id, bool isRight)
 	{
+		if (loading)
+			return;
+		loading = true;
 		if (activeScreen != null) {
 			activeScreen.SetCenterPosition ();
 			activeScreen.MoveTo (isRight);
+			lastActiveScreen = activeScreen;
 		}
 		
 		activeScreen = all [id];
 		activeScreen.gameObject.SetActive (true);
 		activeScreen.SetInitialPosition (isRight);
 		activeScreen.MoveTo (isRight);
+	}
+	public void OnTransitionDone()
+	{
+		if (!loading)
+			return;
+		loading = false;
+		if (lastActiveScreen != null) {
+			lastActiveScreen.gameObject.SetActive (false);
+			lastActiveScreen.OnReset ();
+		}
+		print ("OnInit " + activeScreen.name);
+		activeScreen.OnInit ();
 	}
 	public void ResetAll()
 	{
