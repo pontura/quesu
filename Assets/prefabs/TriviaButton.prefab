@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.44, y: 0.8}
-  m_SizeDelta: {x: 122.54, y: 22.9}
+  m_AnchoredPosition: {x: -6.44, y: -31.9}
+  m_SizeDelta: {x: 122.54, y: 81.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8328952944811208359
 CanvasRenderer:
@@ -71,14 +71,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 17
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: New Text
+    m_LineSpacing: 0.7
+  m_Text: '...'
 --- !u!1 &3365928664675329168
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,8 +187,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.899994, y: 0}
-  m_SizeDelta: {x: 521, y: 106}
+  m_AnchoredPosition: {x: -7.899994, y: -31.4}
+  m_SizeDelta: {x: 521, y: 339.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1133819430446112069
 CanvasRenderer:
@@ -423,8 +423,10 @@ MonoBehaviour:
     id: 
     text: 
     image: 
-    year: 
+    year: 0
+    description: 
     texture: {fileID: 0}
+    usedInGame: 0
   background: {fileID: 5881435099820007255}
   idleBarColor: {r: 0.37254903, g: 0.61960787, b: 1, a: 1}
   textNormalColor: {r: 1, g: 1, b: 1, a: 1}

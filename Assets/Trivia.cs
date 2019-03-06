@@ -5,7 +5,7 @@ using UnityEngine;
 public class Trivia : MainScreen
 {
 	public TriviaPairButtons pairButton;
-	int totalPairs = 3;
+	int totalPairs = 1;
 	public int serieID = 0;
 	int separationY = 148;
 	int separation = 370;
