@@ -30,8 +30,17 @@ public class TriviaData : MonoBehaviour
 	}
 	IEnumerator LoadImage(ItemData itemData, string url)
 	{
-		using (WWW www = new WWW(Data.Instance.serverManager.serverURL + "images/" + url))
-		{
+		Dictionary<string, string> headers = new Dictionary<string, string>();
+
+		#ifUNITY_WEBGL
+		headers.Add("Access-Control-Allow-Credentials", "true");
+		headers.Add("Access-Control-Allow-Headers", "Accept, X-Access-Token, X-Application-Name, X-Request-Sent-Time");
+		headers.Add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+		headers.Add("Access-Control-Allow-Origin", "*");
+		#endif
+
+		using (WWW www = new WWW(Data.Instance.serverManager.serverURL + "images/" + url, null, headers))
+		{			
 			yield return www;
 			itemData.texture = www.texture;
 		}

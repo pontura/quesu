@@ -15,7 +15,6 @@ public class Data : MonoBehaviour
 
     const string PREFAB_PATH = "Data";    
     static Data mInstance = null;
-	public int score;
 	public ServerManager serverManager;
 	public TriviaData triviaData;
 	public TagsData tagsData;
