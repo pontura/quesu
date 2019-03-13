@@ -24,4 +24,5 @@ public class Results : MonoBehaviour
 		combosField.text = "COMBOS: " + Data.Instance.resultsData.combos;	
 		scoreField.text = "PUNTOS: " + Data.Instance.resultsData.GetResults ();	
 	}
+	
 }

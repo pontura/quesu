@@ -15,7 +15,11 @@ public class Timeline : MainScreen
     int separation = 370;
     public Transform container;
     int itemId;
-
+    
+    public void Retar()
+    {
+        LoadScreen(7, true);
+    }
     public override void OnInit()
     {
         LoopUntilReady();
@@ -24,7 +28,7 @@ public class Timeline : MainScreen
     public override void OnReset()
     {
         Utils.RemoveAllChildsIn(container);
-		 all = new List<ItemData>();
+        all = new List<ItemData>();
     }
     void LoopUntilReady()
     {

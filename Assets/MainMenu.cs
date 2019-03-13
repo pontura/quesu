@@ -17,6 +17,10 @@ public class MainMenu : MainScreen
     {
         LoadScreen(1, true);
     }
+    public void Retos()
+	{
+		//LoadScreen(7, true);
+	}
 	public void OnRegisterClicked()
 	{
 		LoadScreen(6, true);

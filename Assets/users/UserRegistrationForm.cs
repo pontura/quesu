@@ -7,8 +7,8 @@ public class UserRegistrationForm : MonoBehaviour
 {
     public UserDataUI ui;
     private string secretKey = "pontura";
-    public string setUserURL = "http://pontura.com/quesu/setUser.php";
-    public string setUserURLUpload = "http://pontura.com/quesu/updateUser.php";
+    string setUserURL = "http://pontura.com/quesu/setUser.php";
+    string setUserURLUpload = "http://pontura.com/quesu/updateUser.php";
     UserData userData;
     public bool imageUploaded;
 
@@ -76,7 +76,7 @@ public class UserRegistrationForm : MonoBehaviour
     }
     IEnumerator SendData(string username)
     {
-        string hash = Md5Sum(UserData.Instance.userID + username + secretKey);
+        string hash = Utils.Md5Sum(UserData.Instance.userID + username + secretKey);
         string post_url = setUserURL + "?userID=" + WWW.EscapeURL(UserData.Instance.userID) + "&username=" + username + "&hash=" + hash;
         print(post_url);
         WWW www = new WWW(post_url);
@@ -101,7 +101,7 @@ public class UserRegistrationForm : MonoBehaviour
     }
     IEnumerator UploadData(string username)
     {
-        string hash = Md5Sum(UserData.Instance.userID + username + secretKey);
+        string hash = Utils.Md5Sum(UserData.Instance.userID + username + secretKey);
         string post_url = setUserURLUpload + "?userID=" + WWW.EscapeURL(UserData.Instance.userID) + "&username=" + username + "&hash=" + hash;
         print(post_url);
         WWW www = new WWW(post_url);
@@ -124,27 +124,6 @@ public class UserRegistrationForm : MonoBehaviour
             }
         }
     }
-    public string Md5Sum(string strToEncrypt)
-    {
-        System.Text.UTF8Encoding ue = new System.Text.UTF8Encoding();
-        byte[] bytes = ue.GetBytes(strToEncrypt);
-
-        // encrypt bytes
-        System.Security.Cryptography.MD5CryptoServiceProvider md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
-        byte[] hashBytes = md5.ComputeHash(bytes);
-
-        // Convert the encrypted bytes back to a string (base 16)
-        string hashString = "";
-
-        for (int i = 0; i < hashBytes.Length; i++)
-        {
-            hashString += System.Convert.ToString(hashBytes[i], 16).PadLeft(2, '0');
-        }
-
-        return hashString.PadLeft(32, '0');
-    }
-
-
 
     IEnumerator UploadFileCo(string localFileName, string uploadURL)
     {

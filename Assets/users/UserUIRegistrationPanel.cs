@@ -55,6 +55,7 @@ public class UserUIRegistrationPanel : MonoBehaviour
     void OnPhotoTaken()
     {
         ShowPhotoTaken();
+        userDataUI.userRegistrationForm.SavePhoto();
     }
     public void ClickedNewPhoto()
     {

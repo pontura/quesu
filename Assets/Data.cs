@@ -18,6 +18,8 @@ public class Data : MonoBehaviour
 	public ServerManager serverManager;
 	public TriviaData triviaData;
 	public TagsData tagsData;
+	public UsersManager usersManager;
+	public RetosManager retosManager;
 	public Settings settings;
 	public ResultsData resultsData;
 	public string triviaName;

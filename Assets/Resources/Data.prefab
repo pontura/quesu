@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 288194331046675991}
   - component: {fileID: 288194331046675990}
   - component: {fileID: 288194331046675988}
+  - component: {fileID: 1519024485}
+  - component: {fileID: 5524417362477820083}
+  - component: {fileID: 878979556033824161}
   m_Layer: 0
   m_Name: Data
   m_TagString: Untagged
@@ -48,11 +51,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   build: 0
-  score: 0
   serverManager: {fileID: 0}
   triviaData: {fileID: 0}
   tagsData: {fileID: 0}
+  usersManager: {fileID: 878979556033824161}
+  retosManager: {fileID: 5524417362477820083}
   settings: {fileID: 0}
+  resultsData: {fileID: 0}
+  triviaName: 
   currentLevel: 
 --- !u!114 &288194331046675987
 MonoBehaviour:
@@ -81,14 +87,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0843ceda57018c148b418d34dc604d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagsSimple:
-    all:
-    - id: 1
-      name: Historia
-    - id: 2
-      name: Rock Nacional
-    - id: 3
-      name: "Pel\xEDculas"
   tags:
     all: []
   loaded: 0
@@ -108,6 +106,7 @@ MonoBehaviour:
     tagID: 0
     all: []
   loaded: 0
+  triviaName: 
 --- !u!114 &288194331046675988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,3 +122,47 @@ MonoBehaviour:
   triviaDuration: 20
   buttonOkColor: {r: 0.037201855, g: 0.7169812, b: 0.16977985, a: 1}
   buttonWrongColor: {r: 0.754717, g: 0.0035599943, b: 0.0035599943, a: 1}
+--- !u!114 &1519024485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288194331046675986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d7d3205f4c3464e8704c8fc7931340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  answers_ok: 0
+  answers_wrong: 0
+  score: 0
+  combos: 0
+--- !u!114 &5524417362477820083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288194331046675986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7530098b3a09bc4084dbce80e8ab690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &878979556033824161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288194331046675986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 973035fd9acfd5a4e8d6ac941865625b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GetUsers: getUsers.php
+  users:
+    all: []
+  loaded: 0
