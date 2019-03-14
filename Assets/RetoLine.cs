@@ -38,7 +38,7 @@ public class RetoLine : MonoBehaviour
         username2.text = data.username2;
 
         score1.text = data.score.ToString();
-        score2.text = data.score2.ToString();
+        score2.text = "...";
 
         LoadImage(avatar1, Data.Instance.usersManager.GetData(data.userID));
         LoadImage(avatar2, Data.Instance.usersManager.GetData(data.userID2));

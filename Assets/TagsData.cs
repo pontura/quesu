@@ -21,6 +21,8 @@ public class TagsData : MonoBehaviour
 	}
 	public string GetTitleById(int id)
 	{
+		if(id==0)
+			return "¡Todo!";
 		foreach(TagData data in tags.all)
 		{
 			if(data.id == id)

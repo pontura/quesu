@@ -8,6 +8,8 @@ public class UserData : MonoBehaviour
     static UserData mInstance = null;
     public string userID;
     public string username;
+    public int retosGanados;
+    public int retosPerdidos;
     public Sprite sprite;
     public bool RESET_ALL_DATA;
 	public string path;
@@ -40,7 +42,11 @@ public class UserData : MonoBehaviour
 
         username = PlayerPrefs.GetString("username");
         if(username != "")
+        {
             userID = PlayerPrefs.GetString("userID");
+            retosGanados = PlayerPrefs.GetInt("retosGanados");
+            retosPerdidos = PlayerPrefs.GetInt("retosPerdidos");
+        }
             
         LoadUserPhoto();
     }
@@ -90,5 +96,21 @@ public class UserData : MonoBehaviour
             return sprite;
         }
         return null;
+    }
+    public void UpdateData()
+    {
+        print("UpdateData");
+        Data.Instance.serverManager.LoadUserData(userID);
+    }
+    public void UpdateRetosValue(int _retosGanados, int _retosPerdidos)
+    {
+        if(_retosGanados == retosGanados && retosPerdidos == _retosPerdidos)
+        {
+            return;
+        }
+        retosGanados = _retosGanados;
+        retosPerdidos = _retosPerdidos;
+        PlayerPrefs.SetInt("retosGanados", retosGanados);
+        PlayerPrefs.SetInt("retosPerdidos", retosPerdidos);
     }
 }

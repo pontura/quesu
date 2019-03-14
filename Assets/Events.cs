@@ -10,4 +10,5 @@ public static class Events {
 	public static System.Action<int> OnCombo = delegate { };
 	public static System.Action<string> OnServerResponse = delegate { };
 	public static System.Action<string> OnPopup = delegate { };
+	public static System.Action OnRetoResultShow = delegate { };
 }

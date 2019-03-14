@@ -1,21 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RetosUI : MainScreen
 {
     public RetoLine button;
     public Transform container;
+    public Text ganados;
+    public Text perdidos;
 
     public override void OnEnabled()
-    {       
+    {
+        ganados.text = "Ganados: " + UserData.Instance.retosGanados;
+        perdidos.text = "Perdidos: " + UserData.Instance.retosPerdidos;
         Data.Instance.usersManager.LoadImages();
         Data.Instance.serverManager.LoadRetos(UserData.Instance.userID);
-         WaitForDataLoaded();
+        WaitForDataLoaded();
     }
     void WaitForDataLoaded()
     {
-        if (Data.Instance.retosManager.retosContent.all.Length > 0)
+        if (Data.Instance.retosManager.retosContent.all.Count > 0)
             AddButtons();
         else
             Invoke("WaitForDataLoaded", 0.1f);
@@ -49,7 +54,7 @@ public class RetosUI : MainScreen
     public void PlayReto(RetoData data)
     {
         Data.Instance.retosManager.SetOpenReto(data);
-        Data.Instance.triviaData.Load(data.tag_id);        
+        Data.Instance.triviaData.Load(data.tag_id);
         LoadScreen(2, true);
     }
 }

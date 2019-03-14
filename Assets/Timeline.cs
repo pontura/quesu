@@ -18,6 +18,11 @@ public class Timeline : MainScreen
     
     public void Retar()
     {
+        if(UserData.Instance.userID == "")
+        {
+            Events.OnPopup("¡No estás registrado!");
+            return;
+        }
         LoadScreen(7, true);
     }
     public override void OnInit()

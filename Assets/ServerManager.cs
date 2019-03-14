@@ -6,7 +6,8 @@ using System;
 public class ServerManager : MonoBehaviour
 {
     public string GetTrivia = "getTrivia.php";
-		public string GetReto = "getReto.php";
+    public string GetReto = "getReto.php";
+    public string GetUser = "getUser.php";
     public string GetTags = "getTags.php";
     public string serverURL = "http://pontura.com/quesu/";
 
@@ -46,14 +47,14 @@ public class ServerManager : MonoBehaviour
             Data.Instance.triviaData.SetData(JsonUtility.FromJson<TriviaData.TriviaContent>(result), 0);
         }
     }
-		public void LoadRetos(string userID)
-		{
-			StartCoroutine(LoadRetosC(userID));
-		}
+    public void LoadRetos(string userID)
+    {
+        StartCoroutine(LoadRetosC(userID));
+    }
     IEnumerator LoadRetosC(string userID)
     {
         string path = serverURL + GetReto + "?userID=" + userID;
-				print("LoadRetosC path: " + path);
+        print("LoadRetosC path: " + path);
         WWW www = new WWW(path);
         yield return www;
         if (www.error != null)
@@ -81,6 +82,31 @@ public class ServerManager : MonoBehaviour
             string result = www.text;
             Data.Instance.triviaData.SetData(JsonUtility.FromJson<TriviaData.TriviaContent>(result), tagID);
 
+        }
+    }
+
+
+    public class UserDataJson
+    {
+        public int retosGanados;
+        public int retosPerdidos;
+    }
+    public void LoadUserData(string userID)
+    {
+        StartCoroutine(LoadUserDataC(userID));
+    }
+    IEnumerator LoadUserDataC(string userID)
+    {
+        string path = serverURL + GetUser + "?userID=" + userID;
+        WWW www = new WWW(path);
+        yield return www;
+        if (www.error != null)
+            print("There was an error: " + www.error);
+        else
+        {
+            string result = www.text;
+            UserDataJson userData = JsonUtility.FromJson<UserDataJson>(result);
+            UserData.Instance.UpdateRetosValue(userData.retosGanados,  userData.retosPerdidos);
         }
     }
 
