@@ -26,7 +26,7 @@ public class WebcamPhoto : MonoBehaviour
         if(devices.Length==0)
             return;
 
-        deviceName = devices[0].name;
+        deviceName = devices[devices.Length-1].name;
         wct = new WebCamTexture(deviceName, 300, 300, 12);
         image.material.mainTexture = wct;
         wct.Play();
