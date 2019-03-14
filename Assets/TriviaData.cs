@@ -15,6 +15,18 @@ public class TriviaData : MonoBehaviour
 		public int tagID;
 		public ItemData[] all;
 	}
+	public void Load(int id)
+	{
+		if (id == 0)
+        {
+            Data.Instance.serverManager.LoadTriviaByCategory("all", 40);
+        }
+        else 
+        {
+            Data.Instance.serverManager.LoadTrivia(id, 40);
+        }
+		 Data.Instance.triviaData.triviaName = Data.Instance.tagsData.GetTitleById(id);
+	}
 	public void EmptyData()
 	{
 		triviaContent.all = new ItemData[0];

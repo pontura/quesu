@@ -39,16 +39,7 @@ public class CategoriesSelector : MainScreen
     }
     public override void OnButtonClicked(ButtonStandard button)
     {
-        if (button.id == 0)
-        {
-            Data.Instance.serverManager.LoadTriviaByCategory("all", 40);
-        }
-        else 
-        {
-            Data.Instance.serverManager.LoadTrivia(button.id, 40);
-        }
-				
-        Data.Instance.triviaData.triviaName = button.field.text;
+        Data.Instance.triviaData.Load(button.id);       
         LoadScreen(2, true);
     }
 }

@@ -8,6 +8,8 @@ public class RetosManager : MonoBehaviour
 {
     public RetosContent retosContent;
 
+    public RetoData openReto;
+
     [Serializable]
 	public class RetosContent
 	{
@@ -18,9 +20,9 @@ public class RetosManager : MonoBehaviour
     string setRetoURL = "http://pontura.com/quesu/setReto.php";
     string setRetoToUserURL = "http://pontura.com/quesu/setRetoToUser.php";
 
-    void LoadRetos()
+    public void SetOpenReto(RetoData openReto)
     {
-        
+        this.openReto = openReto;
     }
     public void SetData(RetosContent _retosContent)
 	{

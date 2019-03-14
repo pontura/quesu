@@ -4,7 +4,7 @@ using System;
 [Serializable]
 public class RetoData
 {
-     public int id;
+    public int id;
     public int tag_id;
 
     public string username;

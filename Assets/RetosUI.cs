@@ -34,7 +34,7 @@ public class RetosUI : MainScreen
     {
         RetoLine b = Instantiate(button);
         b.transform.SetParent(container);
-        b.Init(data);
+        b.Init(this, data);
         b.transform.localScale = Vector3.one;
     }
     public override void OnButtonClicked(ButtonStandard button)
@@ -45,5 +45,11 @@ public class RetosUI : MainScreen
     {
         Data.Instance.retosManager.SetNewReto(_button.data.userID, _button.data.username);
         Events.OnPopup(_button.data.username + " fué retado!");
+    }
+    public void PlayReto(RetoData data)
+    {
+        Data.Instance.retosManager.SetOpenReto(data);
+        Data.Instance.triviaData.Load(data.tag_id);        
+        LoadScreen(2, true);
     }
 }

@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class RetoLine : MonoBehaviour
 {
+    public GameObject panel_ToPlay;
+    public GameObject panel_played;
+
     public Text title;
     public Text statusField;
 
@@ -17,9 +20,11 @@ public class RetoLine : MonoBehaviour
     public Text score1;
     public Text score2;
     RetoData data;
+    RetosUI ui;
 
-    public void Init(RetoData data)
+    public void Init(RetosUI ui, RetoData data)
     {
+        this.ui = ui;
         this.data = data;
         LoadData();
     }
@@ -27,6 +32,8 @@ public class RetoLine : MonoBehaviour
     {
         Data.Instance.tagsData.GetTitleById(data.tag_id);
 
+        title.text = Data.Instance.tagsData.GetTitleById(data.tag_id);
+        
         username1.text = data.username;
         username2.text = data.username2;
 
@@ -35,6 +42,17 @@ public class RetoLine : MonoBehaviour
 
         LoadImage(avatar1, Data.Instance.usersManager.GetData(data.userID));
         LoadImage(avatar2, Data.Instance.usersManager.GetData(data.userID2));
+
+        if (data.userID2 == UserData.Instance.userID && data.ready == 0)
+        {
+            panel_ToPlay.SetActive(true);
+            panel_played.SetActive(false);
+        }
+        else
+        {
+            panel_ToPlay.SetActive(false);
+            panel_played.SetActive(true);
+        }
     }
     void LoadImage(Image image, UsersManager.UserData data)
     {
@@ -48,6 +66,10 @@ public class RetoLine : MonoBehaviour
         {
             Invoke("LoadData", 1);
         }
+    }
+    public void PlayReto()
+    {
+        ui.PlayReto(data);
     }
 
 }
