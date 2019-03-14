@@ -20,14 +20,15 @@ public class CategoriesSelector : MainScreen
     }
     void AddButtons()
     {
+         TagData t = new TagData();
+        t.id = 0;
+        t.name = "Todos";
+        AddButton(t);
         foreach (TagData data in Data.Instance.tagsData.tags.all)
         {
             AddButton(data);
         }
-        TagData t = new TagData();
-        t.id = 0;
-        t.name = "Todos";
-        AddButton(t);
+       
     }
     void AddButton(TagData data)
     {

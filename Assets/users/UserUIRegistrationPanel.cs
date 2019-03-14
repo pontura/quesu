@@ -69,10 +69,11 @@ public class UserUIRegistrationPanel : MonoBehaviour
         }
         else
         {
-            if (UserData.Instance.sprite == null)
-                userDataUI.DebbugText.text = "Falta la foto!";
-            else if (field.text == "")
-                userDataUI.DebbugText.text = "Falta un nombre de usuario";
+         //   if (UserData.Instance.sprite == null)
+         //       userDataUI.DebbugText.text = "Falta la foto!";
+         //   else 
+            if (field.text == "")
+                Events.OnPopup( "Falta un nombre de usuario" );
             else
                 userDataUI.OnSubmit(field.text);
         }

@@ -38,26 +38,26 @@ public class UserRegistrationForm : MonoBehaviour
 
     void UserCreation()
     {
-        ui.DebbugText.text = "new User Created " + UserData.Instance.username;
+        Events.OnPopup("new User Created " + UserData.Instance.username);
         UserData.Instance.UserCreation();
         UsersEvents.OnRegistartionDone();
     }
     void UserUploaded()
     {
-        ui.DebbugText.text = "User uploaded " + UserData.Instance.username;
+        Events.OnPopup( "User uploaded " + UserData.Instance.username );
         UserData.Instance.UserCreation();
         UsersEvents.OnUserUploadDone();
     }
 
     public void SaveUser(string username)
     {
-        ui.DebbugText.text = "Checking data...";
+        Events.OnPopup( "Checking data...");
         UserData.Instance.username = username;
         StartCoroutine(SendData(UserData.Instance.username));
     }
     public void UploadUser(string username)
     {
-        ui.DebbugText.text = "Uploading data...";
+        Events.OnPopup(  "Uploading data...");
         UserData.Instance.username = username;
         StartCoroutine(UploadData(UserData.Instance.username));
 
@@ -84,14 +84,14 @@ public class UserRegistrationForm : MonoBehaviour
 
         if (www.error != null)
         {
-            ui.DebbugText.text = ("There was an error: " + www.error);
+            Events.OnPopup( "There was an error: " + www.error);
         }
         else
         {
             string result = www.text;
             if (result == "exists")
             {
-                ui.DebbugText.text = "ya existe";
+                Events.OnPopup(  "ya existe");
             }
             else
             {
@@ -109,14 +109,14 @@ public class UserRegistrationForm : MonoBehaviour
 
         if (www.error != null)
         {
-            ui.DebbugText.text = ("There was an error: " + www.error);
+            Events.OnPopup( "There was an error: " + www.error);
         }
         else
         {
             string result = www.text;
             if (result == "exists")
             {
-                ui.DebbugText.text = "ya existe";
+               Events.OnPopup( "ya existe");
             }
             else
             {
@@ -143,8 +143,8 @@ public class UserRegistrationForm : MonoBehaviour
         WWW upload = new WWW(uploadURL, postForm);
         yield return upload;
         if (upload.error == null)
-            Debug.Log("upload done :" + upload.text);
+            Events.OnPopup( "upload done :" + upload.text);
         else
-            Debug.Log("Error during upload: " + upload.error);
+            Events.OnPopup( "Error during upload: " + upload.error);
     }
 }

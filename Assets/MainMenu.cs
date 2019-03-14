@@ -8,7 +8,7 @@ public class MainMenu : MainScreen
 
    public override void OnEnabled()
     {
-        if (UserData.Instance.userID == "")
+        if (UserData.Instance.username == "")
             registerButton.SetActive(true);
         else
             registerButton.SetActive(false);
@@ -19,7 +19,7 @@ public class MainMenu : MainScreen
     }
     public void Retos()
 	{
-		//LoadScreen(7, true);
+		LoadScreen(8, true);
 	}
 	public void OnRegisterClicked()
 	{

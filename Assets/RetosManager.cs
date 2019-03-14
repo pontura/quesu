@@ -2,13 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class RetosManager : MonoBehaviour
 {
+    public RetosContent retosContent;
+
+    [Serializable]
+	public class RetosContent
+	{
+		public RetoData[] all;
+	}
+
     private string secretKey = "pontura";
     string setRetoURL = "http://pontura.com/quesu/setReto.php";
     string setRetoToUserURL = "http://pontura.com/quesu/setRetoToUser.php";
 
+    void LoadRetos()
+    {
+        
+    }
+    public void SetData(RetosContent _retosContent)
+	{
+        retosContent.all = new RetoData[0];
+		retosContent = _retosContent;
+	}
     public void SetNewReto(string userID, string username)
     {
         StartCoroutine(SetReto(userID, username));

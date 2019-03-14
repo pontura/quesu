@@ -15,12 +15,17 @@ public class WebcamPhoto : MonoBehaviour
     }
     void OnUserRegisterCanceled()
     {
+        if(devices == null || devices.Length==0)
+            return;
          if (wct != null)
             wct.Stop();
     }
     public void InitWebcam(Image image)
     {
         devices = WebCamTexture.devices;
+        if(devices.Length==0)
+            return;
+
         deviceName = devices[0].name;
         wct = new WebCamTexture(deviceName, 300, 300, 12);
         image.material.mainTexture = wct;
@@ -28,6 +33,9 @@ public class WebcamPhoto : MonoBehaviour
     }
     public void TakeSnapshot(System.Action OnDone)
     {
+        if(devices.Length==0)
+            return;
+
         Texture2D snap = new Texture2D(wct.width, wct.height);
         snap.SetPixels(wct.GetPixels());
         snap.Apply();

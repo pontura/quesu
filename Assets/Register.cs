@@ -21,6 +21,8 @@ public class Register : MainScreen
     }
     void GotoScene()
     {
+        if(UserData.Instance.username == "")
+            UserData.Instance.userID = "";
         LoadScreen(0, false);
     }
 }

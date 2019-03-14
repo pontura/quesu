@@ -19,4 +19,13 @@ public class TagsData : MonoBehaviour
 		tags = data;
 		loaded = true;
 	}
+	public string GetTitleById(int id)
+	{
+		foreach(TagData data in tags.all)
+		{
+			if(data.id == id)
+				return data.name;
+		}
+		return "";
+	}
 }

@@ -16,6 +16,12 @@ public class UserUIRegisteredPanel : MonoBehaviour
     }
     public void OnEditUserData()
     {
+        if(field.text == "")
+        {
+            Events.OnPopup("Nombre de usuario incorrecto");
+            return;
+        }
+        
        userDataUI.EditData();
     }
 }

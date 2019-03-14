@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChooseUsers : MainScreen
+public class RetosUI : MainScreen
 {
-    public UserButton button;
+    public RetoLine button;
     public Transform container;
 
     public override void OnEnabled()
-    {
-        WaitForDataLoaded();
+    {       
         Data.Instance.usersManager.LoadImages();
+        Data.Instance.serverManager.LoadRetos(UserData.Instance.userID);
+         WaitForDataLoaded();
     }
     void WaitForDataLoaded()
     {
-        if (Data.Instance.usersManager.users.all.Length > 0)
+        if (Data.Instance.retosManager.retosContent.all.Length > 0)
             AddButtons();
         else
             Invoke("WaitForDataLoaded", 0.1f);
@@ -22,17 +23,18 @@ public class ChooseUsers : MainScreen
     void AddButtons()
     {
         int id = 0;
-        foreach (UsersManager.UserData data in Data.Instance.usersManager.users.all)
+        Utils.RemoveAllChildsIn(container);
+        foreach (RetoData data in Data.Instance.retosManager.retosContent.all)
         {
-            AddButton(id, data);
+            AddButton(data);
             id++;
         }
     }
-    void AddButton(int id, UsersManager.UserData  data)
+    void AddButton(RetoData data)
     {
-        UserButton b = Instantiate(button);
+        RetoLine b = Instantiate(button);
         b.transform.SetParent(container);
-        b.Init(data, OnClicked);
+        b.Init(data);
         b.transform.localScale = Vector3.one;
     }
     public override void OnButtonClicked(ButtonStandard button)

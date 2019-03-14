@@ -39,7 +39,9 @@ public class UserData : MonoBehaviour
 		path = Application.persistentDataPath + "/";
 
         username = PlayerPrefs.GetString("username");
-        userID = PlayerPrefs.GetString("userID");
+        if(username != "")
+            userID = PlayerPrefs.GetString("userID");
+            
         LoadUserPhoto();
     }
     public void SetUserID(string userID)
