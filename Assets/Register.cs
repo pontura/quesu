@@ -2,27 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Register : MainScreen
-{
+public class Register : MainScreen {
     public UserDataUI ui;
 
-    public override void OnEnabled()
-    {
-        ui.Init();
+    public override void OnEnabled () {
+        ui.Init ();
         UsersEvents.OnRegistartionDone += GotoScene;
         UsersEvents.OnUserUploadDone += GotoScene;
         UsersEvents.OnUserRegisterCanceled += GotoScene;
     }
-    void OnDestroy()
-    {
+    void OnDestroy () {
         UsersEvents.OnRegistartionDone -= GotoScene;
         UsersEvents.OnUserUploadDone -= GotoScene;
         UsersEvents.OnUserRegisterCanceled -= GotoScene;
     }
-    void GotoScene()
-    {
-        if(UserData.Instance.username == "")
+    void GotoScene () {
+        LoadScreen (0, false);
+    }
+    public override void Back () {
+        if (UserData.Instance.username == "") {
             UserData.Instance.userID = "";
-        LoadScreen(0, false);
+        }
+        GotoScene ();
     }
 }

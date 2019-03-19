@@ -39,6 +39,7 @@ public class CategoriesSelector : MainScreen
     }
     public override void OnButtonClicked(ButtonStandard button)
     {
+        Events.OnSoundFX("ui");
         Data.Instance.triviaData.Load(button.id);       
         LoadScreen(2, true);
     }

@@ -8,8 +8,11 @@ public class MainMenu : MainScreen
 
     public override void OnEnabled()
     {
+         
         if (UserData.Instance.username == "")
+        {
             registerButton.SetActive(true);
+        }                           
         else
         {
             registerButton.SetActive(false);
@@ -19,9 +22,11 @@ public class MainMenu : MainScreen
     public void PlaySingleMode()
     {
         LoadScreen(1, true);
+        Events.OnSoundFX("ui");
     }
     public void Retos()
     {
+        Events.OnSoundFX("ui");
         if (UserData.Instance.userID == "")
         {
             Events.OnPopup("¡No estás registrado!");
@@ -32,5 +37,6 @@ public class MainMenu : MainScreen
     public void OnRegisterClicked()
     {
         LoadScreen(6, true);
+        Events.OnSoundFX("ui");
     }
 }

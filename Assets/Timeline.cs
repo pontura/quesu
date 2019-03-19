@@ -18,6 +18,7 @@ public class Timeline : MainScreen
     
     public void Retar()
     {
+        Events.OnSoundFX("ui");
         if(UserData.Instance.userID == "")
         {
             Events.OnPopup("¡No estás registrado!");

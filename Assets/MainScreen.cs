@@ -60,7 +60,7 @@ public class MainScreen : MonoBehaviour
 	{
 		Events.OnButtonClicked -= OnButtonClicked;
 	}
-	public void Back()
+	public virtual void Back()
 	{		
 		screensManager.LoadScreen (backScreenID, false);
 	}

@@ -25,6 +25,9 @@ public class ScreensManager : MonoBehaviour
 	{
 		if (loading)
 			return;
+			
+		Events.OnUIFX("swipe");
+
 		loading = true;
 		if (activeScreen != null) {
 			activeScreen.SetCenterPosition ();

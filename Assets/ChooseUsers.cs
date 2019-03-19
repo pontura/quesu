@@ -41,6 +41,7 @@ public class ChooseUsers : MainScreen
     }
     public void OnClicked(UserButton _button)
     {
+        Events.OnSoundFX("ui");
         Data.Instance.retosManager.SetNewReto(_button.data.userID, _button.data.username);
         Events.OnPopup(_button.data.username + " fué retado!");
     }

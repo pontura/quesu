@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TriviaButton : MonoBehaviour
-{
+public class TriviaButton : MonoBehaviour {
 	public Image image;
 	public Image resultImage;
 	public Text textField;
@@ -17,8 +16,7 @@ public class TriviaButton : MonoBehaviour
 	public Color textNormalColor;
 	public Color textDoneColor;
 
-	public void Init(TriviaPairButtons pairButtons,  ItemData data, bool win)
-	{
+	public void Init (TriviaPairButtons pairButtons, ItemData data, bool win) {
 		resultImage.enabled = false;
 		anim = GetComponent<Animation> ();
 		this.win = win;
@@ -27,54 +25,53 @@ public class TriviaButton : MonoBehaviour
 		textField.text = data.text;
 		LoopUntilReady ();
 	}
-	public void Clicked()
-	{
+	public void Clicked () {
 		if (win)
 			Win ();
 		else
 			Lose ();
 		pairButtons.OnButtonSelected (this);
 	}
-	void LoopUntilReady()
-	{
+	void LoopUntilReady () {
 		if (data.texture != null) {
 			Sprite newSprite = Sprite.Create (data.texture, new Rect (0, 0, data.texture.width, data.texture.height), Vector2.zero);
-			if(newSprite != null)
+			if (newSprite != null)
 				image.sprite = newSprite;
 			return;
 		}
 		Invoke ("LoopUntilReady", 0.1f);
 	}
-	void Win()
-	{		
+	void Win () {
+		
 		Events.OnAnswer (true);
 		anim.Play ("buttonWin");
 	}
-	void Lose()
-	{		
+	void Lose () {
+		
 		Events.OnAnswer (false);
 		anim.Play ("buttonLose");
 	}
-	public void DisableButton()
-	{
+	public void DisableButton () {
 		GetComponent<Button> ().enabled = false;
-		textField.text = data.year.ToString();
+		textField.text = data.year.ToString ();
 	}
-	public void Ready()
-	{
-		if (win)
+	public void Ready () {
+		if (win) {
+			Events.OnSoundFX ("correct");
 			background.color = Data.Instance.settings.buttonOkColor;
-		else
+		} else {
+			Events.OnSoundFX ("wrong");
 			background.color = Data.Instance.settings.buttonWrongColor;
+		}
+
 		Invoke ("Reset", 3);
 		textField.color = textDoneColor;
 		resultImage.enabled = true;
 		resultImage.color = background.color;
 	}
-	void Reset()
-	{
-//		textField.text = data.text;
-//		background.color = Color.white;
-//		textField.color = textNormalColor;
+	void Reset () {
+		//		textField.text = data.text;
+		//		background.color = Color.white;
+		//		textField.color = textNormalColor;
 	}
 }

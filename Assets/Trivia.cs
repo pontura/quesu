@@ -5,13 +5,14 @@ using UnityEngine;
 public class Trivia : MainScreen
 {
 	public TriviaPairButtons pairButton;
-	int totalPairs = 1;
+	int totalPairs = 3;
 	public int serieID = 0;
-	int separationY = 148;
+	int separationY = 176;
 	int separation = 370;
 	public Transform container;
 	public TimerManager timerManager;
 	int itemId;
+	public FeedbackManager feedbackManager;
 
 	public override void OnInit()
 	{
@@ -19,6 +20,7 @@ public class Trivia : MainScreen
 		itemId = 0;
 		timerManager.Init (Data.Instance.settings.triviaDuration);
 		LoopUntilReady ();
+		feedbackManager.Init();		
 	}
 	public override void OnReset()
 	{
@@ -38,7 +40,8 @@ public class Trivia : MainScreen
 		serieID++;
 	}
 	public void LoadNewSerie()
-	{
+	{		
+		Events.OnSoundFX("swipe");
 		Utils.RemoveAllChildsIn (container);
 		container.transform.localPosition = new Vector2(0,container.transform.localPosition.y);
 		StartCoroutine (LoadRoutine ());
@@ -48,9 +51,10 @@ public class Trivia : MainScreen
 		pairID = 0;
 		for (int a = 0; a < totalPairs; a++) {
 			LoadPair ();
-			yield return new WaitForSeconds (0.2f);
+			yield return new WaitForSeconds (0.35f);
 		}
 		timerManager.SetState(true);
+		Events.OnMusic("clock");
 		yield return null;
 	}
 	int pairID;
@@ -63,11 +67,12 @@ public class Trivia : MainScreen
 		ItemData data1 = GetNext ();
 		ItemData data2 = GetNext ();
 		newPairButton.Init (this, data1, data2);
+		Events.OnSoundFX("boing");
 		pairID++;
 	}
 	ItemData GetNext()
 	{
-		print ("pairID " + pairID + "  itemId " + itemId + " length: "+ Data.Instance.triviaData.triviaContent.all.Length);
+	//	print ("pairID " + pairID + "  itemId " + itemId + " length: "+ Data.Instance.triviaData.triviaContent.all.Length);
 		if (Data.Instance.triviaData.triviaContent.all.Length <= itemId)
 			itemId = 0;
 		ItemData data =  Data.Instance.triviaData.triviaContent.all[itemId]; 
@@ -80,6 +85,8 @@ public class Trivia : MainScreen
 	{
 		pairDone++;
 		if (pairDone >= totalPairs) {
+			feedbackManager.Next();
+			Events.OnMusic("");
 			timerManager.SetState(false);
 			Invoke("Next", 2);
 			pairDone = 0;
@@ -104,5 +111,7 @@ public class Trivia : MainScreen
 		StopAllCoroutines ();
 		CancelInvoke ();
 		LoadScreen (4, true);
+		Events.OnMusic("");
+		Events.OnSoundFX("bell");
 	}
 }

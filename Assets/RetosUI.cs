@@ -44,15 +44,18 @@ public class RetosUI : MainScreen
     }
     public override void OnButtonClicked(ButtonStandard button)
     {
+        Events.OnSoundFX("ui");
         LoadScreen(2, true);
     }
     public void OnClicked(UserButton _button)
     {
+        Events.OnSoundFX("ui");
         Data.Instance.retosManager.SetNewReto(_button.data.userID, _button.data.username);
         Events.OnPopup(_button.data.username + " fué retado!");
     }
     public void PlayReto(RetoData data)
     {
+        Events.OnSoundFX("ui");
         Data.Instance.retosManager.SetOpenReto(data);
         Data.Instance.triviaData.Load(data.tag_id);
         LoadScreen(2, true);
