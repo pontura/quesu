@@ -53,3 +53,7 @@ Assets/models/boxer/Materials/Material #31.mat.meta
 Assets/models/animaciones/character.FBX
 Assets/models/animaciones/character.FBX.meta
 Assets/Plugins/iOS/Fabric/Crashlytics.framework/Crashlytics
+.vs/quesu/v15/Server/sqlite3/storage.ide-wal
+.vs/quesu/v15/Server/sqlite3/storage.ide-shm
+.vs/quesu/v15/Server/sqlite3/storage.ide
+.vs/quesu/v15/Server/sqlite3/db.lock

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Trivia : MainScreen
 {
 	public TriviaPairButtons pairButton;
-	int totalPairs = 3;
+	int totalPairs = 1;
 	public int serieID = 0;
 	int separationY = 176;
 	int separation = 370;
@@ -88,7 +88,7 @@ public class Trivia : MainScreen
 			feedbackManager.Next();
 			Events.OnMusic("");
 			timerManager.SetState(false);
-			Invoke("Next", 2);
+			Invoke("Next", 1.25f);
 			pairDone = 0;
 		}
 	}

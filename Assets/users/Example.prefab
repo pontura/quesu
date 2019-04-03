@@ -574,8 +574,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userRegistrationPanel: {fileID: 7515892265815581729}
   userRegisteredPanel: {fileID: 7515892264429982945}
-  webcamPhoto: {fileID: 0}
-  userRegistrationForm: {fileID: 0}
+  webcamPhoto: {fileID: 4617601490039733635}
+  userRegistrationForm: {fileID: 1143435345045197099}
   DebbugText: {fileID: 7515892265795283526}
 --- !u!114 &1143435345045197099
 MonoBehaviour:
@@ -589,9 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceff69955119c6c47a91d7cc9f8f0f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 0}
-  setUserURL: http://pontura.com/quesu/setUser.php
-  setUserURLUpload: http://pontura.com/quesu/uploadtUser.php
+  ui: {fileID: 1139474638675728418}
   imageUploaded: 0
 --- !u!114 &4617601490039733635
 MonoBehaviour:
@@ -751,7 +749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7515892264429982944
 RectTransform:
   m_ObjectHideFlags: 0
@@ -882,7 +880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7515892264638536425
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1455,7 +1453,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '...'
+  m_Text: 
 --- !u!1 &7515892265815581727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,7 +1759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7515892266291623743
 RectTransform:
   m_ObjectHideFlags: 0

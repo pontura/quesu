@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class UserUIRegistrationPanel : MonoBehaviour
 {
-    public Image image;
+    public RawImage image;
+    public AspectRatioFitter aspectRatioFitter;
     public Image imageTaken;
     public InputField field;
     UserDataUI userDataUI;
@@ -40,7 +41,7 @@ public class UserUIRegistrationPanel : MonoBehaviour
     {
         PhotoPanel.SetActive(true);
         PhotoTakenPanel.SetActive(false);
-        userDataUI.webcamPhoto.InitWebcam(image);
+        userDataUI.webcamPhoto.InitWebcam(image, aspectRatioFitter);
     }
     void ShowPhotoTaken()
     {
