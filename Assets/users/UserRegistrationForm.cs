@@ -30,10 +30,11 @@ public class UserRegistrationForm : MonoBehaviour
             userData.userID = Random.Range(0, 10000).ToString();
             userData.SetUserID(userData.userID);
 #elif UNITY_ANDROID
-				userData.userID = SystemInfo.deviceUniqueIdentifier;
-				userData.SetUserID(userData.userID);
+			userData.userID = SystemInfo.deviceUniqueIdentifier;
+			userData.SetUserID(userData.userID);            
 #endif
         }
+        Debug.Log("userData.userID " + userData.userID);
     }
 
     void UserCreation()

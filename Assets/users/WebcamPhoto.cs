@@ -50,7 +50,7 @@ public class WebcamPhoto : MonoBehaviour
         for (int a = 0; a<devices.Length; a++)
         {
             if (devices[a].isFrontFacing)
-                webcam = new WebCamTexture(devices[a].name, Screen.width/2, Screen.height / 2);
+                webcam = new WebCamTexture(devices[a].name, Screen.width, Screen.height);
         }
         if (webcam == null)
             return;
@@ -82,8 +82,12 @@ public class WebcamPhoto : MonoBehaviour
             return;
 
         this.OnDone = OnDone;
-
+#if UNITY_ANDROID
         string fileName = UserData.Instance.userID + ".png";
+#else
+         string fileName = UserData.Instance.path +  UserData.Instance.userID + ".png";
+#endif
+
         ScreenCapture.CaptureScreenshot(fileName);
        
         Invoke("Delayed", 0.5f);

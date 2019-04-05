@@ -49,7 +49,6 @@ public class ScreensManager : MonoBehaviour
 			lastActiveScreen.gameObject.SetActive (false);
 			lastActiveScreen.OnReset ();
 		}
-		print ("OnInit " + activeScreen.name);
 		activeScreen.OnInit ();
 	}
 	public void ResetAll()
