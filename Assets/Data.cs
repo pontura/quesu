@@ -13,6 +13,13 @@ public class Data : MonoBehaviour
 		DEBUG
 	}
 
+    public formats format;
+    public enum formats
+    {
+        CLASSIC,
+        STANDALONE
+    }
+
     const string PREFAB_PATH = "Data";    
     static Data mInstance = null;
 	public ServerManager serverManager;
@@ -52,11 +59,7 @@ public class Data : MonoBehaviour
     {
         if (!mInstance)
             mInstance = this;
-        else
-        {
-            Destroy(this.gameObject);
-            return;
-        }
+
         DontDestroyOnLoad(this.gameObject);
 		serverManager = GetComponent<ServerManager> ();
 		triviaData = GetComponent<TriviaData> ();

@@ -5,6 +5,7 @@ using System;
 
 public class TriviaData : MonoBehaviour
 {
+    public bool reload = false;
 	public TriviaContent triviaContent;
 	public bool loaded;
 	public string triviaName;
@@ -13,23 +14,38 @@ public class TriviaData : MonoBehaviour
 	public class TriviaContent
 	{
 		public int tagID;
-		public ItemData[] all;
+		public List<ItemData> all;
 	}
-	public void Load(int id)
-	{
-		if (id == 0)
+    private void Start()
+    {
+        if (!reload)
         {
-            Data.Instance.serverManager.LoadTriviaByCategory("all", 40);
+            foreach (ItemData id in triviaContent.all)
+                StartCoroutine(LoadImage(id, id.image));
+        } else
+        if (Data.Instance.format == Data.formats.STANDALONE)
+            Load(20);
+    }
+    public void Load(int id)
+	{
+        print("Load" + id);
+        //television y series = 11;
+        //tecnologia es id = 3:
+        id = 11;
+
+        if (id == 0)
+        {
+            Data.Instance.serverManager.LoadTriviaByCategory("all", 200);
         }
         else 
         {
-            Data.Instance.serverManager.LoadTrivia(id, 40);
-        }
-		 Data.Instance.triviaData.triviaName = Data.Instance.tagsData.GetTitleById(id);
+            Data.Instance.serverManager.LoadTrivia(id, 200);
+         }
+        Data.Instance.triviaData.triviaName = Data.Instance.tagsData.GetTitleById(id);
 	}
 	public void EmptyData()
 	{
-		triviaContent.all = new ItemData[0];
+        triviaContent.all.Add(new ItemData());
 	}
 	public void SetData(TriviaContent _trivia, int tagID)
 	{
@@ -44,17 +60,29 @@ public class TriviaData : MonoBehaviour
 	{
 		Dictionary<string, string> headers = new Dictionary<string, string>();
 
-		#ifUNITY_WEBGL
+#if UNITY_WEBGL
 		headers.Add("Access-Control-Allow-Credentials", "true");
 		headers.Add("Access-Control-Allow-Headers", "Accept, X-Access-Token, X-Application-Name, X-Request-Sent-Time");
 		headers.Add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
 		headers.Add("Access-Control-Allow-Origin", "*");
-		#endif
+#endif
+        string path = "";
+        if(Data.Instance.triviaData.reload)
+            path = Data.Instance.serverManager.serverURL + "images/";
+        else
+            path = Application.streamingAssetsPath + "/images/";
 
-		using (WWW www = new WWW(Data.Instance.serverManager.serverURL + "images/" + url, null, headers))
+      //  Debug.Log("Image: " + path);
+        using (WWW www = new WWW(path + url, null, headers))
 		{			
 			yield return www;
 			itemData.texture = www.texture;
 		}
 	}
+    public void RefreshAll()
+    {
+        foreach (ItemData itemData in triviaContent.all)
+            itemData.usedInGame = false;
+        Utils.Shuffle(triviaContent.all);
+    }
 }

@@ -9,7 +9,7 @@ public class TriviaButton : MonoBehaviour {
 	public Text textField;
 	TriviaPairButtons pairButtons;
 	public ItemData data;
-	bool win;
+    public bool win;
 	public Image background;
 	Animation anim;
 	public Color idleBarColor;
@@ -17,14 +17,21 @@ public class TriviaButton : MonoBehaviour {
 	public Color textDoneColor;
 
 	public void Init (TriviaPairButtons pairButtons, ItemData data, bool win) {
-		resultImage.enabled = false;
+        textField.color = Color.black;
+        resultImage.enabled = true;
+        resultImage.color = idleBarColor;
+
+
+        resultImage.enabled = false;
 		anim = GetComponent<Animation> ();
 		this.win = win;
 		this.data = data;
 		this.pairButtons = pairButtons;
 		textField.text = data.text;
 		LoopUntilReady ();
-	}
+
+        anim.Play("buttonStandaloneIdle");
+    }
 	public void Clicked () {
 		if (win)
 			Win ();
@@ -56,11 +63,19 @@ public class TriviaButton : MonoBehaviour {
 		textField.text = data.year.ToString ();
 	}
 	public void Ready () {
+        if (anim == null)
+            return;
 		if (win) {
-			Events.OnSoundFX ("correct");
+            if (Data.Instance.format == Data.formats.STANDALONE)
+                anim.Play("butonWinStandalone");
+            else
+                Events.OnSoundFX ("correct");
 			background.color = Data.Instance.settings.buttonOkColor;
 		} else {
-			Events.OnSoundFX ("wrong");
+            if (Data.Instance.format == Data.formats.STANDALONE)
+                anim.Play("butonLoseStandalone");
+            else
+                Events.OnSoundFX ("wrong");
 			background.color = Data.Instance.settings.buttonWrongColor;
 		}
 
@@ -68,7 +83,8 @@ public class TriviaButton : MonoBehaviour {
 		textField.color = textDoneColor;
 		resultImage.enabled = true;
 		resultImage.color = background.color;
-	}
+        textField.text = data.year.ToString();
+    }
 	void Reset () {
 		//		textField.text = data.text;
 		//		background.color = Color.white;

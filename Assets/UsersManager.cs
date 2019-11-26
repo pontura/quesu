@@ -30,7 +30,8 @@ public class UsersManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(LoadUsers(50));
+        if(Data.Instance.format == Data.formats.CLASSIC)
+            StartCoroutine(LoadUsers(50));
     }
     IEnumerator LoadUsers(int limit)
     {
@@ -61,7 +62,7 @@ public class UsersManager : MonoBehaviour
     {
         Dictionary<string, string> headers = new Dictionary<string, string>();
 
-# ifUNITY_WEBGL
+# if UNITY_WEBGL
         headers.Add("Access-Control-Allow-Credentials", "true");
         headers.Add("Access-Control-Allow-Headers", "Accept, X-Access-Token, X-Application-Name, X-Request-Sent-Time");
         headers.Add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");

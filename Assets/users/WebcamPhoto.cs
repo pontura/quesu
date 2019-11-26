@@ -76,17 +76,14 @@ public class WebcamPhoto : MonoBehaviour
     }
     public Camera cam;
     System.Action OnDone;
-    public void TakeSnapshot(System.Action OnDone)
+    public void TakeSnapshot(System.Action OnDone, string fileName)
     {
         if(devices.Length==0)
             return;
 
+        Debug.Log("Take Snapshot: " + fileName);
+
         this.OnDone = OnDone;
-#if UNITY_ANDROID
-        string fileName = UserData.Instance.userID + ".png";
-#else
-         string fileName = UserData.Instance.path +  UserData.Instance.userID + ".png";
-#endif
 
         ScreenCapture.CaptureScreenshot(fileName);
        

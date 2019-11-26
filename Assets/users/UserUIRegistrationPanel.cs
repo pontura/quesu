@@ -47,7 +47,14 @@ public class UserUIRegistrationPanel : MonoBehaviour
     {
         foreach (GameObject go in hideOnScreenshot)
             go.SetActive(false);
-        userDataUI.webcamPhoto.TakeSnapshot(OnPhotoTaken);
+
+#if UNITY_ANDROID
+        string fileName = UserData.Instance.userID + ".png";
+#else
+        string fileName = UserData.Instance.path + UserData.Instance.userID + ".png";
+#endif
+
+        userDataUI.webcamPhoto.TakeSnapshot(OnPhotoTaken, fileName);
     }
     void OnPhotoTaken()
     {

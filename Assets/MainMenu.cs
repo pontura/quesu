@@ -8,15 +8,21 @@ public class MainMenu : MainScreen
 
     public override void OnEnabled()
     {
-         
-        if (UserData.Instance.username == "")
+        if (Data.Instance.format == Data.formats.CLASSIC)
         {
-            registerButton.SetActive(true);
-        }                           
+            if (UserData.Instance.username == "")
+            {
+                registerButton.SetActive(true);
+            }
+            else
+            {
+                registerButton.SetActive(false);
+                UserData.Instance.UpdateData();
+            }
+        }
         else
         {
-            registerButton.SetActive(false);
-            UserData.Instance.UpdateData();
+            Invoke("ShowHiscores", 8);
         }
     }
     public void PlaySingleMode()
@@ -38,5 +44,13 @@ public class MainMenu : MainScreen
     {
         LoadScreen(6, true);
         Events.OnSoundFX("ui");
+    }
+    void ShowHiscores()
+    {
+        LoadScreen(5, true);
+    }
+    public override void OnReset()
+    {
+        CancelInvoke();
     }
 }

@@ -13,8 +13,10 @@ public class Trivia : MainScreen
 	public TimerManager timerManager;
 	int itemId;
 	public FeedbackManager feedbackManager;
+    int pairID;
+    public int rondaID; 
 
-	public override void OnInit()
+    public override void OnInit()
 	{
 		Events.OnResetTrivia ();
 		itemId = 0;
@@ -57,30 +59,71 @@ public class Trivia : MainScreen
 		Events.OnMusic("clock");
 		yield return null;
 	}
-	int pairID;
-	public void LoadPair()
+    Vector2 diffYears;
+
+    public void LoadPair()
 	{
 		TriviaPairButtons newPairButton = Instantiate (pairButton);
 		newPairButton.transform.SetParent (container);
 		newPairButton.transform.localScale = Vector3.one;
 		newPairButton.transform.localPosition = new Vector3 (0, -separationY*pairID, 0);
 		ItemData data1 = GetNext ();
-		ItemData data2 = GetNext ();
-		newPairButton.Init (this, data1, data2);
+		ItemData data2 = GetPairFor(data1);
+        diffYears = GetDiffYears();
+        newPairButton.Init (this, data1, data2);
 		Events.OnSoundFX("boing");
 		pairID++;
-	}
+        Debug.Log("pairID " + pairID + "   diffYears: " + diffYears + "     data1.year " + data1.year + "    data2.year " + data2.year);
+        itemId++;
+        rondaID++;
+    }
 	ItemData GetNext()
 	{
 	//	print ("pairID " + pairID + "  itemId " + itemId + " length: "+ Data.Instance.triviaData.triviaContent.all.Length);
-		if (Data.Instance.triviaData.triviaContent.all.Length <= itemId)
+		if (Data.Instance.triviaData.triviaContent.all.Count <= itemId-1)
 			itemId = 0;
-		ItemData data =  Data.Instance.triviaData.triviaContent.all[itemId]; 
+
+        ItemData data =  Data.Instance.triviaData.triviaContent.all[itemId]; 
 		data.usedInGame = true;
-		itemId ++;
-		return data;
+		
+        return data;
 	}
-	int pairDone = 0;
+    ItemData GetPairFor(ItemData firstPair)
+    {
+        int year = firstPair.year;
+        int id = 0;
+        foreach(ItemData itemData in Data.Instance.triviaData.triviaContent.all)
+        {
+            id++;
+            int year1 = firstPair.year;
+            int year2 = itemData.year;
+            int difYearsOfThisPair = Mathf.Abs(year1 - year2);
+            if (difYearsOfThisPair < diffYears[0] && difYearsOfThisPair > diffYears[1] && itemId < id)
+            {
+                itemData.usedInGame = true;
+                itemId = id;
+                return itemData;
+            }
+        }
+        itemId = 0;
+        return GetPairFor(firstPair);
+    }
+    Vector2 GetDiffYears()
+    {
+        if (rondaID == 0)
+            return new Vector2(1000, 30);
+        else if (rondaID == 1)
+            return new Vector2(30, 20);
+        else if (rondaID == 2)
+            return new Vector2(20, 10);
+        else if (rondaID >= 3 && rondaID < 5)
+            return new Vector2(10, 5);
+        else if (rondaID >= 5 && rondaID < 7)
+            return new Vector2(5, 3);
+        else
+            return new Vector2(3, 1);
+    }
+    int pairDone = 0;
 	public void PairDone()
 	{
 		pairDone++;

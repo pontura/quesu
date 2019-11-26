@@ -6,7 +6,7 @@ public class ScreensManager : MonoBehaviour
 {
 	public MainScreen[] all;
 
-	MainScreen activeScreen;
+    public MainScreen activeScreen;
 	MainScreen lastActiveScreen;
 
 	bool loading;

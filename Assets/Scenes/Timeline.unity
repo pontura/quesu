@@ -631,6 +631,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimeLineItemEmpty (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3155256460400594753, guid: 77c3f2cd65c509a48aebfa9a9943aee5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5087859546228791789, guid: 77c3f2cd65c509a48aebfa9a9943aee5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -735,11 +740,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3155256460400594753, guid: 77c3f2cd65c509a48aebfa9a9943aee5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6871051401522492184, guid: 77c3f2cd65c509a48aebfa9a9943aee5,
         type: 3}
@@ -890,10 +890,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da72414aae1a474488d71824639ca2ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backSceneName: 
+  backScreenID: 0
+  ready: 0
   all: []
   item: {fileID: 1685995480990888273, guid: cbdcb210d3511db4284d9812fee86d9a, type: 3}
   emptyItem: {fileID: 1685995480990888273, guid: 77c3f2cd65c509a48aebfa9a9943aee5,
     type: 3}
+  emptyIinitialItem: {fileID: 0}
   serieID: 0
   container: {fileID: 2121301225}
 --- !u!1 &1257187197
@@ -1164,8 +1168,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 562469649}
   m_HandleRect: {fileID: 562469648}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.99999994
+  m_Value: 1
+  m_Size: 0.9999998
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1331,6 +1335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GetTrivia: getTrivia.php
+  GetReto: getReto.php
+  GetUser: getUser.php
   GetTags: getTags.php
   serverURL: http://pontura.com/quesu/
 --- !u!114 &1851654522
@@ -1346,11 +1352,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   build: 0
-  score: 0
+  format: 0
   serverManager: {fileID: 0}
   triviaData: {fileID: 0}
   tagsData: {fileID: 0}
+  usersManager: {fileID: 0}
+  retosManager: {fileID: 0}
   settings: {fileID: 0}
+  resultsData: {fileID: 0}
+  triviaName: 
   currentLevel: 
 --- !u!4 &1851654523
 Transform:
@@ -1378,10 +1388,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb547aed08cbeb34ba808b299211f8c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reload: 0
   triviaContent:
     tagID: 0
     all: []
   loaded: 0
+  triviaName: 
 --- !u!114 &1851654525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1394,8 +1406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0843ceda57018c148b418d34dc604d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagsSimple:
-    all: []
   tags:
     all: []
   loaded: 0
@@ -1412,6 +1422,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triviaDuration: 0
+  timeover: 0
+  timeWin: 0
+  timeLose: 0
   buttonOkColor: {r: 0.037201855, g: 0.7169812, b: 0.16977985, a: 1}
   buttonWrongColor: {r: 0.5764706, g: 0.10980393, b: 0.09019608, a: 1}
 --- !u!1 &1924783985
@@ -1445,6 +1458,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userID: 
   username: 
+  retosGanados: 0
+  retosPerdidos: 0
+  sprite: {fileID: 0}
+  RESET_ALL_DATA: 0
+  path: 
 --- !u!4 &1924783987
 Transform:
   m_ObjectHideFlags: 0
@@ -1744,7 +1762,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000014648945, y: -0.000026037747}
+  m_AnchoredPosition: {x: 0.000015171115, y: -0.000026037747}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2121301226

@@ -37,6 +37,7 @@ public class UserData : MonoBehaviour
 		
         if (RESET_ALL_DATA)
             PlayerPrefs.DeleteAll();
+       
 
 		path = Application.persistentDataPath + "/";
 
@@ -80,6 +81,8 @@ public class UserData : MonoBehaviour
 	}
     void LoadUserPhoto()
     {
+        if (Data.Instance.format == Data.formats.STANDALONE)
+            return;
         sprite = LoadSprite(Application.persistentDataPath + "/" + UserData.Instance.userID + ".png");
     }
     private Sprite LoadSprite(string path)

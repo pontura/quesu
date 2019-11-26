@@ -5,7 +5,11 @@ using UnityEngine;
 public class Settings : MonoBehaviour
 {
 	public int triviaDuration;
-	public Color buttonOkColor;
+    public int timeover;
+    public float timeWin;
+    public float timeLose;
+
+    public Color buttonOkColor;
 	public Color buttonWrongColor;
 
 }

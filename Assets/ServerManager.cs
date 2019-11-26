@@ -73,6 +73,7 @@ public class ServerManager : MonoBehaviour
     IEnumerator LoadTriviaR(int tagID, int limit)
     {
         string path = serverURL + GetTrivia + "?id=" + tagID + "&limit=" + limit;
+        Debug.Log(path);
         WWW www = new WWW(path);
         yield return www;
         if (www.error != null)
@@ -98,6 +99,7 @@ public class ServerManager : MonoBehaviour
     IEnumerator LoadUserDataC(string userID)
     {
         string path = serverURL + GetUser + "?userID=" + userID;
+        print("path" + path);
         WWW www = new WWW(path);
         yield return www;
         if (www.error != null)

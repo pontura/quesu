@@ -9,10 +9,23 @@ public class MainScreen : MonoBehaviour
 	ScreensManager screensManager;
 	float screenWidth;
 	public int backScreenID;
+    public bool ready;
 
-	public void Init(ScreensManager screensManager, int id)
+    void Awake()
+    {
+        Events.OnButtonClicked += OnButtonClickedChecker;
+        if (Data.Instance.format == Data.formats.STANDALONE)
+            Events.OnStandaloneKeyDown += OnStandaloneKeyDownChecker;
+    }
+    void OnButtonClickedChecker(ButtonStandard button)
+    {
+        if(ready)
+            OnButtonClicked(button);
+    }
+    public void Init(ScreensManager screensManager, int id)
 	{
-		screenWidth = Screen.width + 100;
+        
+        screenWidth = Screen.width + 100;
 		this.screensManager = screensManager;
 		this.id = id;
 		gameObject.SetActive (false);
@@ -23,15 +36,17 @@ public class MainScreen : MonoBehaviour
 	}
 	public void SetInitialPosition(bool toRight)
 	{
-		OnEnabled ();
+        ready = false;
+        OnEnabled ();
 		float destination = screenWidth;
 		if (!toRight)
 			destination = -screenWidth;
 		gameObject.transform.localPosition = new Vector2 (destination, 0);
 	}
 	public void MoveTo(bool toRight)
-	{		
-		float destination = gameObject.transform.localPosition.x-screenWidth;
+	{
+        ready = false;
+        float destination = gameObject.transform.localPosition.x-screenWidth;
 		if (!toRight)
 			destination = gameObject.transform.localPosition.x + screenWidth;		
 
@@ -50,22 +65,38 @@ public class MainScreen : MonoBehaviour
 	void TransitionDone()
 	{
 		screensManager.OnTransitionDone ();
-	}
-	void OnEnable()
-	{		
-		Events.OnButtonClicked += OnButtonClicked;
+        if (screensManager.activeScreen == this)
+            ready = true;
+        else
+            ready = false;
+    }
+    void OnDestroy()
+    {
+        Events.OnButtonClicked -= OnButtonClicked;
+        Events.OnStandaloneKeyDown -= OnStandaloneKeyDownChecker;
+    }
+    void OnStandaloneKeyDownChecker(StandaloneInputManager.types type)
+    {
+        if (ready)
+        {
+            print(this.gameObject.name);
+            Events.OnSoundFX("ui");
+            OnStandaloneKeyDown(type);
+        }
+    }
 
-	}
-	void OnDisable()
-	{
-		Events.OnButtonClicked -= OnButtonClicked;
-	}
-	public virtual void Back()
+    public virtual void Back()
 	{		
 		screensManager.LoadScreen (backScreenID, false);
 	}
-	public virtual void OnEnabled() { }
+    void OnDisable()
+    {
+        CancelInvoke();
+        ready = false;
+    }
+    public virtual void OnEnabled() { }
 	public virtual void OnButtonClicked(ButtonStandard button) { }
 	public virtual void OnInit() 	{ }
 	public virtual void OnReset() 	{ }
+    public virtual void OnStandaloneKeyDown(StandaloneInputManager.types type) { }
 }
