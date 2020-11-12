@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ddd72a8181e667499082ac20dde01d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triviaDuration: 15
+  triviaDuration: 30
   timeover: 5
   timeWin: 0.5
   timeLose: -0.5
@@ -541,10 +541,1410 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb547aed08cbeb34ba808b299211f8c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reload: 1
+  reload: 0
   triviaContent:
-    tagID: 20
-    all: []
+    tagID: 11
+    all:
+    - id: 449
+      text: GHOST, LA SOMBRA DEL AMOR
+      image: 7312bd070e95a7f20d044ccfb572190a.jpg
+      year: 1990
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 385
+      text: HOMBRES DE NEGRO
+      image: 6e1bf5a87dad14a161a6db3e20597b99.jpg
+      year: 1997
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 165
+      text: EL PADRINO
+      image: 2f66f214eb02a6b6677a95304d278837.jpeg
+      year: 1972
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 391
+      text: EL JUEGO DEL MIEDO
+      image: c06991184c8eefc9f0452eee7d440d70.jpg
+      year: 2004
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 359
+      text: EL GRAN PEZ
+      image: c4cb42fc2e253a885497c9198ade5288.jpg
+      year: 2003
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 413
+      text: 'SPACE JAM: EL JUEGO DEL SIGLO'
+      image: b627f427e0849a40696c17044e35ceca.jpg
+      year: 1996
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 184
+      text: DURO DE MATAR
+      image: 7877b2957bfcd14d8ddae6fdbff15767.jpeg
+      year: 1988
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 150
+      text: LA VIDA ES BELLA
+      image: d4d2f64faf4b5820d6bf870dfabf045a.jpg
+      year: 1997
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 139
+      text: 300
+      image: 738277ec354eecbd72aab93324978ddb.jpg
+      year: 2006
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 373
+      text: SCARY MOVIE
+      image: a28980e848531f481600866a3342a58b.jpg
+      year: 2000
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 362
+      text: JUMANJI
+      image: 4ce406d8290f7d99dd2946cb40832388.jpg
+      year: 1995
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 313
+      text: EL BUENO, EL MALO Y EL FEO
+      image: 24daeefc8b04f27f6011326bded80f46.jpg
+      year: 1966
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 167
+      text: SEXTO SENTIDO
+      image: 6685b52e5569fb1fc1c2cbd35cd0c9b3.jpg
+      year: 1999
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 443
+      text: "EL MUNDO SEG\xDAN WAYNE"
+      image: e8a11e0b800a161057a06256a5c12b46.jpg
+      year: 1992
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 381
+      text: SHREK
+      image: 5f992ac1dab23cd961065973d1d323b5.jpeg
+      year: 2001
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 367
+      text: LA ISLA SINIESTRA
+      image: 69159293c70b21a12375b04cd0619047.jpg
+      year: 2010
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 141
+      text: UP
+      image: f5535cbf59d1ffdfe6092d412a8fb9ab.jpg
+      year: 2009
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 400
+      text: "CIUDAD DE \xC1NGELES"
+      image: 84325b2e1d0575875e0778b6bb05c471.jpg
+      year: 1998
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 452
+      text: TRAINSPOTTING
+      image: 63cb4e9b2720a2de2a3208289e358c7d.jpg
+      year: 1996
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 145
+      text: "EL REY LE\xD3N"
+      image: d7e0d5c7812fa96b28e061b96fec2163._SY300_QL70_
+      year: 1994
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 398
+      text: HIJOS DE LOS HOMBRES
+      image: 73b1fa7910c4429ea75e6f3114973732.jpg
+      year: 2006
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 354
+      text: "EL D\xCDA DE LA MARMOTA"
+      image: 9443d213fd5615657410584210f52b39.jpeg
+      year: 1993
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 383
+      text: TRANSFORMERS
+      image: 05a375549e697eac23b04adfcf8d1c4b.jpg
+      year: 2007
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 320
+      text: TAXI DRIVER
+      image: 6c8ef9154c9fc763fc87dc8f3acb5cdb.jpg
+      year: 1976
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 152
+      text: CIUDAD DE DIOS
+      image: edb8f9d9ba498e9964cd42aed86fed3b.jpg
+      year: 2002
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 347
+      text: BAJOS INSTINTOS
+      image: d026d9e4f4c67571f3daf7dd2b555262.jpg
+      year: 1992
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 183
+      text: LOS GOONIES
+      image: 8694d345cc6d302baa55a13dea685010.jpeg
+      year: 1985
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 403
+      text: "PIRATAS DEL CARIBE: LA MALDICI\xD3N DEL PERLA NEGRA"
+      image: b29e2cd0b3171cb076cdf34d6db54551.jpg
+      year: 2003
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 435
+      text: "EL PACIENTE INGL\xC9S"
+      image: 8cd248619c073f54d93f1b42f17b3844.jpg
+      year: 1996
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 351
+      text: EL JOVEN MANOS DE TIJERAS
+      image: 9fdeae3803677e422d827507c395380c.jpg
+      year: 1990
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 315
+      text: EL BEBE DE ROSEMARY
+      image: 6ae202d984a9e0fde9a2030588e3bddc.jpg
+      year: 1968
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 458
+      text: "MISI\xD3N IMPOSIBLE"
+      image: 3c090b4d73803170c4867debd812b6d4.jpg
+      year: 1996
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 366
+      text: LA LA LAND
+      image: a58e066fafd566addbb7d84c2839e6ba.jpg
+      year: 2016
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 182
+      text: EL RESPLANDOR
+      image: 206cf5db47cb5169e3f28c605a4ed612.jpg
+      year: 1980
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 312
+      text: '2001: ODISEA DEL ESPACIO'
+      image: 91df6f0eb35c1024ee62ea0165b5bbab.jpg
+      year: 1968
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 457
+      text: EL TRANSPORTADOR
+      image: 6ba56a56d707b84f0158dec19cb4ac82.aDsxNDM0MDtqOzE4MjI1OzEyMDA7NzAwOzQ1MQ
+      year: 2002
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 319
+      text: EL EXORCISTA
+      image: db9d6fbc56da3574bc7cb91d079d1479.jpg
+      year: 1973
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 176
+      text: BEETLEJUICE
+      image: 3ce497837bc7e1cfdba9c1478bd24847.jpg
+      year: 1988
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 358
+      text: "N\xC1UFRAGO"
+      image: 19cb7ddb457576b0648c50ec6022d88d.jpg
+      year: 2000
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 377
+      text: X-MEN
+      image: 65ac58cc6ed9c45ff311d74381f7f147.jpg
+      year: 2000
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 421
+      text: LOCO POR MARY
+      image: 14a02c7a4c7d41892b6035a484822692.jpg
+      year: 1998
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 330
+      text: "FIEBRE DE S\xC1BADO POR LA NOCHE"
+      image: 3d3754570ea9cce93382c304d90e5fe4.jpg
+      year: 1977
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 471
+      text: UP
+      image: f5e15bc11230369ff39b7099470a9c94.jpg
+      year: 2009
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 459
+      text: RATATOUILLE
+      image: bb6cc6769604f357723637be8001d44b.jpg
+      year: 2007
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 332
+      text: BLADE RUNNER
+      image: 1fa92950204ca143a471204b2dfd34cd.jpg
+      year: 1982
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 365
+      text: BIRDMAN
+      image: 784e0c1b7a9177d30dfacc835104bf89.jpg
+      year: 2014
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 154
+      text: "EL SE\xD1OR DE LOS ANILLOS"
+      image: 2d3526411aea774d75a21ff17eb8ddb1._SY300_QL70_
+      year: 2001
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 390
+      text: EL MAQUINISTA
+      image: bb80b9b7488dbbef964c7e008db17038.jpg
+      year: 2004
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 195
+      text: "LA NARANJA MEC\xC1NICA"
+      image: aba2e35a0d7022e9c7f0191748412ef1.jpg
+      year: 1971
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 136
+      text: TOY STORY
+      image: 0b00f1d65f480b0db1f9de162b158077.jpg
+      year: 1995
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 318
+      text: "TIBUR\xD3N"
+      image: dad9fe220a0352f80c56761600773af0.jpg
+      year: 1975
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 473
+      text: ETERNO RESPLANDOR DE UNA MENTE SIN RECUERDOS
+      image: 7752312f30cee53ee7f9ce8a5279206a.jpg
+      year: 2004
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 461
+      text: MARLEY Y YO
+      image: 4d4d8cca734fe0539fe91ec7bd059c8c.jpg
+      year: 2008
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 424
+      text: "\xA1ESO QUE T\xDA HACES!"
+      image: 962fe2f138ef1b829e773f982f7d6ad1.jpg
+      year: 1996
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 328
+      text: "\xDALTIMO TANGO EN PAR\xCDS"
+      image: 6c94c648490a30dbdee71ae2184d203e.jpg
+      year: 1972
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 406
+      text: MONSTERS, INC.
+      image: 5a7836a8289e7b495538ae9c063f8a0f.jpg
+      year: 2001
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 357
+      text: THELMA Y LOUISE
+      image: 80304a5ca58a5dfd1d3c0226bdb61b68.jpg
+      year: 1991
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 430
+      text: "BRIGADA A: LOS MAGN\xCDFICOS"
+      image: c8d356822de9323ca3f85bea20e0507f.jpg
+      year: 2010
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 418
+      text: "\xA1MEJOR IMPOSIBLE!"
+      image: eb8654f2b846ed2ca753a6f017475fc5.jpg
+      year: 1997
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 189
+      text: "PELOT\xD3N"
+      image: 7539ebe0b85327e2c52f6cd438cf3edd.jpeg
+      year: 1986
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 151
+      text: EL SILENCIO DE LOS INOCENTES
+      image: 6f8c539b728c7c8586ddeebd805be543.jpg
+      year: 1991
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 440
+      text: PATCH ADAMS
+      image: de82d0a78f72fd05d60f0598751148ac.jpg
+      year: 1998
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 364
+      text: GRAVEDAD
+      image: f3090c5cb3d8da2c7c1d976ac47ae835.jpg
+      year: 2013
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 420
+      text: THE TRUMAN SHOW
+      image: 3cc0864f921877bc7a43cba741dfe048.jpg
+      year: 1998
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 371
+      text: DESTINO FINAL
+      image: 3b137bc751f1dfefb5d6358925a0f4a8.jpg
+      year: 2000
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 405
+      text: IRON MAN
+      image: ea6416af127ed6f3b03aef401ec1346b.jpg
+      year: 2008
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 407
+      text: "\xBFQU\xC9 PAS\xD3 AYER?"
+      image: c32c7fb5f7add017007616ba4b733a3e.jpg
+      year: 2009
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 454
+      text: "BRIGADA A: LOS MAGN\xCDFICOS"
+      image: 4f387f16b645830c595579d613ec2828.jpg
+      year: 2010
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 438
+      text: PESADILLA EN LA CALLE ELM
+      image: f1b5d1085e3bd734ec9b7409ea3115a6.jpg
+      year: 1984
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 160
+      text: FROZEN
+      image: c3e7cc5bee46b96f4334df26cd7198fc.jpg
+      year: 2013
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 353
+      text: MI POBRE ANGELITO
+      image: d2776eef9a4fcff9bf79636ffd9bc9cf.jpg
+      year: 1990
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 350
+      text: LA LISTA DE SCHINDLER
+      image: 38b7c4c952fe7181e9abc0072ab62d24.jpg
+      year: 1993
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 395
+      text: "CHARLIE Y LA F\xC1BRICA DE CHOCOLATE"
+      image: b0f7f5e08a3232a13eb58139b54cb270.jpg
+      year: 2005
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 146
+      text: "INDIANA JONES Y LA \xDALTIMA CRUZADA"
+      image: d50a1fca2f875b9917e228176f095aa2.jpg
+      year: 1989
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 131
+      text: EL PIANISTA
+      image: 005254039a9e4b30fb51ffff18eeff3a.jpg
+      year: 2002
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 324
+      text: CABARET
+      image: 92a451263ac0f0279981488f6194a0b0.jpg
+      year: 1972
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 465
+      text: MI SUPER EXNOVIA
+      image: 6d39d27a4f9c493471c0d2ea0e0a6b1d.jpg
+      year: 2006
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 434
+      text: ACTIVIDAD PARANORMAL
+      image: 3156da4e09721a7833d100cf9b129b73.jpg
+      year: 2007
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 394
+      text: BATMAN INICIA
+      image: 648dab3f02b2f7f9fa7257ede117c93e.jpg
+      year: 2005
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 329
+      text: 'MAD MAX: EL GUERRERO DEL CAMINO'
+      image: 8c6879572fb3c606a625a051717de2b8.jpg
+      year: 1979
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 355
+      text: CUATRO BODAS Y UN FUNERAL
+      image: 83f7086f03d49371a5c03ca838d1f8e2.jpeg
+      year: 1994
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 171
+      text: "EL OR\xCDGEN"
+      image: 5cacfdf5619e7e174470a750602afbaf.jpeg
+      year: 2010
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 142
+      text: GOLPES DEL DESTINO
+      image: 5a70ec8c8d01d2cdd398ff783eeb88de.gif
+      year: 2004
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 419
+      text: "DRAG\xD3N ROJO"
+      image: afb682ef66e98c19df0ae44387055648.jpeg
+      year: 2002
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 191
+      text: CUENTA CONMIGO
+      image: 6a17c92859a3d18601708fb80d33c7fb.jpg
+      year: 1986
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 193
+      text: LA HISTORIA SIN FIN
+      image: d1f9aef80930c9fe109aab6d0e881487.jpg-c_300_300_x-f_jpg-q_x-xxyxx
+      year: 1984
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 468
+      text: THOR
+      image: fb0e270cb4ca626c75aeca04b7544139.jpeg
+      year: 2011
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 467
+      text: "CAPIT\xC1N AM\xC9RICA: EL PRIMER VENGADOR"
+      image: bf2c332d29087db24372511781085e27.jpg
+      year: 2011
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 448
+      text: PERROS DE LA CALLE
+      image: c702fd5cfe788b0d33fa7031c5c03a79.jpg
+      year: 1992
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 148
+      text: 'TERMINATOR 2: EL JUICIO FINAL'
+      image: 98ae84e799c31d966c7a299dd2317cdd.jpg
+      year: 1991
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 166
+      text: LOS INCREIBLES
+      image: f876ba6fc761426f8fa596232773bfe7.jpeg
+      year: 2004
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 423
+      text: CASI FAMOSOS
+      image: ea0d6cfff1b5b4b1dc49e26a78e48556.jpeg
+      year: 2000
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 379
+      text: EL PROTEGIDO
+      image: 1d207fa74f7fdf4b8dba09d44a3e19f8.jpg
+      year: 2000
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 436
+      text: "BUENOS D\xCDAS, VIETNAM"
+      image: 79000419d143b13644f2aa9f9abe3a1f.jpg
+      year: 1987
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 133
+      text: GLADIADOR
+      image: 6da96b2a2c8067bb1a2d3938778d717c.jpg
+      year: 2000
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 339
+      text: FLASHDANCE
+      image: 5ef0417606851b3797f73a9511c4630a.jpg
+      year: 1983
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 462
+      text: MENTIRAS VERDADERAS
+      image: 6000ec846b2bb899a8902962cbd55f19.jpg
+      year: 1994
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 399
+      text: EL LABERINTO DEL FAUNO
+      image: e1dbdf54209d2295fee08746288299a0.jpg
+      year: 2006
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 369
+      text: "R\xC1PIDO Y FURIOSO"
+      image: 57d42f5668332f884e45cb804c90ecda.jpg
+      year: 2001
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 426
+      text: LION, UN CAMINO A CASA
+      image: 3dbcf63c247c663de1d8efac7b28b5d5.jpg
+      year: 2016
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 411
+      text: "\xA1MARCIANOS AL ATAQUE!"
+      image: 841fc6ede7bf31735cb4c6d5ac2fe860.jpg
+      year: 1996
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 380
+      text: HARRY POTTER Y LA PIEDRA FILOSOFAL
+      image: fea7900fb22f718a15d6132c283f2ef3.jpg
+      year: 2001
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 410
+      text: LOS VENGADORES
+      image: 13bd705d76ce25c6937432defc745bdb.jpeg
+      year: 2012
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 194
+      text: BATMAN
+      image: b19c8c61488512622db84bec8e4fbcf3.JPG
+      year: 1989
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 147
+      text: VOLVER AL FUTURO
+      image: b90eb5adf83ad118b256165bf42ef0b1.jpeg
+      year: 1985
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 132
+      text: "CORAZ\xD3N VALIENTE"
+      image: 0c6e51f50075ddcd791880b47c40c8b9.jpg
+      year: 1995
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 455
+      text: IDENTIDAD DESCONOCIDA
+      image: 20715710ca7d7e94022b2a970a1c67ff.jpg
+      year: 2002
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 135
+      text: TIEMPOS VIOLENTOS
+      image: 01a1fa3c721eb475f14e0764b4f93a17.jpg
+      year: 1994
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 375
+      text: LA FAMILIA DE MI NOVIA
+      image: 8092c82cf630507d2d7f9f83e81168c1.jpg
+      year: 2000
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 343
+      text: "CUANDO HARRY CONOCI\xD3 A SALLY"
+      image: 3c23adb976535f7c51dc4db00b2aeb20.jpg
+      year: 1989
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 163
+      text: RAMBO
+      image: a9e0c83eaf83f4fe6ed1246d8c6722f4.jpg
+      year: 1982
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 349
+      text: TONTO Y RETONTO
+      image: bf5fc5c42ca32bfc30181443ca72e0d0.jpg
+      year: 1994
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 192
+      text: LA MOSCA
+      image: 84f76e8cc6bcec58c82cd455670e1349.jpg
+      year: 1986
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 456
+      text: IT
+      image: 3b1bfb67914f74a7013826fd1464f092.jpeg
+      year: 1990
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 180
+      text: CASINO
+      image: 6c507a8898ef0d4486109fa955ad17e8.jpg
+      year: 1995
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 352
+      text: DE MENDIGO A MILLONARIO
+      image: 1a73c8c96f359e3887cf7e6de4c9df37.jpg
+      year: 1983
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 475
+      text: BASTARDOS SIN GLORIA
+      image: d6e637febbeb31ccc07e034bddc4f372.jpg
+      year: 2009
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 370
+      text: LA BRUJA DE BLAIR
+      image: b7d88eec2b51a49df2baf3ed3be1acc2.jpg
+      year: 1999
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 137
+      text: AVATAR
+      image: f8e9b6fa1a0a0efdb598178d2a92747e.jpg
+      year: 2009
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 338
+      text: "Y, \xBFD\xD3NDE EST\xC1 EL PILOTO?"
+      image: 363812d0c82d723acc533b28af2f71ad.jpg
+      year: 1980
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 386
+      text: 'AMERICAN PIE: TU PRIMERA VEZ'
+      image: dd18b2962f24db1e570c30c6bc9e9d65.jpg
+      year: 1999
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 311
+      text: PSICOSIS
+      image: 85fef2fdd920b95e3fbfc4f1adbdec22.jpg
+      year: 1960
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 460
+      text: SOY LEYENDA
+      image: 7ddb772ebf8db7a8279892cbe36dcec4.jpg
+      year: 2007
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 414
+      text: LA ROCA
+      image: 4538d52b0c162a2e2329928d032fb1b5.jpg
+      year: 1996
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 187
+      text: CINEMA PARADISO
+      image: 8b2a846f98dbea1865ef55ec36af778b.jpeg
+      year: 1988
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 388
+      text: "ATR\xC1PAME SI PUEDES"
+      image: e9c59ddae9895e4345f946db86f8a226.jpg
+      year: 2002
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 378
+      text: AMORES PERROS
+      image: ec10303cf9c1a2451bd1667baab70286.jpg
+      year: 2000
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 392
+      text: ESCUELA DE ROCK
+      image: 2ed0137faf8c6726436766d992b73e1c.jpeg
+      year: 2003
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 445
+      text: AUSTIN POWERS
+      image: 29d15ceb8f584fe8e8bfd4bea4b41c0a.jpg
+      year: 1997
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 402
+      text: "EL C\xD3DIGO DA VINCI"
+      image: 7abb0b3691ccb048af6cd654c851e280.jpeg
+      year: 2006
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 396
+      text: "SECRETO EN LA MONTA\xD1A"
+      image: ad419d6378e66048a63d999ed88cf7f1.jpg
+      year: 2005
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 463
+      text: EL RETRATO DE DORIAN GRAY
+      image: c461d37c6f7c5b659655ea8b38584165.jpg
+      year: 2009
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 464
+      text: WATCHMEN
+      image: 49035b0feb33e23c815f4f23a0dd4c20.jpg
+      year: 2009
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 317
+      text: EL PLANETA DE LOS SIMIOS
+      image: 61e5756b574e606c50fd017169d597e8.jpg
+      year: 1968
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 387
+      text: "D\xCDA DE LA INDEPENDENCIA"
+      image: 6f86d1f42e7c0079b69563f814e517c0.jpg
+      year: 1996
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 140
+      text: AMADEUS
+      image: 3f69b48ada6bffe7175edc224611fff8.jpg
+      year: 1984
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 340
+      text: DURO DE MATAR
+      image: 1d740d668badd26d4193860d85bdfdcf.jpg
+      year: 1988
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 409
+      text: CHUCKY, EL MUN?ECO MALDITO
+      image: 37fef0df89811ac98aab028253025c50.jpg
+      year: 1988
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 322
+      text: GREASE
+      image: 902c7f4d93388001979159c8ae96abd2.jpg
+      year: 1978
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 361
+      text: EL CLUB DE LA PELEA
+      image: b7f82d0b5ab568c8e93ab3405540eb4b.jpg
+      year: 1999
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 149
+      text: TERMINATOR
+      image: 4b101bbe5a5e34c6b211db14c7aa94a5.jpg
+      year: 1984
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 356
+      text: LOS SOSPECHOSOS DE SIEMPRE
+      image: 56a574ef5de5835c263a441ffec82118.jpg
+      year: 1995
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 144
+      text: APOCALIPSE NOW
+      image: b6bede79962f391161eb7236915a03c3.jpg
+      year: 1979
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 153
+      text: MATRIX
+      image: 3dc426da534b0bde38e78f97fed01130.jpg
+      year: 1999
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 446
+      text: LOS LOCOS ADDAMS
+      image: 44a66a1c5dc0bfbd84065e06c2524ffa.jpeg
+      year: 1991
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 186
+      text: DEPREDADOR
+      image: e32fd1c44c12a1cc9c2e84a878a094fa.jpeg
+      year: 1987
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 447
+      text: 'ACE VENTURA: DETECTIVE DE MASCOTAS'
+      image: f468835da873be8a1177aef690e081b0.jpg
+      year: 1994
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 415
+      text: EL QUINTO ELEMENTO
+      image: fbcbcf927d4d70a312ac1f4a3803739a.jpg
+      year: 1997
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 333
+      text: EL CLUB DE LOS CINCO
+      image: 1d40eadab6956e58fe3364b7ec6c9e62.jpg
+      year: 1985
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 470
+      text: FRIDA
+      image: ae300e6ce9e252805fe0f948ca5e09ef.jpg
+      year: 2002
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 453
+      text: "LA M\xC1SCARA"
+      image: d10289d6e77e63c80accad4aba0893bd.jpg
+      year: 1995
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 432
+      text: EL RENACIDO
+      image: a891ce1220a3f5fe6f2baeac4aea5590.png
+      year: 2015
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 404
+      text: EL ILUSIONISTA
+      image: 0406804e3fefcfd69ef5596dfc77016f.jpg
+      year: 2006
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 158
+      text: CONTRACARA
+      image: 19e9ed7adf56d0f14f07c33b87ffdcab.JPG
+      year: 1997
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 170
+      text: PECADOS CAPITALES
+      image: f8327956875334842379eb9f20b2ca7b.jpg
+      year: 1995
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 441
+      text: HOOK
+      image: 9bf9749c0159792ebdd1fbbdad98f646.jpg
+      year: 1991
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 336
+      text: "\xBFQUI\xC9N ENGA\xD1\xD3 A ROGER RABBIT?"
+      image: 468ca771364fa12b6c17fa1b69c4e4fa.jpg
+      year: 1988
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 169
+      text: INTENSAMENTE
+      image: 8bd822b67bf35bd3b52753a784c70a0a.jpg
+      year: 2015
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 376
+      text: BILLY ELLIOT
+      image: 2b3bd67abdef8b8575819aa069d2eca2.jpg
+      year: 2000
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 331
+      text: SUPERMAN
+      image: e92df1e9581429835af3fcddb36c7095.jpg
+      year: 1978
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 130
+      text: TITANIC
+      image: b19aba37bcf7d325ee8d8f1ee5d897c4.jpg
+      year: 1997
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 337
+      text: LA SOCIEDAD DE LOS POETAS MUERTOS
+      image: b13a225a4a1240fb5f40259b2701855d.jpg
+      year: 1989
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 472
+      text: EL DIARIO DE BRIDGET JONES
+      image: 9ea8a8ff4e2799b116c1d04c379fb959.jpg
+      year: 2001
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 444
+      text: FULL MONTY
+      image: d619aad5b6643e486621ad2a634c3fa4.jpg
+      year: 1997
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 360
+      text: BELLEZA AMERICANA
+      image: 350410dfe95ba2651f3df57d52dcf50a.jpeg
+      year: 1999
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 429
+      text: 'LARA CROFT: TOMB RAIDER'
+      image: f7976321c795e9573e6be38093b40a31.jpg
+      year: 2001
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 143
+      text: MEMENTO
+      image: 505b993a641fd5c87ac5021d542fea24.jpg
+      year: 2000
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 134
+      text: RESCATANDO AL SOLDADO RYAN
+      image: 8bbce75d09776e30b656895076651db7.jpg
+      year: 1998
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 372
+      text: "PSIC\xD3PATA AMERICANO"
+      image: 742c5cdddebae02bcff024c229850f26.png
+      year: 2000
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 450
+      text: EL SANTO
+      image: 41a3fe37d64c964fb7ab3f831aefae93.jpg
+      year: 1997
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 469
+      text: BUSCANDO A NEMO
+      image: b2db07aba16ce6622802fb4f04f91b1c.jpg
+      year: 2003
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 188
+      text: LABERINTO
+      image: 7c9c1bfd099d5f16e358fde0e0ea6540.jpg
+      year: 1986
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 325
+      text: HARRY, EL SUCIO
+      image: b2bbce85a9021b0c585f855d226f99f7.jpg
+      year: 1971
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 416
+      text: "AVI\xD3N PRESIDENCIAL"
+      image: 65546310b939e61e973609b9cc6c324f.jpg
+      year: 1997
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 172
+      text: TOP GUN
+      image: 5eafea303bef0aedec42e7e6ba8ed097.jpg
+      year: 1986
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 190
+      text: WILLOW
+      image: 245d99fccb01d3d3ed513a73d60e5f55.jpg
+      year: 1988
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 393
+      text: "B\xDASQUEDA IMPLACABLE"
+      image: 1e2979397894a7166a7757d4b25a6bfd.jpg
+      year: 2008
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 425
+      text: "EL PRECIO DEL MA\xD1ANA"
+      image: 94bdbc3ca20c8dbbf481336f4a30ef34.jpg
+      year: 2011
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 474
+      text: EL CHACAL
+      image: b2c841f16c061e5d3b5a5681828a896b.jpg
+      year: 1997
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 179
+      text: "OPERACI\xD3N DRAG\xD3N"
+      image: 9bfefc4faa99ff25b62a3192d0a45690.JPG
+      year: 1973
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 442
+      text: MENTIROSO MENTIROSO
+      image: 822ebb1b989c7bb38ca683dc12de22cf.jpg
+      year: 1997
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 439
+      text: "PAP\xC1 POR SIEMPRE"
+      image: d076cb85c4cd3ee494a9ddab07d0ab1a.jpg
+      year: 1993
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 382
+      text: 12 MONOS
+      image: 4ae1303c26facd65bf21a4d9ebecc2e1.jpg
+      year: 1995
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 384
+      text: LA ERA DEL HIELO
+      image: b469ddd913124ee9a914f6cd4c0934cf.png
+      year: 2002
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 427
+      text: TROYA
+      image: d054e4465b3dbab9435c502fcc6c5896.jpg
+      year: 2004
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 314
+      text: LAWRENCE DE ARABIA
+      image: 3a34a03d4fd8e3065afe1bdd3492c16c.jpg
+      year: 1962
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 177
+      text: ROBOCOP
+      image: cf83fe5c81613d432959bfdc28441566.jpg
+      year: 1987
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 428
+      text: LA MOMIA
+      image: 7e25639776c52df9120b9e1a013d021f.jpg
+      year: 1999
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 173
+      text: KARATE KID
+      image: d22120506596d21471806cf55d3097f4.jpg
+      year: 1984
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 451
+      text: EL GRAN LEBOWSKI
+      image: f5048991e2235b4f3343e51ceaca7a20.jpg
+      year: 1998
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 431
+      text: LA PLAYA
+      image: bafac33a4de7be9b364644724a086c30.jpg
+      year: 2000
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 178
+      text: MINIONS
+      image: b1d7adf25799db92a924be0886c87063.jpg
+      year: 2015
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 162
+      text: ROCKY
+      image: 593dc66e2d1c574e24f230afaae2059a.jpg
+      year: 1976
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 412
+      text: "DAYLIGHT: INFIERNO EN EL T\xDANEL"
+      image: 7c03422ce1d598a12b848b0324aee8b4.jpg
+      year: 1996
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 341
+      text: POLTERGEIST
+      image: c479cc51e792f4b4279e9f68d10083d2.jpeg
+      year: 1982
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 157
+      text: "KILL BILL\r\n"
+      image: a46f9c4c7d513503ddea27fb4e85cca6.jpg
+      year: 2003
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 344
+      text: UN DETECTIVE SUELTO EN HOLLYWOOD
+      image: cb26d880c5de52566a476cb06f1b2084.jpg
+      year: 1984
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 159
+      text: "AM\xC9LIE"
+      image: f3f89d10f0ad8f61f1bcc2470dfde2a5.jpg
+      year: 2002
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 433
+      text: "12 A\xD1OS DE ESCLAVITUD"
+      image: 8c6e21e69535836fb4a903acc0e1bc58.jpeg
+      year: 2013
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
+    - id: 466
+      text: "ESCUADR\xD3N SUICIDA"
+      image: 0727383ff8242b49555feec2d6e74de1.jpg
+      year: 2016
+      description: 
+      texture: {fileID: 0}
+      usedInGame: 0
   loaded: 1
   triviaName: 
 --- !u!114 &288194331089314875

@@ -17,12 +17,14 @@ public class StandaloneTimeManager : MonoBehaviour
     public Animation readyAnim;
 
     private void Start()
-    {        
+    {
+        field.text = "";
         ShowReady(false);
         bar.fillAmount = 1;
     }
     public void Init(StandaloneTrivia standaloneTrivia, float _totalTimer)
     {
+        field.text = _totalTimer + "\"";
         readyAnim.gameObject.SetActive(false);
         this.standaloneTrivia = standaloneTrivia;
         this.totalTimer = _totalTimer;
@@ -50,11 +52,11 @@ public class StandaloneTimeManager : MonoBehaviour
             return;
 
         float num = (totalTimer - timer);
-        string prefix = "00:";
+        string prefix = ""; // "00:";
         if (num < 10)
             prefix += "0";
-        field.text = prefix + System.Math.Round(num, 2);
-
+        field.text = prefix + System.Math.Round(num, 0);
+        field.text += "\"";
         if (timer > totalTimer - 3)
         {
             readyAnim.gameObject.SetActive(true);

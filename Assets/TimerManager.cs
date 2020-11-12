@@ -26,7 +26,7 @@ public class TimerManager : MonoBehaviour
 			return;
 
 		float num = (totalTimer - timer);
-		string prefix = "00:";
+        string prefix = "";// = "00:";
 		if (num < 10)
 			prefix += "0";
 		field.text = prefix + System.Math.Round(num,2);

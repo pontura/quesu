@@ -164,7 +164,21 @@ public class StandaloneTrivia : MainScreen
         Events.OnSoundFX("boing");
         Debug.Log("rondaID " + rondaID + "   itemId : " + itemId + "   diffYears: " + diffYears + "     data1.year " + data1.year + "    data2.year " + data2.year);
     }
+    //para pelis:
     Vector2 GetDiffYears()
+    {
+        if (rondaID == 0)
+            return new Vector2(1000, 6);
+        else if (rondaID == 1)
+            return new Vector2(15, 6);
+        else if (rondaID == 2)
+            return new Vector2(12, 4);
+        else if (rondaID < 5)
+            return new Vector2(8, 3);
+        else
+            return new Vector2(5, 2);
+    }
+    Vector2 GetDiffYears___________________________________old()
     {
         if (rondaID == 0)
             return new Vector2(1000, 30);

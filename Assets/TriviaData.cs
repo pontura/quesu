@@ -24,7 +24,7 @@ public class TriviaData : MonoBehaviour
                 StartCoroutine(LoadImage(id, id.image));
         } else
         if (Data.Instance.format == Data.formats.STANDALONE)
-            Load(20);
+            Load(11);
     }
     public void Load(int id)
 	{
