@@ -12,11 +12,11 @@ public class MainMenu : MainScreen
         {
             if (UserData.Instance.username == "")
             {
-                registerButton.SetActive(true);
+               /// registerButton.SetActive(true);
             }
             else
             {
-                registerButton.SetActive(false);
+               // registerButton.SetActive(false);
                 UserData.Instance.UpdateData();
             }
         }

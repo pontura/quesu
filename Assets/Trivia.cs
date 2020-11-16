@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Trivia : MainScreen
 {
-	public TriviaPairButtons pairButton;
+	public TriviaPairButtons[] pairButton;
 	int totalPairs = 1;
 	public int serieID = 0;
 	int separationY = 176;
@@ -15,6 +15,7 @@ public class Trivia : MainScreen
 	public FeedbackManager feedbackManager;
     int pairID;
     public int rondaID; 
+    [HideInInspector] public List<ItemData> usedItemsData;
 
     public override void OnInit()
 	{
@@ -53,75 +54,138 @@ public class Trivia : MainScreen
 		pairID = 0;
 		for (int a = 0; a < totalPairs; a++) {
 			LoadPair ();
-			yield return new WaitForSeconds (0.35f);
+			yield return new WaitForSeconds (0.45f);
 		}
 		timerManager.SetState(true);
 		Events.OnMusic("clock");
 		yield return null;
 	}
     Vector2 diffYears;
-
+    ItemData data1;
     public void LoadPair()
 	{
-		TriviaPairButtons newPairButton = Instantiate (pairButton);
-		newPairButton.transform.SetParent (container);
+        recursiveTimes = 0;
+        usedItemsData.Clear();
+        diffYears = GetDiffYears();
+        print(diffYears);
+        TriviaPairButtons newPairButton;
+
+        if(Data.Instance.mode == Data.modes.TRIPLE)
+            newPairButton = Instantiate (pairButton[1]);
+        else if (Data.Instance.mode == Data.modes.CUADROPLE)
+            newPairButton = Instantiate(pairButton[2]);
+        else
+            newPairButton = Instantiate(pairButton[0]);
+
+        newPairButton.transform.SetParent (container);
 		newPairButton.transform.localScale = Vector3.one;
 		newPairButton.transform.localPosition = new Vector3 (0, -separationY*pairID, 0);
-		ItemData data1 = GetNext ();
-		ItemData data2 = GetPairFor(data1);
-        diffYears = GetDiffYears();
-        newPairButton.Init (this, data1, data2);
+		GetNext ();
+        ItemData data2 = GetPairFor(data1);
+
+        if (Data.Instance.mode == Data.modes.TRIPLE)
+        {
+            ItemData data3 = GetPairFor(data1);
+            Debug.Log("TRIPLE pairID " + pairID + "   diffYears: " + diffYears + "  data1.year " + data1.year + "    data2.year " + data2.year + "  data3.year " + data3.year);
+            newPairButton.Init(this, data1, data2, data3);
+        }
+        else if (Data.Instance.mode == Data.modes.CUADROPLE)
+        {
+            ItemData data3 = GetPairFor(data1);
+            ItemData data4 = GetPairFor(data1);
+            Debug.Log("CUADROPLE pairID " + pairID + "   diffYears: " + diffYears + "  data1.year " + data1.year + "    data2.year " + data2.year + "  data3.year " + data3.year + " data4.year " + data4.year);
+            newPairButton.Init(this, data1, data2, data3, data4);
+        }
+        else
+        {
+            Debug.Log("pairID " + pairID + "   diffYears: " + diffYears + "  data1.year " + data1.year + "    data2.year " + data2.year);
+            newPairButton.Init(this, data1, GetPairFor(data1));
+        }
+            
+
 		Events.OnSoundFX("boing");
 		pairID++;
-        Debug.Log("pairID " + pairID + "   diffYears: " + diffYears + "     data1.year " + data1.year + "    data2.year " + data2.year);
+        
         itemId++;
         rondaID++;
     }
 	ItemData GetNext()
 	{
-	//	print ("pairID " + pairID + "  itemId " + itemId + " length: "+ Data.Instance.triviaData.triviaContent.all.Length);
+		print ("___GetNext pairID " + pairID + "  itemId " + itemId );
 		if (Data.Instance.triviaData.triviaContent.all.Count <= itemId-1)
 			itemId = 0;
 
-        ItemData data =  Data.Instance.triviaData.triviaContent.all[itemId]; 
-		data.usedInGame = true;
+        data1 =  Data.Instance.triviaData.triviaContent.all[itemId];
+        data1.usedInGame = true;
 		
-        return data;
+        return data1;
 	}
+    int yearLater;
+    int recursiveTimes = 0;
     ItemData GetPairFor(ItemData firstPair)
     {
+        if (usedItemsData.Count == 0)
+        {
+            yearLater = firstPair.year;
+            usedItemsData.Add(firstPair);
+        }
         int year = firstPair.year;
         int id = 0;
-        foreach(ItemData itemData in Data.Instance.triviaData.triviaContent.all)
-        {
+        
+
+        foreach (ItemData itemData in Data.Instance.triviaData.triviaContent.all)
+        {            
             id++;
-            int year1 = firstPair.year;
+            
             int year2 = itemData.year;
-            int difYearsOfThisPair = Mathf.Abs(year1 - year2);
-            if (difYearsOfThisPair < diffYears[0] && difYearsOfThisPair > diffYears[1] && itemId < id)
+            int difYearsOfThisPair = Mathf.Abs(yearLater - year2);
+
+           // print("id: " + id + "  itemId: " + itemId + "  1 year: " + year +  "  2d: " + itemData.year + " diff: "+ difYearsOfThisPair + "  diffYears:[ " + diffYears[0] + "/" + diffYears[1] + " ]");
+
+            if (difYearsOfThisPair < diffYears[0] && difYearsOfThisPair > diffYears[1] && firstPair != itemData && itemId < id && !IsUsed(itemData))
             {
+                if (yearLater > itemData.year)
+                    yearLater = itemData.year;
                 itemData.usedInGame = true;
                 itemId = id;
+                usedItemsData.Add(itemData);
                 return itemData;
             }
         }
+        diffYears[0]*=2;
+        diffYears[1]/=2;
         itemId = 0;
+        recursiveTimes++;
+        print("_________________");
+        if (recursiveTimes > 3)
+            return firstPair;
+
+        GetNext();
         return GetPairFor(firstPair);
+    }
+    bool IsUsed(ItemData id)
+    {
+        foreach (ItemData usedItemData in usedItemsData)
+            if (usedItemData == id)
+                return true;
+        return false;
     }
     Vector2 GetDiffYears()
     {
         if (rondaID == 0)
-            return new Vector2(1000, 30);
-        else if (rondaID == 1)
+            return new Vector2(1000, 25);
+        else if (rondaID <3)
+            return new Vector2(50, 22);
+        else if (rondaID <7)
             return new Vector2(30, 20);
-        else if (rondaID == 2)
+        else if (rondaID < 10)
             return new Vector2(20, 10);
-        else if (rondaID >= 3 && rondaID < 5)
-            return new Vector2(10, 5);
-        else if (rondaID >= 5 && rondaID < 7)
-            return new Vector2(5, 3);
+        else if (rondaID < 15)
+            return new Vector2(15, 8);
+        else if (rondaID < 21)
+            return new Vector2(10, 6);
         else
-            return new Vector2(3, 1);
+            return new Vector2(7, 3);
     }
     int pairDone = 0;
 	public void PairDone()
@@ -131,7 +195,7 @@ public class Trivia : MainScreen
 			feedbackManager.Next();
 			Events.OnMusic("");
 			timerManager.SetState(false);
-			Invoke("Next", 1.25f);
+			Invoke("Next", Data.Instance.settings.timeForFeedback);
 			pairDone = 0;
 		}
 	}

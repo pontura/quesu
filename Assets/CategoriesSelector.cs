@@ -13,6 +13,7 @@ public class CategoriesSelector : MainScreen
     }
     void WaitForTags()
     {
+        print(Data.Instance.tagsData.tags.all.Length);
         if (Data.Instance.tagsData.tags.all.Length > 0)
             AddButtons();
         else
@@ -20,6 +21,7 @@ public class CategoriesSelector : MainScreen
     }
     void AddButtons()
     {
+        print("Add buttons");
          TagData t = new TagData();
         t.id = 0;
         t.name = "Todos";
@@ -41,6 +43,6 @@ public class CategoriesSelector : MainScreen
     {
         Events.OnSoundFX("ui");
         Data.Instance.triviaData.Load(button.id);       
-        LoadScreen(2, true);
+        LoadScreen(9, true);
     }
 }

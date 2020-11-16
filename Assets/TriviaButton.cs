@@ -30,7 +30,8 @@ public class TriviaButton : MonoBehaviour {
 		textField.text = data.text;
 		LoopUntilReady ();
 
-        anim.Play("buttonStandaloneIdle");
+        if(Data.Instance.format == Data.formats.STANDALONE)
+            anim.Play("buttonStandaloneIdle");
     }
 	public void Clicked () {
 		if (win)
@@ -78,16 +79,10 @@ public class TriviaButton : MonoBehaviour {
                 Events.OnSoundFX ("wrong");
 			background.color = Data.Instance.settings.buttonWrongColor;
 		}
-
-		Invoke ("Reset", 3);
+        
 		textField.color = textDoneColor;
 		resultImage.enabled = true;
 		resultImage.color = background.color;
         textField.text = data.year.ToString();
     }
-	void Reset () {
-		//		textField.text = data.text;
-		//		background.color = Color.white;
-		//		textField.color = textNormalColor;
-	}
 }

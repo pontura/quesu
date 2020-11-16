@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class Timeline : MainScreen
 {
@@ -15,6 +16,7 @@ public class Timeline : MainScreen
     int separation = 370;
     public Transform container;
     int itemId;
+    public Scrollbar scrollBar;
     
     public void Retar()
     {
@@ -30,6 +32,23 @@ public class Timeline : MainScreen
     {
         LoopUntilReady();
         GetComponent<Results>().OnInit();
+    }
+    float value;
+    public float speed = 0.25f;
+    bool stopAutomaticUpdate;
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+            stopAutomaticUpdate = true;
+        if (Input.GetMouseButtonUp(0))
+            stopAutomaticUpdate = false;
+
+        if (stopAutomaticUpdate)
+            return;
+        value += Time.deltaTime * speed;
+        if (value > 1)
+            value = 0;
+        scrollBar.value = value;
     }
     public override void OnReset()
     {

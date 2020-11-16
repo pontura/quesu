@@ -20,6 +20,14 @@ public class Data : MonoBehaviour
         STANDALONE
     }
 
+    public modes mode;
+    public enum modes
+    {
+        CLASSIC,
+        TRIPLE,
+        CUADROPLE
+    }
+
     const string PREFAB_PATH = "Data";    
     static Data mInstance = null;
 	public ServerManager serverManager;

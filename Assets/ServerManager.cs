@@ -107,6 +107,7 @@ public class ServerManager : MonoBehaviour
         else
         {
             string result = www.text;
+            print(result);
             UserDataJson userData = JsonUtility.FromJson<UserDataJson>(result);
             UserData.Instance.UpdateRetosValue(userData.retosGanados,  userData.retosPerdidos);
         }

@@ -31,7 +31,7 @@ public class TriviaData : MonoBehaviour
         print("Load" + id);
         //television y series = 11;
         //tecnologia es id = 3:
-        id = 11;
+       // id = 11;
 
         if (id == 0)
         {

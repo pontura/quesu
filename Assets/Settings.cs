@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Settings : MonoBehaviour
 {
+    public float timeForFeedback;
 	public int triviaDuration;
     public int timeover;
     public float timeWin;
