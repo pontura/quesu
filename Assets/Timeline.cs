@@ -45,7 +45,7 @@ public class Timeline : MainScreen
 
         if (stopAutomaticUpdate)
             return;
-        value += Time.deltaTime * speed;
+        value = scrollBar.value + (Time.deltaTime * speed);
         if (value > 1)
             value = 0;
         scrollBar.value = value;

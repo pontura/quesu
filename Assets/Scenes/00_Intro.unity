@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afbcd72eef07db548a1cb5506e3b1e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gotoScene: Standalone_03Game
+  gotoScene: 00_Main
 --- !u!4 &1764980288
 Transform:
   m_ObjectHideFlags: 0

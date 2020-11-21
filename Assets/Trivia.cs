@@ -99,7 +99,7 @@ public class Trivia : MainScreen
         else
         {
             Debug.Log("pairID " + pairID + "   diffYears: " + diffYears + "  data1.year " + data1.year + "    data2.year " + data2.year);
-            newPairButton.Init(this, data1, GetPairFor(data1));
+            newPairButton.Init(this, data1, data2);
         }
             
 
@@ -112,7 +112,7 @@ public class Trivia : MainScreen
 	ItemData GetNext()
 	{
 		print ("___GetNext pairID " + pairID + "  itemId " + itemId );
-		if (Data.Instance.triviaData.triviaContent.all.Count <= itemId-1)
+		if (itemId >= Data.Instance.triviaData.triviaContent.all.Count-1)
 			itemId = 0;
 
         data1 =  Data.Instance.triviaData.triviaContent.all[itemId];
@@ -142,7 +142,7 @@ public class Trivia : MainScreen
 
            // print("id: " + id + "  itemId: " + itemId + "  1 year: " + year +  "  2d: " + itemData.year + " diff: "+ difYearsOfThisPair + "  diffYears:[ " + diffYears[0] + "/" + diffYears[1] + " ]");
 
-            if (difYearsOfThisPair < diffYears[0] && difYearsOfThisPair > diffYears[1] && firstPair != itemData && itemId < id && !IsUsed(itemData))
+            if (year2 != year && difYearsOfThisPair < diffYears[0] && difYearsOfThisPair > diffYears[1] && firstPair != itemData && itemId < id && !IsUsed(itemData))
             {
                 if (yearLater > itemData.year)
                     yearLater = itemData.year;
@@ -156,11 +156,14 @@ public class Trivia : MainScreen
         diffYears[1]/=2;
         itemId = 0;
         recursiveTimes++;
-        print("_________________");
+        print("_________________ recursiveTimes: " + recursiveTimes + " year: " +  year);
         if (recursiveTimes > 3)
+        {
+            print("_________________ <firstPair>");
             return firstPair;
+        }
 
-        GetNext();
+        ///GetNext();
         return GetPairFor(firstPair);
     }
     bool IsUsed(ItemData id)

@@ -53,4 +53,8 @@ public class MainMenu : MainScreen
     {
         CancelInvoke();
     }
+    public void ShoeSettings()
+    {
+        LoadScreen(10, true);
+    }
 }

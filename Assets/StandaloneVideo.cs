@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StandaloneVideo : MonoBehaviour
 {
+    public string gotoScene;
     bool canInteract;
 
     void Start()
@@ -30,6 +31,6 @@ public class StandaloneVideo : MonoBehaviour
     void Goto()
     {
         canInteract = false;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Standalone_03Game");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(gotoScene);
     }
 }
