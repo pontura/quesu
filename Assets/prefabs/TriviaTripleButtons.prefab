@@ -968,7 +968,7 @@ MonoBehaviour:
   button2: {fileID: 1199101886927837272}
   button3: {fileID: 4393143917287547878}
   button4: {fileID: 0}
-  flechas: {fileID: 1338434244895669668}
+  flechas: {fileID: 0}
 --- !u!111 &6736101337168490772
 Animation:
   m_ObjectHideFlags: 0
@@ -1495,7 +1495,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -80, y: -101}
+  m_AnchoredPosition: {x: -70, y: -101}
   m_SizeDelta: {x: 292.2, y: 374.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1097678312210074857

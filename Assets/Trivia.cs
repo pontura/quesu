@@ -11,11 +11,13 @@ public class Trivia : MainScreen
 	int separation = 370;
 	public Transform container;
 	public TimerManager timerManager;
-	int itemId;
+    public PairTimer pairTimer;
+    int itemId;
 	public FeedbackManager feedbackManager;
     int pairID;
     public int rondaID; 
     [HideInInspector] public List<ItemData> usedItemsData;
+    [HideInInspector] public TriviaPairButtons newPairButton;
 
     public override void OnInit()
 	{
@@ -57,7 +59,9 @@ public class Trivia : MainScreen
 			yield return new WaitForSeconds (0.45f);
 		}
 		timerManager.SetState(true);
-		Events.OnMusic("clock");
+        pairTimer.SetState(true);
+
+        Events.OnMusic("clock");
 		yield return null;
 	}
     Vector2 diffYears;
@@ -68,7 +72,7 @@ public class Trivia : MainScreen
         usedItemsData.Clear();
         diffYears = GetDiffYears();
         print(diffYears);
-        TriviaPairButtons newPairButton;
+        
 
         if(Data.Instance.mode == Data.modes.TRIPLE)
             newPairButton = Instantiate (pairButton[1]);
@@ -86,19 +90,19 @@ public class Trivia : MainScreen
         if (Data.Instance.mode == Data.modes.TRIPLE)
         {
             ItemData data3 = GetPairFor(data1);
-            Debug.Log("TRIPLE pairID " + pairID + "   diffYears: " + diffYears + "  data1.year " + data1.year + "    data2.year " + data2.year + "  data3.year " + data3.year);
+           // Debug.Log("TRIPLE pairID " + pairID + "   diffYears: " + diffYears + "  data1.year " + data1.year + "    data2.year " + data2.year + "  data3.year " + data3.year);
             newPairButton.Init(this, data1, data2, data3);
         }
         else if (Data.Instance.mode == Data.modes.CUADROPLE)
         {
             ItemData data3 = GetPairFor(data1);
             ItemData data4 = GetPairFor(data1);
-            Debug.Log("CUADROPLE pairID " + pairID + "   diffYears: " + diffYears + "  data1.year " + data1.year + "    data2.year " + data2.year + "  data3.year " + data3.year + " data4.year " + data4.year);
+           // Debug.Log("CUADROPLE pairID " + pairID + "   diffYears: " + diffYears + "  data1.year " + data1.year + "    data2.year " + data2.year + "  data3.year " + data3.year + " data4.year " + data4.year);
             newPairButton.Init(this, data1, data2, data3, data4);
         }
         else
         {
-            Debug.Log("pairID " + pairID + "   diffYears: " + diffYears + "  data1.year " + data1.year + "    data2.year " + data2.year);
+            //Debug.Log("pairID " + pairID + "   diffYears: " + diffYears + "  data1.year " + data1.year + "    data2.year " + data2.year);
             newPairButton.Init(this, data1, data2);
         }
             
@@ -131,16 +135,16 @@ public class Trivia : MainScreen
         }
         int year = firstPair.year;
         int id = 0;
-        
+
 
         foreach (ItemData itemData in Data.Instance.triviaData.triviaContent.all)
-        {            
+        {
             id++;
-            
+
             int year2 = itemData.year;
             int difYearsOfThisPair = Mathf.Abs(yearLater - year2);
 
-           // print("id: " + id + "  itemId: " + itemId + "  1 year: " + year +  "  2d: " + itemData.year + " diff: "+ difYearsOfThisPair + "  diffYears:[ " + diffYears[0] + "/" + diffYears[1] + " ]");
+            // print("id: " + id + "  itemId: " + itemId + "  1 year: " + year +  "  2d: " + itemData.year + " diff: "+ difYearsOfThisPair + "  diffYears:[ " + diffYears[0] + "/" + diffYears[1] + " ]");
 
             if (year2 != year && difYearsOfThisPair < diffYears[0] && difYearsOfThisPair > diffYears[1] && firstPair != itemData && itemId < id && !IsUsed(itemData))
             {
@@ -152,20 +156,21 @@ public class Trivia : MainScreen
                 return itemData;
             }
         }
-        diffYears[0]*=2;
-        diffYears[1]/=2;
+        diffYears[0] *= 2;
+        diffYears[1] /= 1.5f;
         itemId = 0;
         recursiveTimes++;
-        print("_________________ recursiveTimes: " + recursiveTimes + " year: " +  year);
-        if (recursiveTimes > 3)
+        // print("_________________ recursiveTimes: " + recursiveTimes + " year: " +  year);
+        if (recursiveTimes > 10)
         {
-            print("_________________ <firstPair>");
+            // print("_________________ <firstPair>");
             return firstPair;
         }
 
         ///GetNext();
         return GetPairFor(firstPair);
     }
+
     bool IsUsed(ItemData id)
     {
         foreach (ItemData usedItemData in usedItemsData)
@@ -175,21 +180,25 @@ public class Trivia : MainScreen
     }
     Vector2 GetDiffYears()
     {
-        if (rondaID == 0)
-            return new Vector2(1000, 25);
-        else if (rondaID <3)
-            return new Vector2(50, 22);
-        else if (rondaID <7)
-            return new Vector2(30, 20);
-        else if (rondaID < 10)
-            return new Vector2(20, 10);
-        else if (rondaID < 15)
-            return new Vector2(15, 8);
-        else if (rondaID < 21)
-            return new Vector2(10, 6);
-        else
-            return new Vector2(7, 3);
+        return new Vector2(9, 3);
     }
+    //Vector2 GetDiffYears()
+    //{
+    //    if (rondaID == 0)
+    //        return new Vector2(1000, 25);
+    //    else if (rondaID <3)
+    //        return new Vector2(50, 22);
+    //    else if (rondaID <7)
+    //        return new Vector2(30, 20);
+    //    else if (rondaID < 10)
+    //        return new Vector2(20, 10);
+    //    else if (rondaID < 15)
+    //        return new Vector2(15, 8);
+    //    else if (rondaID < 21)
+    //        return new Vector2(10, 6);
+    //    else
+    //        return new Vector2(7, 3);
+    //}
     int pairDone = 0;
 	public void PairDone()
 	{
@@ -198,7 +207,8 @@ public class Trivia : MainScreen
 			feedbackManager.Next();
 			Events.OnMusic("");
 			timerManager.SetState(false);
-			Invoke("Next", Data.Instance.settings.timeForFeedback);
+            pairTimer.SetState(false);
+            Invoke("Next", Data.Instance.settings.timeForFeedback);
 			pairDone = 0;
 		}
 	}

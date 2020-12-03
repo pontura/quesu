@@ -8,7 +8,9 @@ public class ServerManager : MonoBehaviour
     public string GetTrivia = "getTrivia.php";
     public string GetReto = "getReto.php";
     public string GetUser = "getUser.php";
+    public string GetClient = "getClient.php";
     public string GetTags = "getTags.php";
+    public string GetClientTags = "getClientTags.php";
     public string serverURL = "http://pontura.com/quesu/";
 
     void Start()
@@ -85,8 +87,19 @@ public class ServerManager : MonoBehaviour
 
         }
     }
-
-
+    public ClientDataJson clientDataJson;
+    [Serializable]
+    public class ClientDataJson
+    {
+        public int id;
+        public string username;
+        public List<ClientDataTagsJson> all;
+    }
+    [Serializable]
+    public class ClientDataTagsJson
+    {
+        public int tag_id;
+    }
     public class UserDataJson
     {
         public int retosGanados;
@@ -112,7 +125,53 @@ public class ServerManager : MonoBehaviour
             UserData.Instance.UpdateRetosValue(userData.retosGanados,  userData.retosPerdidos);
         }
     }
+    System.Action<ClientDataJson> OnClientDataDone;
 
+    public void GetClientByPassword(string password, System.Action<ClientDataJson> OnClientDataDone)
+    {
+        this.OnClientDataDone = OnClientDataDone;
+        StartCoroutine(LoadUserDataC2(password));
+    }
+    IEnumerator LoadUserDataC2(string password)
+    {
+        string path = serverURL + GetClient + "?password=" + password;
+        print("path" + path);
+        WWW www = new WWW(path);
+        yield return www;
+        if (www.error != null || www.text == "false")
+            OnClientDataDone(null);
+        else
+        {
+            string result = www.text;
+            print(result);
+            clientDataJson = JsonUtility.FromJson<ClientDataJson>(result);
+            GetClientByPassword(clientDataJson.id);
+        }
+    }
+    public void GetClientByPassword(int client_id)
+    {
+        StartCoroutine(LoadUserDataC3(client_id));
+    }
+    IEnumerator LoadUserDataC3(int client_id)
+    {
+        string path = serverURL + GetClientTags + "?id=" + client_id;
+        print("path" + path);
+        WWW www = new WWW(path);
+        yield return www;
+        if (www.error != null)
+            OnClientDataDone(null);
+        else
+        {
+            string result = www.text;
+            clientDataJson = JsonUtility.FromJson<ClientDataJson>(result);
+            if (clientDataJson == null || clientDataJson.all.Count == 0)
+                OnClientDataDone(null);
+            else
+            {
+                OnClientDataDone(clientDataJson);
+            }
+        }
+    }
 
 
 }

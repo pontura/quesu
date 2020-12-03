@@ -9,7 +9,7 @@ public class SettingsScreen : MainScreen
     public InputField timeWin_field;
     public InputField timeLose_field;
     public InputField delay_field;
-
+    public InputField timePair_field;
     void Start()
     {
         SetData();
@@ -20,6 +20,7 @@ public class SettingsScreen : MainScreen
         timeWin_field.text = Data.Instance.settings.timeWin.ToString();
         timeLose_field.text = Data.Instance.settings.timeLose.ToString();
         delay_field.text = Data.Instance.settings.timeForFeedback.ToString();
+        timePair_field.text = Data.Instance.settings.timerForPair.ToString();
     }
     void SetResults()
     {
@@ -27,6 +28,7 @@ public class SettingsScreen : MainScreen
         Data.Instance.settings.timeWin = float.Parse(timeWin_field.text);
         Data.Instance.settings.timeLose = float.Parse(timeLose_field.text);
         Data.Instance.settings.timeForFeedback = float.Parse(delay_field.text);
+        Data.Instance.settings.timerForPair = float.Parse(timePair_field.text);
     }
     public override void Back()
     {

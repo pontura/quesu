@@ -7,8 +7,8 @@ UnityGenerated/
 Library/
 web/
 Assets/AssetStoreTools*
-Assets/StreamingAssets/images/*
-Assets/StreamingAssets/photos/*
+Assets/StreamingAssets/*
+Assets/StreamingAssets_/*
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #

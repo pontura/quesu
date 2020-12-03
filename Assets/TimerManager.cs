@@ -10,6 +10,7 @@ public class TimerManager : MonoBehaviour
 	public bool isOn;
 	float totalTimer;
 	public Text field;
+    public GameObject barAnimTimeDanger;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class TimerManager : MonoBehaviour
     }
     void OnAnswer(bool iscorrect)
     {
+        barAnimTimeDanger.SetActive(false);
         if (iscorrect)
             timer -= Data.Instance.settings.timeWin;
         else
@@ -41,11 +43,18 @@ public class TimerManager : MonoBehaviour
 		if (!isOn)
 			return;
 
-		float num = (totalTimer - timer);
+		float num = (int)(totalTimer - timer);
         string prefix = "";// = "00:";
-		if (num < 10)
-			prefix += "0";
-		string t = prefix + System.Math.Round(num,2);
+        if (num < 10)
+        {
+            prefix += "0";
+            if (num < 5)
+                barAnimTimeDanger.SetActive(true);
+            else
+                barAnimTimeDanger.SetActive(false);
+        }
+
+        string t = prefix + num; // System.Math.Round(num,2);
         field.text = t.Replace(",", ":");
         timer += Time.deltaTime;
         UpdateBar();
@@ -54,6 +63,7 @@ public class TimerManager : MonoBehaviour
     {
         if (timer >= totalTimer)
         {
+            barAnimTimeDanger.SetActive(false);
             timer = 0;
             isOn = false;
             StopAllCoroutines();

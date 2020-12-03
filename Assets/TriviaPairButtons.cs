@@ -79,9 +79,12 @@ public class TriviaPairButtons : MonoBehaviour
     }
     public void OnButtonSelected(TriviaButton button)
 	{
-        if(Data.Instance.format == Data.formats.CLASSIC)
+        if(flechas != null)
             flechas.GetComponent<Animator> ().Play ("flechasOff");
-		button.Ready ();
+
+        if(button)
+		    button.Ready ();
+
 		trivia.PairDone ();
 		button1.DisableButton() ;
 		button2.DisableButton() ;
@@ -90,10 +93,14 @@ public class TriviaPairButtons : MonoBehaviour
         if (button4 != null)
             button4.DisableButton();
     }
+    public void SetTimeOut()
+    {
+        OnButtonSelected(null);
+    }
     //para el standalone:
     public void SetBothButtonsReady()
     {
-        if (Data.Instance.format == Data.formats.CLASSIC)
+        if (flechas != null)
             flechas.GetComponent<Animator>().Play("flechasOff");
 
         button1.Ready();

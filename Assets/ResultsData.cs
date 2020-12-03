@@ -45,9 +45,11 @@ public class ResultsData : MonoBehaviour
 		}
 		else
 		{
-			score -= 8;
+			score -= 4;
 			answers_wrong++;
 		}
+        if (score < 0)
+            score = 0;
 	}
 	public int GetTotalAnswers()
 	{

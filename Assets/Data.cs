@@ -38,6 +38,7 @@ public class Data : MonoBehaviour
 	public Settings settings;
 	public ResultsData resultsData;
 	public string triviaName;
+    public UnityEngine.Video.VideoPlayer videoPlayer;
 
 	public static Data Instance
 	{
@@ -74,6 +75,16 @@ public class Data : MonoBehaviour
 		tagsData = GetComponent<TagsData> ();
 		settings = GetComponent<Settings> ();
 		resultsData = GetComponent<ResultsData> ();
+
+    }
+    private void Start()
+    {
+        if(format == formats.CLASSIC)
+            videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, "fondo.mp4");        
+    }
+    public void PlayVideo()
+    {
+        videoPlayer.Play();
     }
 
 }

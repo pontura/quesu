@@ -9,12 +9,14 @@ public class Settings : MonoBehaviour
     [SerializeField] int d_timeover;
     [SerializeField] float d_timeWin;
     [SerializeField] float d_timeLose;
+    [SerializeField] float d_timerForPair;
 
     [HideInInspector] public float timeForFeedback;
     [HideInInspector] public int triviaDuration;
     [HideInInspector] public int timeover;
     [HideInInspector] public float timeWin;
     [HideInInspector] public float timeLose;
+    [HideInInspector] public float timerForPair;
 
     public Color buttonOkColor;
 	public Color buttonWrongColor;
@@ -29,6 +31,7 @@ public class Settings : MonoBehaviour
         triviaDuration = d_triviaDuration;
         timeWin = d_timeWin;
         timeLose = d_timeLose;
+        timerForPair = d_timerForPair;
     }
 
 }

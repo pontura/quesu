@@ -6,4 +6,5 @@ public class TagData
 {
 	public int id;
 	public string name;
+    public bool lockedByClient;
 }

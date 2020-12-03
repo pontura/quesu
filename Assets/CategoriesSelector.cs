@@ -25,15 +25,18 @@ public class CategoriesSelector : MainScreen
          TagData t = new TagData();
         t.id = 0;
         t.name = "Todos";
-        AddButton(t);
+
+        //AddButton(t);
         foreach (TagData data in Data.Instance.tagsData.tags.all)
         {
+            if(!data.lockedByClient)
             AddButton(data);
         }
        
     }
     void AddButton(TagData data)
     {
+        print(data.name);
         ButtonStandard b = Instantiate(button);
         b.transform.SetParent(container);
         b.Init(data.id, data.name);
@@ -42,7 +45,18 @@ public class CategoriesSelector : MainScreen
     public override void OnButtonClicked(ButtonStandard button)
     {
         Events.OnSoundFX("ui");
+
+        switch (button.GetComponent<ButtonStandardCategories>().totalPairs)
+        {
+            case 2:
+                Data.Instance.mode = Data.modes.CLASSIC; break;
+            case 3:
+                Data.Instance.mode = Data.modes.TRIPLE; break;
+            case 4:
+                Data.Instance.mode = Data.modes.CUADROPLE; break;
+        }
+        
         Data.Instance.triviaData.Load(button.id);       
-        LoadScreen(9, true);
+        LoadScreen(2, true);
     }
 }
