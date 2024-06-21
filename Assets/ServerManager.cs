@@ -11,7 +11,16 @@ public class ServerManager : MonoBehaviour
     public string GetClient = "getClient.php";
     public string GetTags = "getTags.php";
     public string GetClientTags = "getClientTags.php";
-    public string serverURL = "http://pontura.com/quesu/";
+    //   string serverURL = "http://pontura.com/quesu/";  
+    string serverURL = "https://quesu.xyz/";
+
+    public string ServerURL
+    {
+        get
+        {
+            return serverURL;
+        }
+    }
 
     void Start()
     {
@@ -159,10 +168,14 @@ public class ServerManager : MonoBehaviour
         WWW www = new WWW(path);
         yield return www;
         if (www.error != null)
+        {
             OnClientDataDone(null);
+            print("error  " + www.error);
+        }
         else
         {
             string result = www.text;
+            print("result " + result);
             clientDataJson = JsonUtility.FromJson<ClientDataJson>(result);
             if (clientDataJson == null || clientDataJson.all.Count == 0)
                 OnClientDataDone(null);

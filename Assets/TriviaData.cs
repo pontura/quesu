@@ -68,7 +68,7 @@ public class TriviaData : MonoBehaviour
 #endif
         string path = "";
         if(Data.Instance.triviaData.reload)
-            path = Data.Instance.serverManager.serverURL + "images/";
+            path = Data.Instance.serverManager.ServerURL + "images/";
         else
             path = Application.streamingAssetsPath + "/images/";
 

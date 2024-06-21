@@ -12,7 +12,7 @@ public class Trivia : MainScreen
 	public Transform container;
 	public TimerManager timerManager;
     public PairTimer pairTimer;
-    int itemId;
+    [SerializeField] int itemId;
 	public FeedbackManager feedbackManager;
     int pairID;
     public int rondaID; 
@@ -136,7 +136,7 @@ public class Trivia : MainScreen
         int year = firstPair.year;
         int id = 0;
 
-
+        Utils.Shuffle(Data.Instance.triviaData.triviaContent.all);
         foreach (ItemData itemData in Data.Instance.triviaData.triviaContent.all)
         {
             id++;
@@ -144,7 +144,7 @@ public class Trivia : MainScreen
             int year2 = itemData.year;
             int difYearsOfThisPair = Mathf.Abs(yearLater - year2);
 
-            // print("id: " + id + "  itemId: " + itemId + "  1 year: " + year +  "  2d: " + itemData.year + " diff: "+ difYearsOfThisPair + "  diffYears:[ " + diffYears[0] + "/" + diffYears[1] + " ]");
+             print("id: " + id + "  itemId: " + itemId + "  1 year: " + year +  "  2d: " + itemData.year + " diff: "+ difYearsOfThisPair + "  diffYears:[ " + diffYears[0] + "/" + diffYears[1] + " ]");
 
             if (year2 != year && difYearsOfThisPair < diffYears[0] && difYearsOfThisPair > diffYears[1] && firstPair != itemData && itemId < id && !IsUsed(itemData))
             {
@@ -160,10 +160,10 @@ public class Trivia : MainScreen
         diffYears[1] /= 1.5f;
         itemId = 0;
         recursiveTimes++;
-        // print("_________________ recursiveTimes: " + recursiveTimes + " year: " +  year);
+         print("_________________ recursiveTimes: " + recursiveTimes + " year: " +  year);
         if (recursiveTimes > 10)
         {
-            // print("_________________ <firstPair>");
+             print("_________________ <firstPair>");
             return firstPair;
         }
 
@@ -180,7 +180,7 @@ public class Trivia : MainScreen
     }
     Vector2 GetDiffYears()
     {
-        return new Vector2(9, 3);
+        return new Vector2(20, 1);
     }
     //Vector2 GetDiffYears()
     //{

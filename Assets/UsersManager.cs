@@ -35,7 +35,7 @@ public class UsersManager : MonoBehaviour
     }
     IEnumerator LoadUsers(int limit)
     {
-        string path = Data.Instance.serverManager.serverURL + GetUsers + "?limit=" + limit;
+        string path = Data.Instance.serverManager.ServerURL + GetUsers + "?limit=" + limit;
         print("LoadUsers: " + path);
         WWW www = new WWW(path);
         yield return www;
@@ -44,6 +44,7 @@ public class UsersManager : MonoBehaviour
         else
         {
             string result = www.text;
+            print(result);
             SetData(JsonUtility.FromJson<Users>(result));
             //	LoadTrivia (4, 20);
         }
@@ -69,7 +70,7 @@ public class UsersManager : MonoBehaviour
         headers.Add("Access-Control-Allow-Origin", "*");
 #endif
 
-        string completeUrl = Data.Instance.serverManager.serverURL + "users/" + url;
+        string completeUrl = Data.Instance.serverManager.ServerURL + "users/" + url;
         Debug.Log("loading image: " + completeUrl);
         using (WWW www = new WWW(completeUrl, null, headers))
         {
