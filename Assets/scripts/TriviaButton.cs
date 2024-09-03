@@ -17,7 +17,8 @@ public class TriviaButton : MonoBehaviour {
 	public Color textDoneColor;
 
 	public void Init (TriviaPairButtons pairButtons, ItemData data, bool win) {
-        textField.color = Color.black;
+
+        textField.color = textNormalColor;
         resultImage.enabled = true;
         resultImage.color = idleBarColor;
 
@@ -30,8 +31,6 @@ public class TriviaButton : MonoBehaviour {
 		textField.text = data.text;
 		LoopUntilReady ();
 
-        if(Data.Instance.format == Data.formats.STANDALONE)
-            anim.Play("buttonStandaloneIdle");
     }
 	public void Clicked () {
 		if (win)
