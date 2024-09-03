@@ -1,0 +1,389 @@
+{
+  "page": 9,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/4GWYk5VP9qu1rNSeNAwNaBy9mwS.jpg",
+      "genre_ids": [
+        10751,
+        16
+      ],
+      "id": 399106,
+      "original_language": "en",
+      "original_title": "Piper",
+      "overview": "A mother bird tries to teach her little one how to find food by herself. In the process, she encounters a traumatic experience that she must overcome in order to survive.",
+      "popularity": 14.121,
+      "poster_path": "/rfEkkVzmrMYqGezNLl02mVyJCP2.jpg",
+      "release_date": "2016-06-16",
+      "title": "Piper",
+      "video": false,
+      "vote_average": 8.15,
+      "vote_count": 1594
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/pcDc2WJAYGJTTvRSEIpRZwM3Ola.jpg",
+      "genre_ids": [
+        28,
+        12,
+        14
+      ],
+      "id": 791373,
+      "original_language": "en",
+      "original_title": "Zack Snyder's Justice League",
+      "overview": "Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.",
+      "popularity": 98.079,
+      "poster_path": "/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg",
+      "release_date": "2021-03-18",
+      "title": "Zack Snyder's Justice League",
+      "video": false,
+      "vote_average": 8.149,
+      "vote_count": 9838
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/pi3yXaJzVxZUayUfqMekcsN199A.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 575813,
+      "original_language": "zh",
+      "original_title": "少年的你",
+      "overview": "A bullied teenage girl forms an unlikely friendship with a mysterious young man who protects her from her assailants, while she copes with the pressures of her final examinations.",
+      "popularity": 35.914,
+      "poster_path": "/ev8PDIuKm2j3m3jWxw497zCLjzu.jpg",
+      "release_date": "2019-10-25",
+      "title": "Better Days",
+      "video": false,
+      "vote_average": 8.146,
+      "vote_count": 426
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6aoyUbvu0419XLKLIMoH0TkEicH.jpg",
+      "genre_ids": [
+        80,
+        18
+      ],
+      "id": 103,
+      "original_language": "en",
+      "original_title": "Taxi Driver",
+      "overview": "A mentally unstable Vietnam War veteran works as a night-time taxi driver in New York City where the perceived decadence and sleaze feed his urge for violent action.",
+      "popularity": 53.883,
+      "poster_path": "/ekstpH614fwDX8DUln1a2Opz0N8.jpg",
+      "release_date": "1976-02-09",
+      "title": "Taxi Driver",
+      "video": false,
+      "vote_average": 8.146,
+      "vote_count": 12015
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/aCHn2TXYJfzPXQKA6r9mKPbMlUB.jpg",
+      "genre_ids": [
+        35,
+        18
+      ],
+      "id": 37165,
+      "original_language": "en",
+      "original_title": "The Truman Show",
+      "overview": "Every second of every day, from the moment he was born, for the last thirty years, Truman Burbank has been the unwitting star of the longest running, most popular documentary-soap opera in history. The picture-perfect town of Seahaven that he calls home is actually a gigantic soundstage. Truman's friends and family - everyone he meets, in fact - are actors. He lives every moment under the unblinking gaze of thousands of hidden TV cameras.",
+      "popularity": 72.07,
+      "poster_path": "/vuza0WqY239yBXOadKlGwJsZJFE.jpg",
+      "release_date": "1998-06-04",
+      "title": "The Truman Show",
+      "video": false,
+      "vote_average": 8.143,
+      "vote_count": 18033
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zvOJawrnmgK0sL293mOXOdLvTXQ.jpg",
+      "genre_ids": [
+        10749,
+        18
+      ],
+      "id": 398818,
+      "original_language": "en",
+      "original_title": "Call Me by Your Name",
+      "overview": "In 1980s Italy, a relationship begins between seventeen-year-old teenage Elio and the older adult man hired as his father's research assistant.",
+      "popularity": 60.487,
+      "poster_path": "/mZ4gBdfkhP9tvLH1DO4m4HYtiyi.jpg",
+      "release_date": "2017-07-28",
+      "title": "Call Me by Your Name",
+      "video": false,
+      "vote_average": 8.137,
+      "vote_count": 11937
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/bblKpucB0XbyQBmfXsaRN985Rgh.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 458220,
+      "original_language": "en",
+      "original_title": "Palmer",
+      "overview": "After 12 years in prison, former high school football star Eddie Palmer returns home to put his life back together—and forms an unlikely bond with Sam, an outcast boy from a troubled home. But Eddie's past threatens to ruin his new life and family.",
+      "popularity": 23.398,
+      "poster_path": "/xSDdRAjxKAGi8fUBLOqSrBhJmF0.jpg",
+      "release_date": "2021-01-28",
+      "title": "Palmer",
+      "video": false,
+      "vote_average": 8.136,
+      "vote_count": 1559
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/BBVAUchYvkmPThVIqipgAfabfl.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 614,
+      "original_language": "sv",
+      "original_title": "Smultronstället",
+      "overview": "Crotchety retired doctor Isak Borg travels from Stockholm to Lund, Sweden, with his pregnant and unhappy daughter-in-law, Marianne, in order to receive an honorary degree from his alma mater. Along the way, they encounter a series of hitchhikers, each of whom causes the elderly doctor to muse upon the pleasures and failures of his own life. These include the vivacious young Sara, a dead ringer for the doctor's own first love.",
+      "popularity": 19.11,
+      "poster_path": "/iyTD2QnySNMPUPE3IedZQipSWfz.jpg",
+      "release_date": "1957-08-28",
+      "title": "Wild Strawberries",
+      "video": false,
+      "vote_average": 8.135,
+      "vote_count": 1588
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4rsrxYDfIzvtAsIE9wevxPRXAk4.jpg",
+      "genre_ids": [
+        18,
+        10751
+      ],
+      "id": 406997,
+      "original_language": "en",
+      "original_title": "Wonder",
+      "overview": "The story of August Pullman – a boy with facial differences – who enters fifth grade, attending a mainstream elementary school for the first time.",
+      "popularity": 46.553,
+      "poster_path": "/sONh3LYGFcVDTy8pm1tbSOB13Li.jpg",
+      "release_date": "2017-11-13",
+      "title": "Wonder",
+      "video": false,
+      "vote_average": 8.134,
+      "vote_count": 7769
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/mKEmuB7diOa7Ef0tJSGQ3fYJnNe.jpg",
+      "genre_ids": [
+        18,
+        10752
+      ],
+      "id": 600,
+      "original_language": "en",
+      "original_title": "Full Metal Jacket",
+      "overview": "A pragmatic U.S. Marine observes the dehumanizing effects the U.S.-Vietnam War has on his fellow recruits from their brutal boot camp training to the bloody street fighting in Hue.",
+      "popularity": 44.467,
+      "poster_path": "/kMKyx1k8hWWscYFnPbnxxN4Eqo4.jpg",
+      "release_date": "1987-06-26",
+      "title": "Full Metal Jacket",
+      "video": false,
+      "vote_average": 8.131,
+      "vote_count": 10297
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ul4WiN9EJxsMokdg7z4Y6iisvHS.jpg",
+      "genre_ids": [
+        28,
+        12,
+        14,
+        53
+      ],
+      "id": 518068,
+      "original_language": "ko",
+      "original_title": "신과함께-인과 연",
+      "overview": "As the deceased soul Ja-hong and his three afterlife guardians prepare for their remaining trials for reincarnation, the guardians soon come face to face with the truth of their tragic time on Earth 1,000 years earlier.",
+      "popularity": 32.487,
+      "poster_path": "/9BnqBHFGDv3WlCPB2qQwzAWdy7y.jpg",
+      "release_date": "2018-08-01",
+      "title": "Along with the Gods: The Last 49 Days",
+      "video": false,
+      "vote_average": 8.1,
+      "vote_count": 643
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/rQaHA74pevnGsxcKGaoZVGWe9TC.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        35,
+        14
+      ],
+      "id": 508442,
+      "original_language": "en",
+      "original_title": "Soul",
+      "overview": "Joe Gardner is a middle school teacher with a love for jazz music. After a successful audition at the Half Note Club, he suddenly gets into an accident that separates his soul from his body and is transported to the You Seminar, a center in which souls develop and gain passions before being transported to a newborn child. Joe must enlist help from the other souls-in-training, like 22, a soul who has spent eons in the You Seminar, in order to get back to Earth.",
+      "popularity": 64.934,
+      "poster_path": "/hm58Jw4Lw8OIeECIq5qyPYhAeRJ.jpg",
+      "release_date": "2020-12-25",
+      "title": "Soul",
+      "video": false,
+      "vote_average": 8.129,
+      "vote_count": 10274
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fcH7FM74GoHgOUnKjpGAoKOxWvY.jpg",
+      "genre_ids": [
+        35,
+        10752,
+        18
+      ],
+      "id": 55823,
+      "original_language": "it",
+      "original_title": "La grande guerra",
+      "overview": "Italy, 1916. Oreste Jacovacci and Giovanni Busacca are called, as all the Italian youths, to serve the army in the WWI. They both try in every way to avoid serving the army.",
+      "popularity": 7.518,
+      "poster_path": "/aDvKsUb5y7GMNMz2HHNtuGww5t8.jpg",
+      "release_date": "1959-10-28",
+      "title": "The Great War",
+      "video": false,
+      "vote_average": 8.129,
+      "vote_count": 338
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/kH8xW7K2Gp1KOXoeewcLPkfqZ8K.jpg",
+      "genre_ids": [
+        80,
+        18
+      ],
+      "id": 470044,
+      "original_language": "en",
+      "original_title": "The Hate U Give",
+      "overview": "Raised in a poverty-stricken slum, a 16-year-old girl named Starr now attends a suburban prep school. After she witnesses a police officer shoot her unarmed best friend, she's torn between her two very different worlds as she tries to speak her truth.",
+      "popularity": 24.2,
+      "poster_path": "/2icwBom0t5nmOuZI9FVXF3gkMK0.jpg",
+      "release_date": "2018-10-19",
+      "title": "The Hate U Give",
+      "video": false,
+      "vote_average": 8.128,
+      "vote_count": 2084
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/bg4B52loVIYZTf3odGQKVV6B55h.jpg",
+      "genre_ids": [
+        35
+      ],
+      "id": 20914,
+      "original_language": "it",
+      "original_title": "Amici miei",
+      "overview": "Four middle-aged friends in Florence organize together idle pranks (called zingarate, \"gypsy shenanigans\") in a continuous attempt to prolong childhood during their adult life.",
+      "popularity": 8.733,
+      "poster_path": "/8Pm8SLjq2UHCwisd56ipHtzvZI1.jpg",
+      "release_date": "1975-10-24",
+      "title": "My Friends",
+      "video": false,
+      "vote_average": 8.127,
+      "vote_count": 687
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jqFjgNnxpXIXWuPsyfqmcLXRo9p.jpg",
+      "genre_ids": [
+        80,
+        53
+      ],
+      "id": 500,
+      "original_language": "en",
+      "original_title": "Reservoir Dogs",
+      "overview": "A botched robbery indicates a police informant, and the pressure mounts in the aftermath at a warehouse. Crime begets violence as the survivors -- veteran Mr. White, newcomer Mr. Orange, psychopathic parolee Mr. Blonde, bickering weasel Mr. Pink and Nice Guy Eddie -- unravel.",
+      "popularity": 35.025,
+      "poster_path": "/xi8Iu6qyTfyZVDVy60raIOYJJmk.jpg",
+      "release_date": "1992-09-02",
+      "title": "Reservoir Dogs",
+      "video": false,
+      "vote_average": 8.126,
+      "vote_count": 14073
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/eeMoFKxjjiCi6iep2GEZtSAMYIr.jpg",
+      "genre_ids": [
+        18,
+        878
+      ],
+      "id": 19,
+      "original_language": "de",
+      "original_title": "Metropolis",
+      "overview": "In a futuristic city sharply divided between the rich and the poor, the son of the city's mastermind meets a prophet who predicts the coming of a savior to mediate their differences.",
+      "popularity": 29.924,
+      "poster_path": "/pxbGZewX327IbTvrCVRJgcLJTSQ.jpg",
+      "release_date": "1927-02-06",
+      "title": "Metropolis",
+      "video": false,
+      "vote_average": 8.126,
+      "vote_count": 2685
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4PKfa0zltSrp1BJoLl8zfvYXaac.jpg",
+      "genre_ids": [
+        16,
+        28,
+        14
+      ],
+      "id": 663558,
+      "original_language": "zh",
+      "original_title": "新神榜：哪吒重生",
+      "overview": "While living as an ordinary deliveryman and motor racing fan, Nezha encounters old nemeses and must rediscover his powers to protect his loved ones.",
+      "popularity": 23.931,
+      "poster_path": "/sezNkk9HifNJW3pC5SU2XqMKgSJ.jpg",
+      "release_date": "2021-02-06",
+      "title": "New Gods: Nezha Reborn",
+      "video": false,
+      "vote_average": 8.122,
+      "vote_count": 405
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/h3weAFgg06GqchI2xDfufBgSFTj.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 600354,
+      "original_language": "en",
+      "original_title": "The Father",
+      "overview": "A man refuses all assistance from his daughter as he ages and, as he tries to make sense of his changing circumstances, he begins to doubt his loved ones, his own mind and even the fabric of his reality.",
+      "popularity": 22.934,
+      "poster_path": "/pr3bEQ517uMb5loLvjFQi8uLAsp.jpg",
+      "release_date": "2020-12-23",
+      "title": "The Father",
+      "video": false,
+      "vote_average": 8.124,
+      "vote_count": 3109
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/iQlJyRecJeGGzQGT2rEcyAgz89F.jpg",
+      "genre_ids": [
+        10749,
+        18
+      ],
+      "id": 762975,
+      "original_language": "en",
+      "original_title": "Purple Hearts",
+      "overview": "An aspiring musician agrees to a marriage of convenience with a soon-to-deploy Marine, but a tragedy soon turns their fake relationship all too real.",
+      "popularity": 45.219,
+      "poster_path": "/4JyNWkryifWbWXJyxcWh3pVya6N.jpg",
+      "release_date": "2022-07-29",
+      "title": "Purple Hearts",
+      "video": false,
+      "vote_average": 8.122,
+      "vote_count": 2466
+    }
+  ],
+  "total_pages": 480,
+  "total_results": 9591
+}

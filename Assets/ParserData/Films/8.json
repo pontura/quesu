@@ -1,0 +1,388 @@
+{
+  "page": 8,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/oaUWMPGxpb4OsVCrppmlhQA2bwb.jpg",
+      "genre_ids": [
+        18,
+        10752
+      ],
+      "id": 20941,
+      "original_language": "es",
+      "original_title": "Voces inocentes",
+      "overview": "A young boy, attempting to have a normal childhood in 1980s El Salvador, is caught up in a dramatic fight for his life when he desperately tries to avoid the war that is raging all around him.",
+      "popularity": 16.499,
+      "poster_path": "/hvwB4LdMCLzqXsk5ZjR77vzPkGk.jpg",
+      "release_date": "2005-01-28",
+      "title": "Innocent Voices",
+      "video": false,
+      "vote_average": 8.174,
+      "vote_count": 465
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jLq0ol1f0ZKXni9R9GsPBcyPrNN.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 18148,
+      "original_language": "ja",
+      "original_title": "東京物語",
+      "overview": "The elderly Shukishi and his wife, Tomi, take the long journey from their small seaside village to visit their adult children in Tokyo. Their elder son, Koichi, a doctor, and their daughter, Shige, a hairdresser, don't have much time to spend with their aged parents, and so it falls to Noriko, the widow of their younger son who was killed in the war, to keep her in-laws company.",
+      "popularity": 21.109,
+      "poster_path": "/g2YbTYKpY7N2yDSk7BfXZ18I5QV.jpg",
+      "release_date": "1953-11-03",
+      "title": "Tokyo Story",
+      "video": false,
+      "vote_average": 8.172,
+      "vote_count": 1022
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/39LXWfH7jWRcpJCBn7Hp4Vpv53S.jpg",
+      "genre_ids": [
+        18,
+        35,
+        10752
+      ],
+      "id": 1026227,
+      "original_language": "it",
+      "original_title": "C'è ancora domani",
+      "overview": "In post-war Italy, the family of typical housewife Delia is in turmoil over the impending engagement of beloved firstborn Marcella. The arrival of a mysterious letter, however, will ignite Delia's courage to face her abusive husband and imagine a better future.",
+      "popularity": 92.92,
+      "poster_path": "/4Hi7yjiQjokEDStT1MOj5rPgRfW.jpg",
+      "release_date": "2023-10-26",
+      "title": "There's Still Tomorrow",
+      "video": false,
+      "vote_average": 8.17,
+      "vote_count": 1137
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/e5MvOQIIouSgQcBHCMNA6Rsbwnd.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 81481,
+      "original_language": "ko",
+      "original_title": "도가니",
+      "overview": "Based on actual events that took place at Gwangju Inhwa School for the hearing-impaired, where young deaf students were the victims of repeated sexual assaults by faculty members over a period of five years in the early 2000s.",
+      "popularity": 64.786,
+      "poster_path": "/mbMp0oIFmYnw0i5gzRoKt8cH5ve.jpg",
+      "release_date": "2011-09-22",
+      "title": "Silenced",
+      "video": false,
+      "vote_average": 8.169,
+      "vote_count": 604
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oVDkfWqMMTNryxq60eQdVMMYaw7.jpg",
+      "genre_ids": [
+        9648,
+        10749,
+        53
+      ],
+      "id": 426,
+      "original_language": "en",
+      "original_title": "Vertigo",
+      "overview": "A retired San Francisco detective suffering from acrophobia investigates the strange activities of an old friend's wife, all the while becoming dangerously obsessed with her.",
+      "popularity": 29.871,
+      "poster_path": "/15uOEfqBNTVtDUT7hGBVCka0rZz.jpg",
+      "release_date": "1958-05-28",
+      "title": "Vertigo",
+      "video": false,
+      "vote_average": 8.169,
+      "vote_count": 5630
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6WRrGYalXXveItfpnipYdayFkQB.jpg",
+      "genre_ids": [
+        18,
+        53,
+        80
+      ],
+      "id": 1422,
+      "original_language": "en",
+      "original_title": "The Departed",
+      "overview": "To take down South Boston's Irish Mafia, the police send in one of their own to infiltrate the underworld, not realizing the syndicate has done likewise. While an undercover cop curries favor with the mob kingpin, a career criminal rises through the police ranks. But both sides soon discover there's a mole among them.",
+      "popularity": 47.525,
+      "poster_path": "/nT97ifVT2J1yMQmeq20Qblg61T.jpg",
+      "release_date": "2006-10-04",
+      "title": "The Departed",
+      "video": false,
+      "vote_average": 8.167,
+      "vote_count": 14645
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg",
+      "genre_ids": [
+        878,
+        12
+      ],
+      "id": 693134,
+      "original_language": "en",
+      "original_title": "Dune: Part Two",
+      "overview": "Follow the mythic journey of Paul Atreides as he unites with Chani and the Fremen while on a path of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, Paul endeavors to prevent a terrible future only he can foresee.",
+      "popularity": 255.271,
+      "poster_path": "/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
+      "release_date": "2024-02-27",
+      "title": "Dune: Part Two",
+      "video": false,
+      "vote_average": 8.166,
+      "vote_count": 5116
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cCvp5Sni75agCtyJkNOMapORUQV.jpg",
+      "genre_ids": [
+        28,
+        80,
+        18
+      ],
+      "id": 111,
+      "original_language": "en",
+      "original_title": "Scarface",
+      "overview": "After getting a green card in exchange for assassinating a Cuban government official, Tony Montana stakes a claim on the drug trade in Miami. Viciously murdering anyone who stands in his way, Tony eventually becomes the biggest drug lord in the state, controlling nearly all the cocaine that comes through Miami. But increased pressure from the police, wars with Colombian drug cartels and his own drug-fueled paranoia serve to fuel the flames of his eventual downfall.",
+      "popularity": 118.008,
+      "poster_path": "/iQ5ztdjvteGeboxtmRdXEChJOHh.jpg",
+      "release_date": "1983-12-09",
+      "title": "Scarface",
+      "video": false,
+      "vote_average": 8.166,
+      "vote_count": 11604
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/921vUyXdfIYpaXqu5Lnf3nVb4IJ.jpg",
+      "genre_ids": [
+        16,
+        28,
+        14
+      ],
+      "id": 810693,
+      "original_language": "ja",
+      "original_title": "劇場版 呪術廻戦 0",
+      "overview": "Yuta Okkotsu is a nervous high school student who is suffering from a serious problem—his childhood friend Rika has turned into a curse and won't leave him alone. Since Rika is no ordinary curse, his plight is noticed by Satoru Gojo, a teacher at Jujutsu High, a school where fledgling exorcists learn how to combat curses. Gojo convinces Yuta to enroll, but can he learn enough in time to confront the curse that haunts him?",
+      "popularity": 74.452,
+      "poster_path": "/23oJaeBh0FDk2mQ2P240PU9Xxfh.jpg",
+      "release_date": "2021-12-24",
+      "title": "Jujutsu Kaisen 0",
+      "video": false,
+      "vote_average": 8.2,
+      "vote_count": 1353
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/37y53Jt8K6MvN6s4zJVFa61luO2.jpg",
+      "genre_ids": [
+        10749,
+        18
+      ],
+      "id": 851644,
+      "original_language": "ko",
+      "original_title": "20세기 소녀",
+      "overview": "In 1999, a teen girl keeps close tabs on a boy in school on behalf of her deeply smitten best friend – then she gets swept up in a love story of her own.",
+      "popularity": 98.081,
+      "poster_path": "/od22ftNnyag0TTxcnJhlsu3aLoU.jpg",
+      "release_date": "2022-10-06",
+      "title": "20th Century Girl",
+      "video": false,
+      "vote_average": 8.162,
+      "vote_count": 670
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/aZQO50OgoUzrjMUbs1UzTD8y1Jc.jpg",
+      "genre_ids": [
+        35,
+        10749
+      ],
+      "id": 872,
+      "original_language": "en",
+      "original_title": "Singin' in the Rain",
+      "overview": "In 1927 Hollywood, a silent film production company and cast make a difficult transition to sound.",
+      "popularity": 27.19,
+      "poster_path": "/w03EiJVHP8Un77boQeE7hg9DVdU.jpg",
+      "release_date": "1952-04-09",
+      "title": "Singin' in the Rain",
+      "video": false,
+      "vote_average": 8.2,
+      "vote_count": 3072
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/rrsG3xYrWifoduZtsIZ4ntoDfBY.jpg",
+      "genre_ids": [
+        18,
+        10749
+      ],
+      "id": 289,
+      "original_language": "en",
+      "original_title": "Casablanca",
+      "overview": "In Casablanca, Morocco in December 1941, a cynical American expatriate meets a former lover, with unforeseen complications.",
+      "popularity": 44.379,
+      "poster_path": "/5K7cOHoay2mZusSLezBOY0Qxh8a.jpg",
+      "release_date": "1943-01-15",
+      "title": "Casablanca",
+      "video": false,
+      "vote_average": 8.161,
+      "vote_count": 5319
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sEW8q9al73rtow257dXAusD9yS7.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 517814,
+      "original_language": "ar",
+      "original_title": "کفرناحوم",
+      "overview": "After running away from his negligent parents, committing a violent crime and being sentenced to five years in jail, a hardened, streetwise 12-year-old Lebanese boy sues his parents in protest of the life they have given him.",
+      "popularity": 25.534,
+      "poster_path": "/mFnfTVADj8yOxwzprYOmTPselk8.jpg",
+      "release_date": "2018-09-20",
+      "title": "Capernaum",
+      "video": false,
+      "vote_average": 8.155,
+      "vote_count": 1655
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/gZWl93sf8AxavYpVT1Un6EF3oCj.jpg",
+      "genre_ids": [
+        80,
+        53,
+        18
+      ],
+      "id": 475557,
+      "original_language": "en",
+      "original_title": "Joker",
+      "overview": "During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure.",
+      "popularity": 96.805,
+      "poster_path": "/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
+      "release_date": "2019-10-01",
+      "title": "Joker",
+      "video": false,
+      "vote_average": 8.158,
+      "vote_count": 25056
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oLsts7ct0NVkdYpx5rZg10MG6zh.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 489,
+      "original_language": "en",
+      "original_title": "Good Will Hunting",
+      "overview": "When professors discover that an aimless janitor is also a math genius, a therapist helps the young man confront the demons that are holding him back.",
+      "popularity": 59.418,
+      "poster_path": "/bABCBKYBK7A5G1x0FzoeoNfuj2.jpg",
+      "release_date": "1997-12-05",
+      "title": "Good Will Hunting",
+      "video": false,
+      "vote_average": 8.157,
+      "vote_count": 12134
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ng5JFJ7TlixGXFIdbLXRimYTCCH.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 422,
+      "original_language": "it",
+      "original_title": "8½",
+      "overview": "Guido Anselmi, a film director, finds himself creatively barren at the peak of his career. Urged by his doctors to rest, Anselmi heads for a luxurious resort, but a sorry group gathers—his producer, staff, actors, wife, mistress, and relatives—each one begging him to get on with the show. In retreat from their dependency, he fantasizes about past women and dreams of his childhood.",
+      "popularity": 17.168,
+      "poster_path": "/sjTIqwvPNAnEN7fcRK8MOlGfZMB.jpg",
+      "release_date": "1963-02-14",
+      "title": "8½",
+      "video": false,
+      "vote_average": 8.157,
+      "vote_count": 2226
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/AmR3JG1VQVxU8TfAvljUhfSFUOx.jpg",
+      "genre_ids": [
+        27,
+        878
+      ],
+      "id": 348,
+      "original_language": "en",
+      "original_title": "Alien",
+      "overview": "During its return to the earth, commercial spaceship Nostromo intercepts a distress signal from a distant planet. When a three-member team of the crew discovers a chamber containing thousands of eggs on the planet, a creature inside one of the eggs attacks an explorer. The entire crew is unaware of the impending nightmare set to descend upon them when the alien parasite planted inside its unfortunate host is birthed.",
+      "popularity": 373.26,
+      "poster_path": "/vfrQk5IPloGg1v9Rzbh2Eg3VGyM.jpg",
+      "release_date": "1979-05-25",
+      "title": "Alien",
+      "video": false,
+      "vote_average": 8.154,
+      "vote_count": 14383
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/prQE97Ds6ElKtTuemJRCvGJFlZz.jpg",
+      "genre_ids": [
+        18,
+        10749
+      ],
+      "id": 133919,
+      "original_language": "sv",
+      "original_title": "Scener ur ett äktenskap",
+      "overview": "Johan and Marianne are married and seem to have it all. Their happiness, however, is a façade for a troubled relationship, which becomes even rockier when Johan admits that he's having an affair. Before long, the spouses separate and move towards finalizing their divorce, but they make attempts at reconciling. Even as they pursue other relationships, Johan and Marianne realize that they have a significant bond, but also many issues that hinder that connection.",
+      "popularity": 9.474,
+      "poster_path": "/ArKEdvJesIktFX8OAhcdKAOLl6I.jpg",
+      "release_date": "1974-09-15",
+      "title": "Scenes from a Marriage",
+      "video": false,
+      "vote_average": 8.154,
+      "vote_count": 334
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6yrbWzzrPp7pwz6zHdifspJk8t3.jpg",
+      "genre_ids": [
+        878,
+        18
+      ],
+      "id": 1398,
+      "original_language": "ru",
+      "original_title": "Сталкер",
+      "overview": "Near a gray and unnamed city is the Zone, a place guarded by barbed wire and soldiers, and where the normal laws of physics are victim to frequent anomalies. A stalker guides two men into the Zone, specifically to an area in which deep-seated desires are granted.",
+      "popularity": 36.033,
+      "poster_path": "/rem87AyEochEuhn9VvAGoMQpigz.jpg",
+      "release_date": "1979-05-25",
+      "title": "Stalker",
+      "video": false,
+      "vote_average": 8.153,
+      "vote_count": 2095
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2Jr2OBzoLLOYqQWnyN4eicZv0sL.jpg",
+      "genre_ids": [
+        12,
+        10751
+      ],
+      "id": 606856,
+      "original_language": "en",
+      "original_title": "Togo",
+      "overview": "The untold true story set in the winter of 1925 that takes you across the treacherous terrain of the Alaskan tundra for an exhilarating and uplifting adventure that will test the strength, courage and determination of one man, Leonhard Seppala, and his lead sled dog, Togo.",
+      "popularity": 24.787,
+      "poster_path": "/wX0QD36a80hxulcizz7tyahYOF8.jpg",
+      "release_date": "2019-12-20",
+      "title": "Togo",
+      "video": false,
+      "vote_average": 8.15,
+      "vote_count": 1963
+    }
+  ],
+  "total_pages": 480,
+  "total_results": 9591
+}

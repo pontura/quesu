@@ -17,8 +17,8 @@ public class RetosManager : MonoBehaviour
     }
 
     private string secretKey = "pontura";
-    string setRetoURL = "http://pontura.com/quesu/setReto.php";
-    string closeRetoURL = "http://pontura.com/quesu/closeReto.php";
+    string setRetoURL = "https://quesu.xyz/quesu/setReto.php";
+    string closeRetoURL = "https://quesu.xyz/quesu/closeReto.php";
 
     public void SetOpenReto(RetoData openReto)
     {

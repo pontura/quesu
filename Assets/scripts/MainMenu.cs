@@ -30,9 +30,9 @@ public class MainMenu : MainScreen
         //  LoadScreen(1, true);
 
         // clients login si no bajo sus categorías dadas de alta en el admin:
-        if(Data.Instance.serverManager.clientDataJson.all.Count == 0)
-            LoadScreen(9, true);
-        else
+        //if(Data.Instance.serverManager.clientDataJson.all.Count == 0)
+        //    LoadScreen(9, true);
+        //else
             LoadScreen(1, true);
 
         Events.OnSoundFX("ui");

@@ -11,14 +11,12 @@ public class ServerManager : MonoBehaviour
     public string GetClient = "getClient.php";
     public string GetTags = "getTags.php";
     public string GetClientTags = "getClientTags.php";
-    //   string serverURL = "http://pontura.com/quesu/";  
-    string serverURL = "https://quesu.xyz/";
 
     public string ServerURL
     {
         get
         {
-            return serverURL;
+            return "https://quesu.xyz/";
         }
     }
 
@@ -28,7 +26,7 @@ public class ServerManager : MonoBehaviour
     }
     IEnumerator LoadTags()
     {
-        string path = serverURL + GetTags;
+        string path = ServerURL + GetTags;
         WWW www = new WWW(path);
         yield return www;
         if (www.error != null)
@@ -47,7 +45,7 @@ public class ServerManager : MonoBehaviour
     }
     IEnumerator LoadTriviaByCategoryR(string categoryName, int limit)
     {
-        string path = serverURL + GetTrivia + "?categoria=" + categoryName + "&limit=" + limit;
+        string path = ServerURL + GetTrivia + "?categoria=" + categoryName + "&limit=" + limit;
         WWW www = new WWW(path);
         yield return www;
         if (www.error != null)
@@ -64,7 +62,7 @@ public class ServerManager : MonoBehaviour
     }
     IEnumerator LoadRetosC(string userID)
     {
-        string path = serverURL + GetReto + "?userID=" + userID;
+        string path = ServerURL + GetReto + "?userID=" + userID;
         print("LoadRetosC path: " + path);
         WWW www = new WWW(path);
         yield return www;
@@ -83,7 +81,7 @@ public class ServerManager : MonoBehaviour
     }
     IEnumerator LoadTriviaR(int tagID, int limit)
     {
-        string path = serverURL + GetTrivia + "?id=" + tagID + "&limit=" + limit;
+        string path = ServerURL + GetTrivia + "?id=" + tagID + "&limit=" + limit;
         Debug.Log(path);
         WWW www = new WWW(path);
         yield return www;
@@ -120,7 +118,7 @@ public class ServerManager : MonoBehaviour
     }
     IEnumerator LoadUserDataC(string userID)
     {
-        string path = serverURL + GetUser + "?userID=" + userID;
+        string path = ServerURL + GetUser + "?userID=" + userID;
         print("path" + path);
         WWW www = new WWW(path);
         yield return www;
@@ -143,7 +141,7 @@ public class ServerManager : MonoBehaviour
     }
     IEnumerator LoadUserDataC2(string password)
     {
-        string path = serverURL + GetClient + "?password=" + password;
+        string path = ServerURL + GetClient + "?password=" + password;
         print("path" + path);
         WWW www = new WWW(path);
         yield return www;
@@ -163,7 +161,7 @@ public class ServerManager : MonoBehaviour
     }
     IEnumerator LoadUserDataC3(int client_id)
     {
-        string path = serverURL + GetClientTags + "?id=" + client_id;
+        string path = ServerURL + GetClientTags + "?id=" + client_id;
         print("path" + path);
         WWW www = new WWW(path);
         yield return www;

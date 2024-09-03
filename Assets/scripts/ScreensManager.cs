@@ -19,8 +19,9 @@ public class ScreensManager : MonoBehaviour
 			id++;
 		}
 		ResetAll ();
-		LoadScreen (9, true);
-	}
+        //LoadScreen (9, true);
+        LoadScreen(0, true);
+    }
 	public void LoadScreen(int id, bool isRight)
 	{
 		if (loading)

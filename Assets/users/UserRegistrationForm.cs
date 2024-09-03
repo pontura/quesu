@@ -7,8 +7,8 @@ public class UserRegistrationForm : MonoBehaviour
 {
     public UserDataUI ui;
     private string secretKey = "pontura";
-    string setUserURL = "http://pontura.com/quesu/setUser.php";
-    string setUserURLUpload = "http://pontura.com/quesu/updateUser.php";
+    string setUserURL = "https://quesu.xyz/quesu/setUser.php";
+    string setUserURLUpload = "https://quesu.xyz/quesu/updateUser.php";
     UserData userData;
     public bool imageUploaded;
 
@@ -73,7 +73,7 @@ public class UserRegistrationForm : MonoBehaviour
             return;
         }
 
-        StartCoroutine(UploadFileCo(imagePath + UserData.Instance.userID + ".png", "http://pontura.com/quesu/uploadPhoto.php"));
+        StartCoroutine(UploadFileCo(imagePath + UserData.Instance.userID + ".png", "https://quesu.xyz/quesu/uploadPhoto.php"));
     }
     IEnumerator SendData(string username)
     {

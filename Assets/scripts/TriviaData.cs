@@ -28,6 +28,8 @@ public class TriviaData : MonoBehaviour
     }
     public void Load(int id)
 	{
+        Data.Instance.triviaData.triviaName = "all";
+        return;
         print("Load" + id);
         //television y series = 11;
         //tecnologia es id = 3:
@@ -45,7 +47,7 @@ public class TriviaData : MonoBehaviour
 	}
 	public void EmptyData()
 	{
-        triviaContent.all.Add(new ItemData());
+        triviaContent.all.Clear();
 	}
 	public void SetData(TriviaContent _trivia, int tagID)
 	{
@@ -60,19 +62,19 @@ public class TriviaData : MonoBehaviour
 	{
 		Dictionary<string, string> headers = new Dictionary<string, string>();
 
-#if UNITY_WEBGL
-		headers.Add("Access-Control-Allow-Credentials", "true");
-		headers.Add("Access-Control-Allow-Headers", "Accept, X-Access-Token, X-Application-Name, X-Request-Sent-Time");
-		headers.Add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-		headers.Add("Access-Control-Allow-Origin", "*");
-#endif
+//#if UNITY_WEBGL
+//		headers.Add("Access-Control-Allow-Credentials", "true");
+//		headers.Add("Access-Control-Allow-Headers", "Accept, X-Access-Token, X-Application-Name, X-Request-Sent-Time");
+//		headers.Add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+//		headers.Add("Access-Control-Allow-Origin", "*");
+//#endif
         string path = "";
-        if(Data.Instance.triviaData.reload)
-            path = Data.Instance.serverManager.ServerURL + "images/";
-        else
-            path = Application.streamingAssetsPath + "/images/";
+        //if(Data.Instance.triviaData.reload)
+        //    path = Data.Instance.serverManager.ServerURL + "images/";
+        //else
+        //    path = Application.streamingAssetsPath + "/images/";
 
-      //  Debug.Log("Image: " + path);
+        Debug.Log("Image: " + path);
         using (WWW www = new WWW(path + url, null, headers))
 		{			
 			yield return www;
