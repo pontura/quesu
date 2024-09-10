@@ -69,6 +69,6 @@ public class FeedbackManager : MonoBehaviour {
     void AddScore()
     {
         int score = Data.Instance.resultsData.score;
-        scoreField.text = "PUNTOS: " + score;
+        scoreField.text = Utils.FormatNumbers(score);
     }
 }

@@ -37,7 +37,8 @@ public class Data : MonoBehaviour
 	public RetosManager retosManager;
 	public Settings settings;
 	public ResultsData resultsData;
-	public string triviaName;
+    public RankingsManager rankingsManager;
+    public string triviaName;
     public UnityEngine.Video.VideoPlayer videoPlayer;
 
 	public static Data Instance
@@ -79,8 +80,8 @@ public class Data : MonoBehaviour
     }
     private void Start()
     {
-        if(format == formats.CLASSIC)
-            videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, "fondo.mp4");        
+        //if(format == formats.CLASSIC)
+        //    videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, "fondo.mp4");        
     }
     public void PlayVideo()
     {

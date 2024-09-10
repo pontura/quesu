@@ -30,104 +30,109 @@ public class Timeline : MainScreen
     }
     public override void OnInit()
     {
-        LoopUntilReady();
+        Data.Instance.rankingsManager.SetHiscore(OnSended);
+       // LoopUntilReady();
         GetComponent<Results>().OnInit();
+    }
+    void OnSended()
+    {
+        print("hiscore sended!");
     }
     float value;
     public float speed = 0.25f;
     bool stopAutomaticUpdate;
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-            stopAutomaticUpdate = true;
-        if (Input.GetMouseButtonUp(0))
-            stopAutomaticUpdate = false;
+    //private void Update()
+    //{
+    //    if (Input.GetMouseButtonDown(0))
+    //        stopAutomaticUpdate = true;
+    //    if (Input.GetMouseButtonUp(0))
+    //        stopAutomaticUpdate = false;
 
-        if (stopAutomaticUpdate)
-            return;
-        value = scrollBar.value + (Time.deltaTime * speed);
-        if (value > 1)
-            value = 0;
-        scrollBar.value = value;
-    }
-    public override void OnReset()
-    {
-        Utils.RemoveAllChildsIn(container);
-        all = new List<ItemData>();
-    }
-    void LoopUntilReady()
-    {
-        if (Data.Instance.triviaData.loaded)
-        {
-            Init();
-            return;
-        }
-        Invoke("LoopUntilReady", 0.1f);
-    }
-    public void Init()
-    {
-        ItemData[] allItemsOrdered = Data.Instance.triviaData.triviaContent.all.OrderBy(go => go.year).ToArray();
-        all = new List<ItemData>();
-        foreach (ItemData itemData in allItemsOrdered)
-        {
-            if (itemData.usedInGame)
-                all.Add(itemData);
-        }
-        LoadItems();
-    }
-    void LoadItems()
-    {
-        int id = 0;
-        AddEmptyInitialItem();
-        bool startedDisplaying = false;
-        foreach (ItemData data in all)
-        {
-            if (data.usedInGame)
-            {
-                startedDisplaying = true;
-                AddItem(data);
-            }
-            id++;
-            if (startedDisplaying)
-            {
-                if (id >= all.Count - 1)
-                    return;
-                else
-                {
-                    ItemData nextItem = all[id];
-                    if (nextItem.year != data.year)
-                        AddYears(data.year + 1, nextItem.year - 1);
-                }
-            }
-        }
-        AddEmptyInitialItem();
-    }
-    void AddYears(int year1, int year2)
-    {
-        for (int a = year1; a < year2; a++)
-        {
-            AddEmptyItem(a);
-        }
-    }
-    void AddItem(ItemData data)
-    {
-        TimelineItem newPairButton = Instantiate(item);
-        newPairButton.transform.SetParent(container);
-        newPairButton.transform.localScale = Vector3.one;
-        newPairButton.Init(data);
-    }
-    void AddEmptyItem(int year)
-    {
-        TimelineItem newPairButton = Instantiate(emptyItem);
-        newPairButton.transform.SetParent(container);
-        newPairButton.transform.localScale = Vector3.one;
-        newPairButton.InitEmpty(year);
-    }
-    void AddEmptyInitialItem()
-    {
-        TimelineItem newPairButton = Instantiate(emptyIinitialItem);
-        newPairButton.transform.SetParent(container);
-        newPairButton.transform.localScale = Vector3.one;
-    }
+    //    if (stopAutomaticUpdate)
+    //        return;
+    //    value = scrollBar.value + (Time.deltaTime * speed);
+    //    if (value > 1)
+    //        value = 0;
+    //    scrollBar.value = value;
+    //}
+    //public override void OnReset()
+    //{
+    //    Utils.RemoveAllChildsIn(container);
+    //    all = new List<ItemData>();
+    //}
+    //void LoopUntilReady()
+    //{
+    //    if (Data.Instance.triviaData.loaded)
+    //    {
+    //        Init();
+    //        return;
+    //    }
+    //    Invoke("LoopUntilReady", 0.1f);
+    //}
+    //public void Init()
+    //{
+    //    ItemData[] allItemsOrdered = Data.Instance.triviaData.triviaContent.all.OrderBy(go => go.year).ToArray();
+    //    all = new List<ItemData>();
+    //    foreach (ItemData itemData in allItemsOrdered)
+    //    {
+    //        if (itemData.usedInGame)
+    //            all.Add(itemData);
+    //    }
+    //    LoadItems();
+    //}
+    //void LoadItems()
+    //{
+    //    int id = 0;
+    //    AddEmptyInitialItem();
+    //    bool startedDisplaying = false;
+    //    foreach (ItemData data in all)
+    //    {
+    //        if (data.usedInGame)
+    //        {
+    //            startedDisplaying = true;
+    //            AddItem(data);
+    //        }
+    //        id++;
+    //        if (startedDisplaying)
+    //        {
+    //            if (id >= all.Count - 1)
+    //                return;
+    //            else
+    //            {
+    //                ItemData nextItem = all[id];
+    //                if (nextItem.year != data.year)
+    //                    AddYears(data.year + 1, nextItem.year - 1);
+    //            }
+    //        }
+    //    }
+    //    AddEmptyInitialItem();
+    //}
+    //void AddYears(int year1, int year2)
+    //{
+    //    for (int a = year1; a < year2; a++)
+    //    {
+    //        AddEmptyItem(a);
+    //    }
+    //}
+    //void AddItem(ItemData data)
+    //{
+    //    TimelineItem newPairButton = Instantiate(item);
+    //    newPairButton.transform.SetParent(container);
+    //    newPairButton.transform.localScale = Vector3.one;
+    //    newPairButton.Init(data);
+    //}
+    //void AddEmptyItem(int year)
+    //{
+    //    TimelineItem newPairButton = Instantiate(emptyItem);
+    //    newPairButton.transform.SetParent(container);
+    //    newPairButton.transform.localScale = Vector3.one;
+    //    newPairButton.InitEmpty(year);
+    //}
+    //void AddEmptyInitialItem()
+    //{
+    //    TimelineItem newPairButton = Instantiate(emptyIinitialItem);
+    //    newPairButton.transform.SetParent(container);
+    //    newPairButton.transform.localScale = Vector3.one;
+    //}
 
 }

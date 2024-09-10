@@ -43,8 +43,8 @@ public class StandaloneResults : MainScreen
         hand_P1.SetActive(false);
         hand_P2.SetActive(false);
 
-        score1.text = Utils.SetFormatedNumber(multiplayerData.score_player_1.ToString());
-        score2.text = Utils.SetFormatedNumber(multiplayerData.score_player_2.ToString());
+        score1.text = Utils.FormatNumbers(multiplayerData.score_player_1);
+        score2.text = Utils.FormatNumbers(multiplayerData.score_player_2);
 
         if (multiplayerData.win == MultiplayerData.wins.PLAYER1)
         {

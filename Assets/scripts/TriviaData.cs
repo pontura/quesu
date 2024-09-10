@@ -9,6 +9,7 @@ public class TriviaData : MonoBehaviour
 	public TriviaContent triviaContent;
 	public bool loaded;
 	public string triviaName;
+    public int tag_id;
 
 	[Serializable]
 	public class TriviaContent
@@ -26,23 +27,23 @@ public class TriviaData : MonoBehaviour
         if (Data.Instance.format == Data.formats.STANDALONE)
             Load(11);
     }
-    public void Load(int id)
+    public void Load(int tag_id)
 	{
-
-        print("Load" + id);
+        this.tag_id = tag_id;
+        print("Load trivia for tag tag_id:" + tag_id);
         //television y series = 11;
         //tecnologia es id = 3:
        // id = 11;
 
-        if (id == 0)
+        if (tag_id == 0)
         {
             Data.Instance.serverManager.LoadTriviaByCategory("all", 200);
         }
         else 
         {
-            Data.Instance.serverManager.LoadTrivia(id, 200);
+            Data.Instance.serverManager.LoadTrivia(tag_id, 200);
          }
-        Data.Instance.triviaData.triviaName = Data.Instance.tagsData.GetTitleById(id);
+        Data.Instance.triviaData.triviaName = Data.Instance.tagsData.GetTitleById(tag_id);
 	}
 	public void EmptyData()
 	{
@@ -73,7 +74,7 @@ public class TriviaData : MonoBehaviour
         else
             path = Application.streamingAssetsPath + "/images/";
 
-        Debug.Log("Image: " + path);
+        Debug.Log("Image: " + path + url);
         using (WWW www = new WWW(path + url, null, headers))
 		{			
 			yield return www;

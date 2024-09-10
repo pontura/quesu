@@ -440,6 +440,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriviaButton
       objectReference: {fileID: 0}
+    - target: {fileID: 7519451307266797270, guid: efe865d9104857142badfea1790998f9,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519451307266797270, guid: efe865d9104857142badfea1790998f9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519451307266797270, guid: efe865d9104857142badfea1790998f9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7524055290803796512, guid: efe865d9104857142badfea1790998f9,
         type: 3}
       propertyPath: m_Pivot.x
@@ -518,7 +533,7 @@ PrefabInstance:
     - target: {fileID: 7524055290803796512, guid: efe865d9104857142badfea1790998f9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -70
+      value: -68
       objectReference: {fileID: 0}
     - target: {fileID: 7524055290803796512, guid: efe865d9104857142badfea1790998f9,
         type: 3}
@@ -576,6 +591,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriviaButton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7519451307266797270, guid: efe865d9104857142badfea1790998f9,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519451307266797270, guid: efe865d9104857142badfea1790998f9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519451307266797270, guid: efe865d9104857142badfea1790998f9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7524055290803796512, guid: efe865d9104857142badfea1790998f9,
         type: 3}
       propertyPath: m_Pivot.x
@@ -654,7 +684,7 @@ PrefabInstance:
     - target: {fileID: 7524055290803796512, guid: efe865d9104857142badfea1790998f9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 70
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 7524055290803796512, guid: efe865d9104857142badfea1790998f9,
         type: 3}

@@ -27,8 +27,8 @@ public class StandaloneScores : MainScreen
         int s1=  multiplayerData.score_player_1;
         int s2 = multiplayerData.score_player_2;
 
-        score1.text = Utils.SetFormatedNumber(s1.ToString());
-        score2.text = Utils.SetFormatedNumber(s2.ToString());
+        score1.text = Utils.FormatNumbers(s1);
+        score2.text = Utils.FormatNumbers(s2);
 
         if (s1 == s2 && s1 == 0)
         {

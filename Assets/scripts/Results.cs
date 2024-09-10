@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Results : MonoBehaviour {
+
 	public GameObject retarButton;
 	public Text bienField;
 	public Text malField;
@@ -18,6 +19,7 @@ public class Results : MonoBehaviour {
 
 	}
 	public void OnInit () {
+
 		int total = Data.Instance.resultsData.GetResults ();
 		bienField.text = "BIEN: " + Data.Instance.resultsData.answers_ok;
 		malField.text = "MAL: " + Data.Instance.resultsData.answers_wrong;

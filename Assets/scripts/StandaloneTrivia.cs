@@ -401,7 +401,7 @@ public class StandaloneTrivia : MainScreen
     }
     void SetScores()
     {
-        score1.text = Utils.SetFormatedNumber(multiplayerData.score_player_1.ToString());
-        score2.text = Utils.SetFormatedNumber(multiplayerData.score_player_2.ToString());
+        score1.text = Utils.FormatNumbers(multiplayerData.score_player_1);
+        score2.text = Utils.FormatNumbers(multiplayerData.score_player_2);
     }
 }

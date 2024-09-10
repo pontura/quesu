@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 1068058911}
   - component: {fileID: 1068058913}
   - component: {fileID: 1068058901}
+  - component: {fileID: 6444197802833445925}
   m_Layer: 0
   m_Name: Data
   m_TagString: Untagged
@@ -35,12 +36,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288194331046675986}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 788, y: 492.33603, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &288194331046675984
 MonoBehaviour:
@@ -64,6 +66,7 @@ MonoBehaviour:
   retosManager: {fileID: 5524417362477820083}
   settings: {fileID: 0}
   resultsData: {fileID: 0}
+  rankingsManager: {fileID: 6444197802833445925}
   triviaName: 
   videoPlayer: {fileID: 0}
   currentLevel: 
@@ -82,8 +85,13 @@ MonoBehaviour:
   GetTrivia: getTrivia.php
   GetReto: getReto.php
   GetUser: getUser.php
+  GetClient: getClient.php
   GetTags: getTags.php
-  serverURL: http://pontura.com/quesu/
+  GetClientTags: getClientTags.php
+  clientDataJson:
+    id: 0
+    username: 
+    all: []
 --- !u!114 &288194331046675991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +105,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags:
-    all: []
+    all:
+    - id: 0
+      name: all
+      lockedByClient: 0
   loaded: 0
 --- !u!114 &288194331046675990
 MonoBehaviour:
@@ -111,12 +122,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb547aed08cbeb34ba808b299211f8c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reload: 0
+  reload: 1
   triviaContent:
     tagID: 0
     all: []
   loaded: 0
   triviaName: 
+  tag_id: 0
 --- !u!114 &288194331046675988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,3 +515,16 @@ MonoBehaviour:
   musicAudioSource: {fileID: 1068058910}
   soundsAudioSource: {fileID: 1068058911}
   uiAudioSource: {fileID: 1068058913}
+--- !u!114 &6444197802833445925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288194331046675986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ed2b0183bfae345897f636a2f82e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all: []
