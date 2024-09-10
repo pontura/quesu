@@ -33,8 +33,8 @@ public class Results : MonoBehaviour {
 			//si no es empate lo cierra:
 			if (total != Data.Instance.retosManager.openReto.score)
 				Data.Instance.retosManager.CloseReto (total);
-
 		}
 	}
+    
 
 }

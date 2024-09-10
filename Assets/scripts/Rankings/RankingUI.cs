@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class RankingUI : MonoBehaviour
+public class RankingUI : MainScreen
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Text field;
+    [SerializeField] RankingLine line;
+    [SerializeField] Transform container;
+    [SerializeField] GameObject loading;
 
-    // Update is called once per frame
-    void Update()
+    public override void OnInit()
     {
-        
+        field.text = "RANKING " + Data.Instance.triviaData.triviaName;
+        Data.Instance.rankingsManager.Init(Data.Instance.triviaData.tag_id, OnLoaded);
+        loading.SetActive(true);
+    }
+    private void OnLoaded()
+    {
+        loading.SetActive(false);
+        int id = 1;
+        foreach (RankingData l in Data.Instance.rankingsManager.all)
+        {
+            RankingLine rankingLine = Instantiate(line, container);
+            rankingLine.Init(l, id);
+            id++;
+        }
     }
 }

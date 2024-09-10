@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RankingLine : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Text field;
+    [SerializeField] Text score;
+    [SerializeField] Text num;
 
-    // Update is called once per frame
-    void Update()
+    public void Init(RankingData data, int id)
     {
-        
+        num.text = id.ToString();
+        field.text = data.username;
+        score.text = Utils.FormatNumbers(data.score);
     }
 }

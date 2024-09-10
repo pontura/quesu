@@ -6,41 +6,39 @@ using UnityEngine.UI;
 
 public class Timeline : MainScreen
 {
-    public List<ItemData> all;
-    public TimelineItem item;
-    public TimelineItem emptyItem;
-    public TimelineItem emptyIinitialItem;
-    int totalPairs = 3;
-    public int serieID = 0;
-    int separationY = 148;
-    int separation = 370;
-    public Transform container;
-    int itemId;
-    public Scrollbar scrollBar;
+    //public List<ItemData> all;
+    //public TimelineItem item;
+    //public TimelineItem emptyItem;
+    //public TimelineItem emptyIinitialItem;
+    //int totalPairs = 3;
+    //public int serieID = 0;
+    //int separationY = 148;
+    //int separation = 370;
+    //public Transform container;
+    //int itemId;
+    //public Scrollbar scrollBar;
     
-    public void Retar()
-    {
-        Events.OnSoundFX("ui");
-        if(UserData.Instance.userID == "")
-        {
-            Events.OnPopup("¡No estás registrado!");
-            return;
-        }
-        LoadScreen(7, true);
-    }
+    //public void Retar()
+    //{
+    //    Events.OnSoundFX("ui");
+    //    if(UserData.Instance.userID == "")
+    //    {
+    //        Events.OnPopup("¡No estás registrado!");
+    //        return;
+    //    }
+    //    LoadScreen(7, true);
+    //}
     public override void OnInit()
     {
-        Data.Instance.rankingsManager.SetHiscore(OnSended);
-       // LoopUntilReady();
         GetComponent<Results>().OnInit();
     }
-    void OnSended()
+    public void Next()
     {
-        print("hiscore sended!");
+        LoadScreen(11, true);
     }
-    float value;
-    public float speed = 0.25f;
-    bool stopAutomaticUpdate;
+    //float value;
+    //public float speed = 0.25f;
+    //bool stopAutomaticUpdate;
     //private void Update()
     //{
     //    if (Input.GetMouseButtonDown(0))
