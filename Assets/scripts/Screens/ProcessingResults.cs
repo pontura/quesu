@@ -7,7 +7,7 @@ public class ProcessingResults : MainScreen
 	public override void OnInit()
 	{
 		Invoke ("Done", 3);
-	}
+    }
 	void Done()
 	{
         CancelInvoke();

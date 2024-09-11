@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class RankingsManager : MonoBehaviour
 {
     int limit = 100;
     public RankingsData data;
+
+    [Serializable]
     public class RankingsData
     {
         public List<RankingData> all;

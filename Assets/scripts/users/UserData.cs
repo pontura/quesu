@@ -31,22 +31,9 @@ public class UserData : MonoBehaviour
     }
     void Awake()
     {
-        mInstance = this;
-		
+        mInstance = this;		
         if (RESET_ALL_DATA)
             PlayerPrefs.DeleteAll();
-       
-
-		path = Application.persistentDataPath + "/";
-#if UNITY_EDITOR
-
-#else
-        username = PlayerPrefs.GetString("username");
-        if(username != "")
-        {
-            userID = PlayerPrefs.GetString("userID");
-        }
-#endif
     }
     private void Start()
     {
@@ -55,62 +42,24 @@ public class UserData : MonoBehaviour
     void LoopTillReady()
     {
         if (username != "")
-            Events.OnUserReady();
+        {
+            OnUserReady();
+            //UpdateData(OnUserReady);
+        }
         else
+        {
             Invoke("LoopTillReady", 0.1f);
+            username = Telegram.TelegramManager.Instance.userName;
+            userID = Telegram.TelegramManager.Instance.id;
+        }
     }
-    //public void SetUserID(string userID)
-    //{
-    //    this.userID = userID;
-    //    PlayerPrefs.SetString("userID", userID);
-    //}
-
-    //public void UserCreation()
-    //{
-
-    //    PlayerPrefs.SetString("username", username);
-    //    PlayerPrefs.SetString("userID", userID);
-    //}
-
-    //System.Action func;
-    //public void LoopUntilPhotoIsLoaded(System.Action func)
-    //{
-    //	this.func = func;
-    //	LoopUntilPhotoIsLoadedLoop();
-    //}
-    //public void LoopUntilPhotoIsLoadedLoop()
-    //{
-    //	Debug.Log("Loading image from local...");
-    //	if(sprite == null)
-    //		Invoke("LoopUntilPhotoIsLoadedLoop", 1);
-    //	else
-    //		func();
-    //	LoadUserPhoto();
-    //}
-    //   void LoadUserPhoto()
-    //   {
-    //       if (Data.Instance.format == Data.formats.STANDALONE)
-    //           return;
-    //       sprite = LoadSprite(Application.persistentDataPath + "/" + UserData.Instance.userID + ".png");
-    //   }
-    //   private Sprite LoadSprite(string path)
-    //   {
-    //       Debug.Log("Searching for image in " + path);
-    //       if (string.IsNullOrEmpty(path)) return null;
-    //       if (System.IO.File.Exists(path))
-    //       {
-    //           Debug.Log("Image exists in local");
-    //           byte[] bytes = System.IO.File.ReadAllBytes(path);
-    //           Texture2D texture = new Texture2D(300, 300);
-    //           texture.LoadImage(bytes);
-    //           Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-    //           return sprite;
-    //       }
-    //       return null;
-    //   }
-    public void UpdateData()
+    void OnUserReady()
+    {
+        Events.OnUserReady();
+    }
+    public void UpdateData(System.Action OnReady)
     {
         print("UpdateData");
-        Data.Instance.serverManager.LoadUserData(userID);
+        Data.Instance.serverManager.LoadUserData(userID, OnReady);
     }
 }

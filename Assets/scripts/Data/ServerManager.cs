@@ -112,11 +112,11 @@ public class ServerManager : MonoBehaviour
         public int retosGanados;
         public int retosPerdidos;
     }
-    public void LoadUserData(string userID)
+    public void LoadUserData(string userID, System.Action OnReady)
     {
-        StartCoroutine(LoadUserDataC(userID));
+        StartCoroutine(LoadUserDataC(userID, OnReady));
     }
-    IEnumerator LoadUserDataC(string userID)
+    IEnumerator LoadUserDataC(string userID, System.Action OnReady)
     {
         string path = ServerURL + GetUser + "?userID=" + userID;
         print("path" + path);
@@ -129,6 +129,8 @@ public class ServerManager : MonoBehaviour
             string result = www.text;
             print(result);
             UserDataJson userData = JsonUtility.FromJson<UserDataJson>(result);
+            if(OnReady != null)
+                OnReady();
            // UserData.Instance.UpdateRetosValue(userData.retosGanados,  userData.retosPerdidos);
         }
     }

@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class Results : MonoBehaviour {
 
-	public GameObject retarButton;
-	public Text bienField;
-	public Text malField;
-	public Text combosField;
-	public Text scoreField;
+    [SerializeField] Text bienField;
+    [SerializeField] Text malField;
+    [SerializeField] Text combosField;
+    [SerializeField] Text scoreField;
+    [SerializeField] Button button;
 
 	void OnEnable () {
 		bienField.text = "";
@@ -20,21 +20,20 @@ public class Results : MonoBehaviour {
 	}
 	public void OnInit () {
 
-		int total = Data.Instance.resultsData.GetResults ();
+        button.gameObject.SetActive(false);
+
+        int total = Data.Instance.resultsData.GetResults ();
 		bienField.text = "BIEN: " + Data.Instance.resultsData.answers_ok;
 		malField.text = "MAL: " + Data.Instance.resultsData.answers_wrong;
 		combosField.text = "COMBOS: " + Data.Instance.resultsData.combos;
 		scoreField.text = "PUNTOS: " + total;
 
-		//if (Data.Instance.retosManager.openReto.userID != "") {
-		//	GetComponent<RetoResultUI> ().Init (total);
-		//	retarButton.SetActive (false);
-
-		//	//si no es empate lo cierra:
-		//	if (total != Data.Instance.retosManager.openReto.score)
-		//		Data.Instance.retosManager.CloseReto (total);
-		//}
-	}
+        Data.Instance.rankingsManager.SetHiscore(Done);
+    }
+    void Done()
+    {
+        button.gameObject.SetActive(true);
+    }
     
 
 }

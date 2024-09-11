@@ -21,6 +21,7 @@ public class Ranking : MonoBehaviour
     }
     private void OnLoaded()
     {
+        Utils.RemoveAllChildsIn(container);
         loading.SetActive(false);
         int id = 1;
         foreach (RankingData l in Data.Instance.rankingsManager.data.all)
