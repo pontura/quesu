@@ -5,24 +5,24 @@ using UnityEngine;
 public class Register : MainScreen {
     public UserDataUI ui;
 
-    public override void OnEnabled () {
-        ui.Init ();
-        UsersEvents.OnRegistartionDone += GotoScene;
-        UsersEvents.OnUserUploadDone += GotoScene;
-        UsersEvents.OnUserRegisterCanceled += GotoScene;
-    }
-    void OnDestroy () {
-        UsersEvents.OnRegistartionDone -= GotoScene;
-        UsersEvents.OnUserUploadDone -= GotoScene;
-        UsersEvents.OnUserRegisterCanceled -= GotoScene;
-    }
-    void GotoScene () {
-        LoadScreen (0, false);
-    }
-    public override void Back () {
-        if (UserData.Instance.username == "") {
-            UserData.Instance.userID = "";
-        }
-        GotoScene ();
-    }
+    //public override void OnEnabled () {
+    //    ui.Init ();
+    //    UsersEvents.OnRegistartionDone += GotoScene;
+    //    UsersEvents.OnUserUploadDone += GotoScene;
+    //    UsersEvents.OnUserRegisterCanceled += GotoScene;
+    //}
+    //void OnDestroy () {
+    //    UsersEvents.OnRegistartionDone -= GotoScene;
+    //    UsersEvents.OnUserUploadDone -= GotoScene;
+    //    UsersEvents.OnUserRegisterCanceled -= GotoScene;
+    //}
+    //void GotoScene () {
+    //    LoadScreen (0, false);
+    //}
+    //public override void Back () {
+    //    if (UserData.Instance.username == "") {
+    //        UserData.Instance.userID = "";
+    //    }
+    //    GotoScene ();
+    //}
 }

@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/00_Main.unity
     guid: 46872dfe4c8d9ae4d89ce3eecaff351d
   - enabled: 0
-    path: Assets/users/UserRegistration.unity
+    path: Assets/scripts/users/UserRegistration.unity
     guid: 66e16f71f2df82043ac4f827a58cf7ee
   - enabled: 0
     path: Assets/Scenes/Standalone_01Intro.unity

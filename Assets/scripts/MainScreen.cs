@@ -14,8 +14,6 @@ public class MainScreen : MonoBehaviour
     void Awake()
     {
         Events.OnButtonClicked += OnButtonClickedChecker;
-        if (Data.Instance.format == Data.formats.STANDALONE)
-            Events.OnStandaloneKeyDown += OnStandaloneKeyDownChecker;
     }
     void OnButtonClickedChecker(ButtonStandard button)
     {
@@ -73,18 +71,7 @@ public class MainScreen : MonoBehaviour
     void OnDestroy()
     {
         Events.OnButtonClicked -= OnButtonClicked;
-        Events.OnStandaloneKeyDown -= OnStandaloneKeyDownChecker;
     }
-    void OnStandaloneKeyDownChecker(StandaloneInputManager.types type)
-    {
-        if (ready)
-        {
-            print(this.gameObject.name);
-            Events.OnSoundFX("ui");
-            OnStandaloneKeyDown(type);
-        }
-    }
-
     public virtual void Back()
 	{		
 		screensManager.LoadScreen (backScreenID, false);
@@ -98,5 +85,4 @@ public class MainScreen : MonoBehaviour
 	public virtual void OnButtonClicked(ButtonStandard button) { }
 	public virtual void OnInit() 	{ }
 	public virtual void OnReset() 	{ }
-    public virtual void OnStandaloneKeyDown(StandaloneInputManager.types type) { }
 }

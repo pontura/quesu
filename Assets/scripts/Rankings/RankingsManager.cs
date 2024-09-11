@@ -5,7 +5,11 @@ using UnityEngine;
 public class RankingsManager : MonoBehaviour
 {
     int limit = 100;
-    public List<RankingData> all;
+    public RankingsData data;
+    public class RankingsData
+    {
+        public List<RankingData> all;
+    }
 
     private void Start()
     {
@@ -27,7 +31,7 @@ public class RankingsManager : MonoBehaviour
         {           
             string result = www.text;
             print(result);
-            all = JsonUtility.FromJson<List<RankingData>>(result);
+            data = JsonUtility.FromJson<RankingsData>(result);
             if (OnReady != null)
                 OnReady();
         }

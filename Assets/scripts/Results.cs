@@ -26,14 +26,14 @@ public class Results : MonoBehaviour {
 		combosField.text = "COMBOS: " + Data.Instance.resultsData.combos;
 		scoreField.text = "PUNTOS: " + total;
 
-		if (Data.Instance.retosManager.openReto.userID != "") {
-			GetComponent<RetoResultUI> ().Init (total);
-			retarButton.SetActive (false);
+		//if (Data.Instance.retosManager.openReto.userID != "") {
+		//	GetComponent<RetoResultUI> ().Init (total);
+		//	retarButton.SetActive (false);
 
-			//si no es empate lo cierra:
-			if (total != Data.Instance.retosManager.openReto.score)
-				Data.Instance.retosManager.CloseReto (total);
-		}
+		//	//si no es empate lo cierra:
+		//	if (total != Data.Instance.retosManager.openReto.score)
+		//		Data.Instance.retosManager.CloseReto (total);
+		//}
 	}
     
 
