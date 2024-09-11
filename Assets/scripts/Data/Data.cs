@@ -33,7 +33,6 @@ public class Data : MonoBehaviour
 	public ServerManager serverManager;
 	public TriviaData triviaData;
 	public TagsData tagsData;
-	public UsersManager usersManager;
 	public Settings settings;
 	public ResultsData resultsData;
     public RankingsManager rankingsManager;

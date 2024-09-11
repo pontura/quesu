@@ -18,17 +18,7 @@ public class TriviaPairButtons : MonoBehaviour
     {
         anim = GetComponent<Animation>();
     }
-    public void InitStandalone(StandaloneTrivia trivia, ItemData data1, ItemData data2)
-    {
-        bool win1 = false;
-
-        if (data1.year < data2.year)
-            win1 = true;
-
-        button1.Init(this, data1, win1);
-        button2.Init(this, data2, !win1);
-        anim.Play("standaloneButtonsEnter");
-    }
+   
     public void Init(Trivia trivia, ItemData data1, ItemData data2)
     {
 		this.trivia = trivia;

@@ -28,6 +28,11 @@ public class PairTimer : MonoBehaviour
         this.isOn = _isOn;
         panel.SetActive(isOn);
     }
+    private void OnDisable()
+    {
+        isOn = false;
+        value = 0;
+    }
     void Update()
     {
         if (!isOn)

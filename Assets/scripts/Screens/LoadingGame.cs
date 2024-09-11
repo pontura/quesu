@@ -19,14 +19,20 @@ public class LoadingGame : MainScreen
     }
     public void OnStart()
     {
+        Data.Instance.triviaData.Load(OnDone);
+    }
+    void OnDone()
+    {
         LoadScreen(3, true);
     }
     public void Next()
     {
-        Data.Instance.triviaData.Next(Init);
+        Data.Instance.triviaData.Next();
+        Init();
     }
     public void Prev()
     {
-        Data.Instance.triviaData.Prev(Init);
+        Data.Instance.triviaData.Prev();
+        Init();
     }
 }

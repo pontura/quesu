@@ -40,21 +40,17 @@ public class TriviaData : MonoBehaviour
             num++;
         }
     }
-    public void Load(int tag_id, System.Action OnDone)
-	{
+    public void SetActualData(int tag_id)
+    {
         this.tag_id = tag_id;
         SetId();
         print("Load trivia for tag tag_id:" + tag_id);
-
-        //if (tag_id == 0)
-        //{
-        //    Data.Instance.serverManager.LoadTriviaByCategory("all", 200);
-        //}
-        //else 
-        //{
-            Data.Instance.serverManager.LoadTrivia(tag_id, 200, OnDone);
-        // }
         Data.Instance.triviaData.triviaName = Data.Instance.tagsData.GetTitleById(tag_id);
+    }
+    public void Load(System.Action OnDone)
+	{
+        SetActualData(tag_id);
+        Data.Instance.serverManager.LoadTrivia(tag_id, 200, OnDone);
 	}
 	public void EmptyData()
 	{
@@ -69,6 +65,7 @@ public class TriviaData : MonoBehaviour
 
 		loaded = true;
 	}
+
 	IEnumerator LoadImage(ItemData itemData, string url)
 	{
 		Dictionary<string, string> headers = new Dictionary<string, string>();
@@ -98,18 +95,18 @@ public class TriviaData : MonoBehaviour
             itemData.usedInGame = false;
         Utils.Shuffle(triviaContent.all);
     }
-    public void Next(System.Action OnDone)
+    public void Next()
     {
         tag_id_num++;
         if (tag_id_num >= Data.Instance.tagsData.tags.all.Length)
             tag_id_num = 0;
-        Load(Data.Instance.tagsData.tags.all[tag_id_num].id, OnDone);
+        SetActualData(Data.Instance.tagsData.tags.all[tag_id_num].id);
     }
-    public void Prev(System.Action OnDone)
+    public void Prev()
     {
         tag_id_num--;
         if (tag_id_num < 0)
             tag_id_num = Data.Instance.tagsData.tags.all.Length-1;
-        Load(Data.Instance.tagsData.tags.all[tag_id_num].id, OnDone);
+        SetActualData(Data.Instance.tagsData.tags.all[tag_id_num].id);
     }
 }
