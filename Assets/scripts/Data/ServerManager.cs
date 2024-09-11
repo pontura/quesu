@@ -74,12 +74,12 @@ public class ServerManager : MonoBehaviour
     //        Data.Instance.retosManager.SetData(JsonUtility.FromJson<RetosManager.RetosContent>(result));
     //    }
     //}
-    public void LoadTrivia(int tagID, int limit)
+    public void LoadTrivia(int tagID, int limit, System.Action OnDone)
     {
         Data.Instance.triviaData.EmptyData();
-        StartCoroutine(LoadTriviaR(tagID, limit));
+        StartCoroutine(LoadTriviaR(tagID, limit, OnDone));
     }
-    IEnumerator LoadTriviaR(int tagID, int limit)
+    IEnumerator LoadTriviaR(int tagID, int limit, System.Action OnDone)
     {
         string path = ServerURL + GetTrivia + "?id=" + tagID + "&limit=" + limit;
         Debug.Log(path);
@@ -93,6 +93,8 @@ public class ServerManager : MonoBehaviour
             Data.Instance.triviaData.SetData(JsonUtility.FromJson<TriviaData.TriviaContent>(result), tagID);
 
         }
+        if(OnDone != null)
+            OnDone();
     }
     public ClientDataJson clientDataJson;
     [Serializable]

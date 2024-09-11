@@ -56,7 +56,10 @@ public class CategoriesSelector : MainScreen
                 Data.Instance.mode = Data.modes.CUADROPLE; break;
         }
         
-        Data.Instance.triviaData.Load(button.id);       
+        Data.Instance.triviaData.Load(button.id, OnReady);  
+    }
+    void OnReady()
+    {
         LoadScreen(2, true);
     }
 }

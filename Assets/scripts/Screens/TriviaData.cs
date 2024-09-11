@@ -10,39 +10,50 @@ public class TriviaData : MonoBehaviour
 	public bool loaded;
 	public string triviaName;
     public int tag_id;
-
+    [SerializeField] int tag_id_num;
 	[Serializable]
 	public class TriviaContent
 	{
 		public int tagID;
 		public List<ItemData> all;
 	}
-    private void Start()
+    //private void Start()
+    //{
+    //    if (!reload)
+    //    {
+    //        foreach (ItemData id in triviaContent.all)
+    //            StartCoroutine(LoadImage(id, id.image));
+    //    } else
+    //    if (Data.Instance.format == Data.formats.STANDALONE)
+    //        Load(11, null);
+    //}
+    void SetId()
     {
-        if (!reload)
+        int num = 0;
+        foreach(TagData td  in Data.Instance.tagsData.tags.all)
         {
-            foreach (ItemData id in triviaContent.all)
-                StartCoroutine(LoadImage(id, id.image));
-        } else
-        if (Data.Instance.format == Data.formats.STANDALONE)
-            Load(11);
+            if (td.id == tag_id)
+            {
+                this.tag_id_num = num;
+                return;
+            }
+            num++;
+        }
     }
-    public void Load(int tag_id)
+    public void Load(int tag_id, System.Action OnDone)
 	{
         this.tag_id = tag_id;
+        SetId();
         print("Load trivia for tag tag_id:" + tag_id);
-        //television y series = 11;
-        //tecnologia es id = 3:
-       // id = 11;
 
-        if (tag_id == 0)
-        {
-            Data.Instance.serverManager.LoadTriviaByCategory("all", 200);
-        }
-        else 
-        {
-            Data.Instance.serverManager.LoadTrivia(tag_id, 200);
-         }
+        //if (tag_id == 0)
+        //{
+        //    Data.Instance.serverManager.LoadTriviaByCategory("all", 200);
+        //}
+        //else 
+        //{
+            Data.Instance.serverManager.LoadTrivia(tag_id, 200, OnDone);
+        // }
         Data.Instance.triviaData.triviaName = Data.Instance.tagsData.GetTitleById(tag_id);
 	}
 	public void EmptyData()
@@ -86,5 +97,19 @@ public class TriviaData : MonoBehaviour
         foreach (ItemData itemData in triviaContent.all)
             itemData.usedInGame = false;
         Utils.Shuffle(triviaContent.all);
+    }
+    public void Next(System.Action OnDone)
+    {
+        tag_id_num++;
+        if (tag_id_num >= Data.Instance.tagsData.tags.all.Length)
+            tag_id_num = 0;
+        Load(Data.Instance.tagsData.tags.all[tag_id_num].id, OnDone);
+    }
+    public void Prev(System.Action OnDone)
+    {
+        tag_id_num--;
+        if (tag_id_num < 0)
+            tag_id_num = Data.Instance.tagsData.tags.all.Length-1;
+        Load(Data.Instance.tagsData.tags.all[tag_id_num].id, OnDone);
     }
 }
