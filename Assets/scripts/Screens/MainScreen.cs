@@ -18,9 +18,7 @@ public class MainScreen : MonoBehaviour
     }
     public void SetActive(bool isOn)
     {
-        if (isOn)
-            OnInit();
-        else
+        if (!isOn)
             OnReset();
         gameObject.SetActive(isOn);
     }

@@ -207,6 +207,7 @@ MonoBehaviour:
   button3: {fileID: 0}
   button4: {fileID: 0}
   flechas: {fileID: 0}
+  anim: {fileID: 6736101337168490772}
 --- !u!111 &6736101337168490772
 Animation:
   m_ObjectHideFlags: 0

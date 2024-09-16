@@ -594,8 +594,10 @@ MonoBehaviour:
       siendo la \xFAnica de los presidentes a"
     texture: {fileID: 0}
     usedInGame: 1
+    textureReady: 0
   win: 0
   background: {fileID: 480129188002714487}
+  anim: {fileID: 4125386579790936761}
   idleBarColor: {r: 0.37254903, g: 0.61960787, b: 1, a: 1}
   textNormalColor: {r: 1, g: 1, b: 1, a: 1}
   textDoneColor: {r: 1, g: 1, b: 1, a: 1}
@@ -608,10 +610,12 @@ Animation:
   m_GameObject: {fileID: 5719635213981657559}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: fb33af6f02d58454b837843665324400, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: c02ef55089c49ad41badc072f1e05357, type: 2}
   - {fileID: 7400000, guid: 4474ffb276d9f7049a46aa852b365370, type: 2}
+  - {fileID: 7400000, guid: 471875889a99cef40b7844da57f7c932, type: 2}
+  - {fileID: 7400000, guid: fb33af6f02d58454b837843665324400, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0

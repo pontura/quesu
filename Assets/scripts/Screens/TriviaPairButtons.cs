@@ -11,14 +11,16 @@ public class TriviaPairButtons : MonoBehaviour
 
     Trivia trivia;
     public GameObject flechas;
-    Animation anim;
+    [SerializeField] Animation anim;
     bool win1, win2, win3, win4;
 
-    void Awake()
+    public void SetInit()
     {
-        anim = GetComponent<Animation>();
+        button1.SetInit();
+        button2.SetInit();
+        if(button3 != null) button3.SetInit();
+        if (button4 != null)  button4.SetInit();
     }
-   
     public void Init(Trivia trivia, ItemData data1, ItemData data2)
     {
 		this.trivia = trivia;

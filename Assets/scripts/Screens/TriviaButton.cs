@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TriviaButton : MonoBehaviour {
+
 	public Image image;
 	public Image resultImage;
 	public Text textField;
@@ -11,25 +12,25 @@ public class TriviaButton : MonoBehaviour {
 	public ItemData data;
     public bool win;
 	public Image background;
-	Animation anim;
+	[SerializeField] Animation anim;
 	public Color idleBarColor;
 	public Color textNormalColor;
 	public Color textDoneColor;
 
 	public void Init (TriviaPairButtons pairButtons, ItemData data, bool win) {
 
+        GetComponent<Button>().interactable = true;
         textField.color = textNormalColor;
         resultImage.enabled = true;
         resultImage.color = idleBarColor;
 
-
         resultImage.enabled = false;
-		anim = GetComponent<Animation> ();
 		this.win = win;
 		this.data = data;
 		this.pairButtons = pairButtons;
 		textField.text = data.text;
-		LoopUntilReady ();
+        SetSprite();
+        SetOn();
 
     }
 	public void Clicked () {
@@ -39,15 +40,19 @@ public class TriviaButton : MonoBehaviour {
 			Lose ();
 		pairButtons.OnButtonSelected (this);
 	}
-	void LoopUntilReady () {
-		if (data.texture != null) {
-			Sprite newSprite = Sprite.Create (data.texture, new Rect (0, 0, data.texture.width, data.texture.height), Vector2.zero);
-			if (newSprite != null)
-				image.sprite = newSprite;
-			return;
-		}
-		Invoke ("LoopUntilReady", 0.1f);
+	void SetSprite () {
+		Sprite newSprite = Sprite.Create (data.texture, new Rect (0, 0, data.texture.width, data.texture.height), Vector2.zero);
+		if (newSprite != null)
+			image.sprite = newSprite;
 	}
+    public void SetInit()
+    {
+        anim.Play("off");
+    }
+    public void SetOn()
+    {
+        anim.Play("on");
+    }
 	void Win () {
 		
 		Events.OnAnswer (true);
@@ -59,7 +64,7 @@ public class TriviaButton : MonoBehaviour {
 		anim.Play ("buttonLose");
 	}
 	public void DisableButton () {
-		GetComponent<Button> ().enabled = false;
+		GetComponent<Button> ().interactable = false;
 		textField.text = data.year.ToString ();
 	}
 	public void Ready () {

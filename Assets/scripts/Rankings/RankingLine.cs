@@ -5,14 +5,28 @@ using UnityEngine.UI;
 
 public class RankingLine : MonoBehaviour
 {
-    [SerializeField] Text field;
-    [SerializeField] Text score;
-    [SerializeField] Text num;
+    [SerializeField] TMPro.TMP_Text field;
+    [SerializeField] TMPro.TMP_Text shortName;
+    [SerializeField] TMPro.TMP_Text score;
 
     public void Init(RankingData data, int id)
     {
-        num.text = id.ToString();
-        field.text = data.username;
+        field.text = id.ToString()+ " - " + data.username;
         score.text = Utils.FormatNumbers(data.score);
+        string[] arr = data.username.Split(" ");
+        string shortNameText = "";
+        if (arr.Length < 2)
+            shortNameText += data.username[0];
+        else
+        {
+            int num = 0;
+            foreach (string s in arr)
+            {
+                num++;
+                if (num <= 2)
+                    shortNameText += s[0];
+            }
+        }
+        shortName.text = shortNameText.ToUpper();
     }
 }

@@ -16,7 +16,15 @@ public class TriviaData : MonoBehaviour
 	{
 		public int tagID;
 		public List<ItemData> all;
-	}
+        
+        public ItemData GetItem(string id)
+        {
+            foreach (ItemData it in all)
+                if (it.id == id)
+                    return it;
+            return null;
+        }
+    }
     public bool IsLoaded()
     {
         return loaded;
@@ -60,12 +68,17 @@ public class TriviaData : MonoBehaviour
         triviaContent = _trivia;
 		triviaContent.tagID = tagID;
         totalImages = triviaContent.all.Count;
-
-        foreach (ItemData id in triviaContent.all)
-			StartCoroutine(LoadImage (id, id.image));
-	}
-
-	IEnumerator LoadImage(ItemData itemData, string url)
+        loaded = true;
+    }
+    public void LoadImage(ItemData itemData, System.Action<Texture2D> OnReady)
+    {
+        Texture2D t = itemData.GetImage();
+        if (t != null)
+            OnReady(t);
+        else
+            StartCoroutine(LoadImage(itemData, itemData.image, OnReady));
+    }
+	IEnumerator LoadImage(ItemData itemData, string url, System.Action<Texture2D> OnReady)
 	{
 		Dictionary<string, string> headers = new Dictionary<string, string>();
 
@@ -85,12 +98,8 @@ public class TriviaData : MonoBehaviour
         using (WWW www = new WWW(path + url, null, headers))
 		{			
 			yield return www;
-			itemData.texture = www.texture;
-
-            imagesLoaded++;
-            if (imagesLoaded > totalImages/1.5f)
-                loaded = true;
-
+			itemData.SetTexture2D( www.texture);                
+            OnReady(itemData.texture);
         }
 	}
     public void RefreshAll()

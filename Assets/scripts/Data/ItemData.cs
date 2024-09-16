@@ -13,4 +13,15 @@ public class ItemData
 	public string description;
 	public Texture2D texture;
 	public bool usedInGame;
+    public bool textureReady;
+    public Texture2D GetImage()
+    {
+        return texture;
+    }
+    public void SetTexture2D (Texture2D t)
+    {
+        textureReady = true;
+        texture = t;
+    }
+
 }
