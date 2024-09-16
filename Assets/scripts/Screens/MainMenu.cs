@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MainMenu : MainScreen
 {
-
     public void PlaySingleMode()
     {
         LoadScreen(1, true);
