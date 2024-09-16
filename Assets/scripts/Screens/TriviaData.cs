@@ -5,9 +5,9 @@ using System;
 
 public class TriviaData : MonoBehaviour
 {
+    bool loaded;
     public bool reload = false;
 	public TriviaContent triviaContent;
-	public bool loaded;
 	public string triviaName;
     public int tag_id;
     [SerializeField] int tag_id_num;
@@ -17,16 +17,10 @@ public class TriviaData : MonoBehaviour
 		public int tagID;
 		public List<ItemData> all;
 	}
-    //private void Start()
-    //{
-    //    if (!reload)
-    //    {
-    //        foreach (ItemData id in triviaContent.all)
-    //            StartCoroutine(LoadImage(id, id.image));
-    //    } else
-    //    if (Data.Instance.format == Data.formats.STANDALONE)
-    //        Load(11, null);
-    //}
+    public bool IsLoaded()
+    {
+        return loaded;
+    }
     void SetId()
     {
         int num = 0;
@@ -56,14 +50,19 @@ public class TriviaData : MonoBehaviour
 	{
         triviaContent.all.Clear();
 	}
-	public void SetData(TriviaContent _trivia, int tagID)
-	{
-		triviaContent = _trivia;
-		triviaContent.tagID = tagID;
-		foreach (ItemData id in triviaContent.all)
-			StartCoroutine(LoadImage (id, id.image));
 
-		loaded = true;
+    int totalImages;
+    int imagesLoaded;
+    public void SetData(TriviaContent _trivia, int tagID)
+	{
+        loaded = false;
+        imagesLoaded = 0;
+        triviaContent = _trivia;
+		triviaContent.tagID = tagID;
+        totalImages = triviaContent.all.Count;
+
+        foreach (ItemData id in triviaContent.all)
+			StartCoroutine(LoadImage (id, id.image));
 	}
 
 	IEnumerator LoadImage(ItemData itemData, string url)
@@ -87,7 +86,12 @@ public class TriviaData : MonoBehaviour
 		{			
 			yield return www;
 			itemData.texture = www.texture;
-		}
+
+            imagesLoaded++;
+            if (imagesLoaded > totalImages/1.5f)
+                loaded = true;
+
+        }
 	}
     public void RefreshAll()
     {

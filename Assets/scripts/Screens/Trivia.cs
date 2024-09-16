@@ -25,15 +25,15 @@ public class Trivia : MainScreen
 		itemId = 0;
 		timerManager.Init (Data.Instance.settings.triviaDuration);
 		LoopUntilReady ();
-		feedbackManager.Init();		
-	}
+		feedbackManager.Init();
+    }
 	public override void OnReset()
 	{
 		Utils.RemoveAllChildsIn (container);
 	}
 	void LoopUntilReady()
 	{
-		if (Data.Instance.triviaData.loaded) {				
+		if (Data.Instance.triviaData.IsLoaded()) {				
 			Init ();
 			return;
 		}

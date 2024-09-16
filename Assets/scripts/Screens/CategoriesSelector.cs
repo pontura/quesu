@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CategoriesSelector : MainScreen
 {
-    public ButtonStandard button;
+    public ButtonStandardCategories button;
     public Transform container;
 
     public override void OnInit()
@@ -37,26 +37,30 @@ public class CategoriesSelector : MainScreen
     void AddButton(TagData data)
     {
         print(data.name);
-        ButtonStandard b = Instantiate(button);
+        ButtonStandardCategories b = Instantiate(button);
         b.transform.SetParent(container);
-        b.Init(data.id, data.name);
+        b.Init(OnButtonClicked);
+        b.SetText(data.name);
+        b.SetData(data);
         b.transform.localScale = Vector3.one;
     }
-    public override void OnButtonClicked(ButtonStandard button)
+    public void OnButtonClicked(ButtonUI button)
     {
+        print("OnButtonClicked");
         Events.OnSoundFX("ui");
+        int id = button.GetComponent<ButtonStandardCategories>().data.id;
 
-        switch (button.GetComponent<ButtonStandardCategories>().totalPairs)
-        {
-            case 2:
-                Data.Instance.mode = Data.modes.CLASSIC; break;
-            case 3:
-                Data.Instance.mode = Data.modes.TRIPLE; break;
-            case 4:
-                Data.Instance.mode = Data.modes.CUADROPLE; break;
-        }
+        //switch (button.GetComponent<ButtonStandardCategories>().totalPairs)
+        //{
+        //    case 2:
+                Data.Instance.mode = Data.modes.CLASSIC;
+        //    case 3:
+        //        Data.Instance.mode = Data.modes.TRIPLE; break;
+        //    case 4:
+        //        Data.Instance.mode = Data.modes.CUADROPLE; break;
+        //}
         
-        Data.Instance.triviaData.SetActualData(button.id); 
+        Data.Instance.triviaData.SetActualData(id); 
         LoadScreen(2, true);
     }
 }

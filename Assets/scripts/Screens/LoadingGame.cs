@@ -5,19 +5,18 @@ using UnityEngine.UI;
 
 public class LoadingGame : MainScreen
 {
-    public Text field;
+    public TMPro.TMP_Text field;
     [SerializeField] Ranking ranking;
+    [SerializeField] ButtonUI button;
 
-    public override void OnEnabled()
-    {
-        Init();
-    }
-    void Init()
+    public override void OnInit()
     {
         field.text = Data.Instance.triviaData.triviaName.ToUpper();
         ranking.Init(Data.Instance.triviaData);
+        button.Init(OnClick);
+        button.SetText("COMENZAR");
     }
-    public void OnStart()
+    public void OnClick(ButtonUI b)
     {
         Data.Instance.triviaData.Load(OnDone);
     }
@@ -28,11 +27,11 @@ public class LoadingGame : MainScreen
     public void Next()
     {
         Data.Instance.triviaData.Next();
-        Init();
+        OnInit();
     }
     public void Prev()
     {
         Data.Instance.triviaData.Prev();
-        Init();
+        OnInit();
     }
 }

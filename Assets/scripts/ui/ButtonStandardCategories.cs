@@ -3,26 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonStandardCategories : ButtonStandard
+public class ButtonStandardCategories : ButtonUI
 {
     public int totalPairs;
-    public Image[] activeImages;
+    public TagData data;
 
-    public void SetActives(int total)
+    public void SetData(TagData data)
     {
-        int id = 0;
-        foreach (Image i in activeImages)
-        {
-            if (id <= total)
-                i.enabled = true;
-            else
-                i.enabled = false;
-            id++;
-        }
-    }
-    public void PairsNumSelected(int totalPairs)
-    {
-        this.totalPairs = totalPairs;
-        Clicked();
+        this.data = data;
     }
 }

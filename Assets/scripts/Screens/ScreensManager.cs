@@ -39,35 +39,15 @@ public class ScreensManager : MonoBehaviour
     }
 	public void LoadScreen(int id, bool isRight)
 	{
-        print("LOAD: " + id + loading);
-   //     if (loading)
-			//return;
-			
-		Events.OnUIFX("swipe");
-
-		loading = true;
+        print("Load Screen: " + id);
 		if (activeScreen != null) {
-			activeScreen.SetCenterPosition ();
-			activeScreen.MoveTo (isRight);
-			lastActiveScreen = activeScreen;
+			activeScreen.SetActive (false);
 		}
 		
 		activeScreen = all [id];
-		activeScreen.gameObject.SetActive (true);
-		activeScreen.SetInitialPosition (isRight);
-		activeScreen.MoveTo (isRight);
-	}
-	public void OnTransitionDone()
-	{
-		if (!loading)
-			return;
-		loading = false;
-		if (lastActiveScreen != null) {
-			lastActiveScreen.gameObject.SetActive (false);
-			lastActiveScreen.OnReset ();
-		}
-		activeScreen.OnInit ();
-	}
+        activeScreen.SetActive(true);
+        activeScreen.OnInit();
+    }
 	public void ResetAll()
 	{
 		foreach (MainScreen mainScreen in all) {

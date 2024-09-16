@@ -9,7 +9,7 @@ public class Results : MonoBehaviour {
     [SerializeField] Text malField;
     [SerializeField] Text combosField;
     [SerializeField] Text scoreField;
-    [SerializeField] Button button;
+    [SerializeField] ButtonUI button;
 
 	void OnEnable () {
 		bienField.text = "";
@@ -20,6 +20,7 @@ public class Results : MonoBehaviour {
 	}
 	public void OnInit () {
 
+        button.Init(Next);
         button.gameObject.SetActive(false);
 
         int total = Data.Instance.resultsData.GetResults ();
@@ -33,6 +34,10 @@ public class Results : MonoBehaviour {
     void Done()
     {
         button.gameObject.SetActive(true);
+    }
+    public void Next(ButtonUI b)
+    {
+        GetComponent<Timeline>().Next();
     }
     
 
