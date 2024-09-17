@@ -49,7 +49,6 @@ public class CategoriesSelector : MainScreen
         print("OnButtonClicked");
         Events.OnSoundFX("ui");
         int id = button.GetComponent<ButtonStandardCategories>().data.id;
-
         //switch (button.GetComponent<ButtonStandardCategories>().totalPairs)
         //{
         //    case 2:

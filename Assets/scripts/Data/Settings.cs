@@ -1,9 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Settings : MonoBehaviour
 {
+    public CategorieData[] categoriesData;
+    [Serializable] public class CategorieData
+    {
+        public int id;
+        public Sprite logo;
+        public Color color;
+    }
+
     [SerializeField] float d_timeForFeedback;
     [SerializeField] int d_triviaDuration;
     [SerializeField] int d_timeover;
@@ -36,6 +45,26 @@ public class Settings : MonoBehaviour
         timeWin = d_timeWin;
         timeLose = d_timeLose;
         timerForPair = d_timerForPair;
+    }
+    CategorieData GetDataByCategory(int id)
+    {
+        foreach(CategorieData c in categoriesData)
+        {
+            if (c.id == id)
+                return c;
+        }
+        return null;
+    }
+    public void GetCategoryData(int tag_id, System.Action<CategorieData> OnLoaded)
+    {
+        CategorieData c = GetDataByCategory(tag_id);
+        if (c == null)
+        {
+            Debug.LogError("No category for: " + tag_id);
+            OnLoaded(categoriesData[0]);
+        }
+        else
+            OnLoaded(c);
     }
 
 }

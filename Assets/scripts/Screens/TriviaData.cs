@@ -46,6 +46,7 @@ public class TriviaData : MonoBehaviour
     {
         this.tag_id = tag_id;
         SetId();
+        Events.OnChangeTag(tag_id);
         print("Load trivia for tag tag_id:" + tag_id);
         Data.Instance.triviaData.triviaName = Data.Instance.tagsData.GetTitleById(tag_id);
     }

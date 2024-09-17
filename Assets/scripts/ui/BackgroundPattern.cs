@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class BackgroundPattern : MonoBehaviour
 {
-    [SerializeField] Sprite sprite;
     [SerializeField] GameObject asset;
+    [SerializeField] Image bg;
     [SerializeField] Transform container;
     [SerializeField] Vector2 separation;
     [SerializeField] int rows = 5;
@@ -15,10 +15,19 @@ public class BackgroundPattern : MonoBehaviour
 
     void Start()
     {
-        Draw();
+        Events.OnChangeTag += OnChangeTag;
     }
-    public void Draw()
+    private void OnDestroy()
     {
+        Events.OnChangeTag -= OnChangeTag;
+    }
+    void OnChangeTag(int tag_id)
+    {
+        Data.Instance.settings.GetCategoryData(tag_id, OnLogoDone);
+    }
+    public void OnLogoDone(Settings.CategorieData data)
+    {
+        bg.color = data.color;
         Utils.RemoveAllChildsIn(container);
         for(int a = 0; a<cols; a++)
         {
@@ -26,7 +35,7 @@ public class BackgroundPattern : MonoBehaviour
             {
                 GameObject go = Instantiate(asset, container);
                 go.transform.localPosition = new Vector2(separation.x*b, separation.y*a);
-                asset.GetComponentInChildren<Image>().sprite = sprite;
+                asset.GetComponentInChildren<Image>().sprite = data.logo;
             }
         }
     }
