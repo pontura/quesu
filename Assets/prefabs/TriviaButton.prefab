@@ -124,8 +124,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.8397, y: 0.7229}
-  m_SizeDelta: {x: 121.7883, y: 228.8075}
+  m_AnchoredPosition: {x: 0.8397, y: 0.7939}
+  m_SizeDelta: {x: 121.7883, y: 230.3705}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3756988885569810122
 CanvasRenderer:
@@ -896,7 +896,6 @@ MonoBehaviour:
     usedInGame: 1
     textureReady: 0
   win: 0
-  background: {fileID: 6998210632695864598}
   anim: {fileID: 4125386579790936761}
   idleBarColor: {r: 1, g: 1, b: 1, a: 1}
   textNormalColor: {r: 0, g: 0, b: 0, a: 1}

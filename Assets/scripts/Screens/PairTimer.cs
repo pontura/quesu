@@ -24,22 +24,22 @@ public class PairTimer : MonoBehaviour
             panel.transform.localPosition = new Vector3(0, -20, 0);
         else if (Data.Instance.mode == Data.modes.CUADROPLE)
             panel.transform.localPosition = new Vector3(0, -17, 0);
-        value = 0;
+        value = 1;
         this.isOn = _isOn;
         panel.SetActive(isOn);
     }
     private void OnDisable()
     {
         isOn = false;
-        value = 0;
+        value = 1;
     }
     void Update()
     {
         if (!isOn)
             return;
-        value += Time.deltaTime / totalTime;
+        value -= Time.deltaTime / totalTime;
 
-        if (value >= 1)
+        if (value <= 0)
         {
             Events.OnSoundFX("timeOver");
             SetState(false);
@@ -47,6 +47,6 @@ public class PairTimer : MonoBehaviour
             GetComponent<Trivia>().newPairButton.SetTimeOut();
         }
       
-        bar.fillAmount = 1-value;
+        bar.fillAmount = value;
     }
 }
