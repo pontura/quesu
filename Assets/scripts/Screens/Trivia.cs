@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,11 +19,24 @@ public class Trivia : MainScreen
     [HideInInspector] public List<ItemData> usedItemsData;
     [HideInInspector] public TriviaPairButtons newPairButton;
     [HideInInspector] TriviaCache cache;
+    [SerializeField] ButtonUI closeBtn;
 
     private void Awake()
     {
         cache = GetComponent<TriviaCache>();
+        closeBtn.Init(OnClose);
     }
+
+    private void OnClose(ButtonUI obj)
+    {
+        Events.OnConfirmationPopup("¿Seguro deseas salir?", Exit);
+    }
+    void Exit(bool isOk)
+    {
+        if (isOk)
+            Exit();
+    }
+
     public override void OnInit()
     {
         print("OnInit");
@@ -79,7 +93,13 @@ public class Trivia : MainScreen
     }
 
 
-
+    public void Exit()
+    {
+        StopAllCoroutines();
+        CancelInvoke();
+        LoadScreen(1, true);
+        Events.OnMusic("");
+    }
     //Ends:
     public void TimeOver()
     {
