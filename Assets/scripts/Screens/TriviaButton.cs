@@ -7,11 +7,10 @@ public class TriviaButton : MonoBehaviour {
 
 	public Image image;
 	public Image resultImage;
-	public Text textField;
+	public TMPro.TMP_Text textField;
 	TriviaPairButtons pairButtons;
 	public ItemData data;
     public bool win;
-	public Image background;
 	[SerializeField] Animation anim;
 	public Color idleBarColor;
 	public Color textNormalColor;
@@ -24,7 +23,6 @@ public class TriviaButton : MonoBehaviour {
         resultImage.enabled = true;
         resultImage.color = idleBarColor;
 
-        resultImage.enabled = false;
 		this.win = win;
 		this.data = data;
 		this.pairButtons = pairButtons;
@@ -75,18 +73,17 @@ public class TriviaButton : MonoBehaviour {
                 anim.Play("butonWinStandalone");
             else
                 Events.OnSoundFX ("correct");
-			background.color = Data.Instance.settings.buttonOkColor;
+            resultImage.color = Data.Instance.settings.buttonOkColor;
 		} else {
             if (Data.Instance.format == Data.formats.STANDALONE)
                 anim.Play("butonLoseStandalone");
             else
                 Events.OnSoundFX ("wrong");
-			background.color = Data.Instance.settings.buttonWrongColor;
+            resultImage.color = Data.Instance.settings.buttonWrongColor;
 		}
         
 		textField.color = textDoneColor;
-		resultImage.enabled = true;
-		resultImage.color = background.color;
+		resultImage.color = resultImage.color;
         textField.text = data.year.ToString();
     }
 }

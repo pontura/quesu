@@ -9,7 +9,7 @@ public class TimerManager : MonoBehaviour
 	float timer;
 	public bool isOn;
 	float totalTimer;
-	public Text field;
+	public TMPro.TMP_Text field;
     public GameObject barAnimTimeDanger;
 
     private void Start()
@@ -43,7 +43,7 @@ public class TimerManager : MonoBehaviour
 		if (!isOn)
 			return;
 
-		float num = (int)(totalTimer - timer);
+		float num = (totalTimer - timer);
         string prefix = "";// = "00:";
         if (num < 10)
         {
@@ -54,7 +54,7 @@ public class TimerManager : MonoBehaviour
                 barAnimTimeDanger.SetActive(false);
         }
 
-        string t = prefix + num; // System.Math.Round(num,2);
+        string t = "00:" + prefix + num.ToString("F2"); // System.Math.Round(num,2);
         field.text = t.Replace(",", ":");
         timer += Time.deltaTime;
         UpdateBar();
