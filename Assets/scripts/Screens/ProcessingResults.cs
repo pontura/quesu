@@ -11,6 +11,6 @@ public class ProcessingResults : MainScreen
 	void Done()
 	{
         CancelInvoke();
-		LoadScreen (5, true);
+		LoadScreen (screens.RESULTS, true);
 	}
 }

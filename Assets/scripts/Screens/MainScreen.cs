@@ -4,7 +4,20 @@ using UnityEngine;
 
 public class MainScreen : MonoBehaviour
 {
-	public string backSceneName;
+    public screens screen;
+    public enum screens
+    {
+        MAIN,
+        CATEGORIES,
+        CATEGORY_RANKING,
+        LOADING_GAME,
+        GAME,
+        RESULTS,
+        RANKING,
+        LOADING,
+        PROCESSING_RESULTS
+    }
+	public screens backScene;
 	int id;
 	ScreensManager screensManager;
 	public int backScreenID;
@@ -22,13 +35,13 @@ public class MainScreen : MonoBehaviour
             OnReset();
         gameObject.SetActive(isOn);
     }
-	public void LoadScreen(int screenID, bool toRight)
+	public void LoadScreen(MainScreen.screens screen, bool toRight)
 	{
-		screensManager.LoadScreen (screenID, toRight);
+		screensManager.LoadScreen (screen, toRight);
 	}
     public virtual void Back()
 	{		
-		screensManager.LoadScreen (backScreenID, false);
+		screensManager.LoadScreen (backScene, false);
 	}
     void OnDisable()
     {

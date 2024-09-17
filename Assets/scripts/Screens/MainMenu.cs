@@ -6,7 +6,7 @@ public class MainMenu : MainScreen
 {
     public void PlaySingleMode()
     {
-        LoadScreen(1, true);
+        LoadScreen(screens.CATEGORIES, true);
         Events.OnSoundFX("ui");
     }
 }

@@ -97,7 +97,7 @@ public class Trivia : MainScreen
     {
         StopAllCoroutines();
         CancelInvoke();
-        LoadScreen(1, true);
+        LoadScreen(screens.CATEGORY_RANKING, true);
         Events.OnMusic("");
     }
     //Ends:
@@ -105,9 +105,10 @@ public class Trivia : MainScreen
     {
         StopAllCoroutines();
         CancelInvoke();
-        LoadScreen(4, true);
+        LoadScreen(screens.PROCESSING_RESULTS, true);
         Events.OnMusic("");
         Events.OnSoundFX("bell");
+        Events.CloseConfirmationPopup();
     }
     public void PairDone()
     {
@@ -117,6 +118,7 @@ public class Trivia : MainScreen
         timerManager.SetState(false);
         pairTimer.SetState(false);
         Invoke("SetRonda", Data.Instance.settings.timeForFeedback);
+        Events.CloseConfirmationPopup();
     }
     ////////////
 

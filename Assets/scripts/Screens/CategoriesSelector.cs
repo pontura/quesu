@@ -60,6 +60,6 @@ public class CategoriesSelector : MainScreen
         //}
         
         Data.Instance.triviaData.SetActualData(id); 
-        LoadScreen(2, true);
+        LoadScreen(screens.CATEGORY_RANKING, true);
     }
 }

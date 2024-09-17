@@ -24,7 +24,7 @@ public class ScreensManager : MonoBehaviour
     private void OnUserReady()
     {
         print("OnUserReady");
-        LoadScreen(0, true);
+        LoadScreen(MainScreen.screens.MAIN, true);
     }
 
     void Start()
@@ -35,20 +35,30 @@ public class ScreensManager : MonoBehaviour
 			id++;
 		}
 		ResetAll ();
-        LoadScreen(7, true);
+        LoadScreen(MainScreen.screens.MAIN, true);
     }
-	public void LoadScreen(int id, bool isRight)
+	public void LoadScreen(MainScreen.screens screen, bool isRight)
 	{
-        print("Load Screen: " + id);
+        print("Load Screen: " + screen);
 		if (activeScreen != null) {
 			activeScreen.SetActive (false);
 		}
-		
-		activeScreen = all [id];
+
+        activeScreen = GetScreen(screen);
         activeScreen.SetActive(true);
         activeScreen.OnInit();
     }
-	public void ResetAll()
+    MainScreen GetScreen(MainScreen.screens screen)
+    {
+        foreach (MainScreen mainScreen in all)
+        {
+            if (mainScreen.screen == screen)
+                return mainScreen;
+        }
+        return null;
+    }
+
+    public void ResetAll()
 	{
 		foreach (MainScreen mainScreen in all) {
 			mainScreen.gameObject.SetActive (false);

@@ -14,11 +14,13 @@ public class ConfirmationPopup : MonoBehaviour
         closeBtn.Init(OnClose);
 
         Events.OnConfirmationPopup += OnConfirmationPopup;
-        panel.SetActive(false);
+        Events.CloseConfirmationPopup += CloseConfirmationPopup;
+        CloseConfirmationPopup();
     }
     void OnDestroy()
     {
         Events.OnConfirmationPopup -= OnConfirmationPopup;
+        Events.CloseConfirmationPopup += CloseConfirmationPopup;
     }
     void OnConfirmationPopup(string text, System.Action<bool> OnDone)
     {
@@ -35,6 +37,10 @@ public class ConfirmationPopup : MonoBehaviour
     void OnClose(ButtonUI b)
     {
         OnDone(false);
+        CloseConfirmationPopup();
+    }
+    void CloseConfirmationPopup()
+    {
         panel.SetActive(false);
     }
 }
