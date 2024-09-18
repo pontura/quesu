@@ -12,6 +12,7 @@ public class LoadingGame : MainScreen
     public override void OnInit()
     {
         Invoke("Go", 3);
+        field.text = Data.Instance.triviaData.triviaName;
     }
     void Go()
     {

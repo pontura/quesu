@@ -23,6 +23,7 @@ public class CategoryRanking : MainScreen
         field.text = Data.Instance.triviaData.triviaName.ToUpper();
         ranking.Init(Data.Instance.triviaData);
         button.SetText("COMENZAR");
+        Data.Instance.settings.GetCategoryData(Data.Instance.triviaData.tag_id, CategoryDataDone);
     }
     public void OnClick(ButtonUI b)
     {
@@ -31,7 +32,6 @@ public class CategoryRanking : MainScreen
     void OnDone()
     {
         LoadScreen(screens.LOADING_GAME, true);
-        Data.Instance.settings.GetCategoryData(Data.Instance.triviaData.tag_id, CategoryDataDone);
     }
     public void CategoryDataDone(Settings.CategorieData data)
     {

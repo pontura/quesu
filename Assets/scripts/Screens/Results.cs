@@ -20,6 +20,7 @@ public class Results : MonoBehaviour {
 
         button.Init(Next);
         button.gameObject.SetActive(false);
+        button.SetText("Siguiente");
 
         int total = Data.Instance.resultsData.GetResults ();
         scoreField.text = Utils.FormatNumbers(total);
