@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -741,6 +741,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 65481612}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &65481614 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4266947023705018016, guid: 1121e1a1ed2958f4fb4fb93625236e7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 65481612}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed9d5ff820aada4e942c6dfbd0f6cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &66128945
 GameObject:
   m_ObjectHideFlags: 0
@@ -2188,10 +2200,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: e973c41b8111008409e6399577dc99e5, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -2272,6 +2284,7 @@ MonoBehaviour:
   button: {fileID: 875204755}
   next: {fileID: 1382458350}
   prev: {fileID: 2036045526}
+  fade: {fileID: 1751396834}
 --- !u!1 &291729349
 GameObject:
   m_ObjectHideFlags: 0
@@ -4265,11 +4278,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299c1c6da613086459a213c4bb98ff72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bienField: {fileID: 1463590207}
-  malField: {fileID: 787521393}
-  combosField: {fileID: 645513639}
-  scoreField: {fileID: 571551325}
   button: {fileID: 1127151008}
+  good: {fileID: 4886404193048711712}
+  bad: {fileID: 885092926}
+  combos: {fileID: 981845806}
+  score: {fileID: 65481614}
+  scoreField: {fileID: 1169845201}
 --- !u!224 &596494402 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5442463876975534050, guid: c27f51067335ff840a036ab349eccfc7,
@@ -5078,7 +5092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1269505703}
-  field: {fileID: 0}
+  field: {fileID: 1675864084}
   combos: 0
   scoreField: {fileID: 828023789}
 --- !u!114 &739832843
@@ -6250,6 +6264,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 885092924}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &885092926 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4266947023705018016, guid: 1121e1a1ed2958f4fb4fb93625236e7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 885092924}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed9d5ff820aada4e942c6dfbd0f6cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &902979129
 GameObject:
   m_ObjectHideFlags: 0
@@ -6663,6 +6689,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 981845804}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &981845806 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4266947023705018016, guid: 1121e1a1ed2958f4fb4fb93625236e7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 981845804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed9d5ff820aada4e942c6dfbd0f6cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &989599556
 GameObject:
   m_ObjectHideFlags: 0
@@ -13456,6 +13494,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1121e1a1ed2958f4fb4fb93625236e7a, type: 3}
+--- !u!114 &4886404193048711712 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4266947023705018016, guid: 1121e1a1ed2958f4fb4fb93625236e7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4886404193048711711}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed9d5ff820aada4e942c6dfbd0f6cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!111 &5309247828922132922
 Animation:
   m_ObjectHideFlags: 0

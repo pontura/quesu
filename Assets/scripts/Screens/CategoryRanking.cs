@@ -10,6 +10,7 @@ public class CategoryRanking : MainScreen
     [SerializeField] ButtonUI button;
     [SerializeField] ButtonUI next;
     [SerializeField] ButtonUI prev;
+    [SerializeField] Image fade;
 
     private void Start()
     {
@@ -30,6 +31,11 @@ public class CategoryRanking : MainScreen
     void OnDone()
     {
         LoadScreen(screens.LOADING_GAME, true);
+        Data.Instance.settings.GetCategoryData(Data.Instance.triviaData.tag_id, CategoryDataDone);
+    }
+    public void CategoryDataDone(Settings.CategorieData data)
+    {
+        fade.color = data.color;
     }
     public void Next(ButtonUI b)
     {

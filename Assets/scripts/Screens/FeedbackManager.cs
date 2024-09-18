@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FeedbackManager : MonoBehaviour {
 
     public GameObject panel;
-    public Text field;
+    public TMPro.TMP_Text field;
     public int combos;
     bool timeOut;
     public Text scoreField;
