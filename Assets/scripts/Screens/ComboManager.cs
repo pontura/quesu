@@ -24,7 +24,7 @@ public class ComboManager : MonoBehaviour
 	{
 		combos = 0;
 	}
-	void OnAnswer(bool isOk)
+	void OnAnswer(bool isOk, Vector2 pos)
 	{
 		panel.SetActive (false);
 		if (isOk)

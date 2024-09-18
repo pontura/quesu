@@ -56,7 +56,7 @@ public class FeedbackManager : MonoBehaviour {
         Events.OnAnswer -= OnAnswer;
     }
 
-    void OnAnswer (bool isOk) {
+    void OnAnswer (bool isOk, Vector2 pos) {
         if (isOk)
             combos++;
         else

@@ -20,7 +20,7 @@ public class TimerManager : MonoBehaviour
     {
         Events.OnAnswer += OnAnswer;
     }
-    void OnAnswer(bool iscorrect)
+    void OnAnswer(bool iscorrect, Vector2 pos)
     {
         barAnimTimeDanger.SetActive(false);
         if (iscorrect)

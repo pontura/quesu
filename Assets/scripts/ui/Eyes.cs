@@ -47,7 +47,7 @@ public class Eyes : MonoBehaviour
         print("idle");
         anim.Play("idle");
     }
-    private void OnAnswer(bool win)
+    private void OnAnswer(bool win, Vector2 pos)
     {
         if(!win)
             anim.Play("lose");

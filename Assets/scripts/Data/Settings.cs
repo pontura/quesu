@@ -21,16 +21,17 @@ public class Settings : MonoBehaviour
     [SerializeField] float d_timeLose;
     [SerializeField] float d_timerForPair;
 
-    [HideInInspector] public float timeForFeedback;
-    [HideInInspector] public int triviaDuration;
-    [HideInInspector] public int timeover;
-    [HideInInspector] public float timeWin;
-    [HideInInspector] public float timeLose;
-    [HideInInspector] public float timerForPair;
+    public float timeForFeedback;
+    public int triviaDuration;
+    public int timeover;
+    public float timeWin;
+    public float timeLose;
+    public float timerForPair;
 
-    [HideInInspector] public int scoreWin = 100;
-    [HideInInspector] public int scoreLose = -30;
-    [HideInInspector] public int scoreCombo = 45;
+    public int scoreByTimeLostMult = 10;
+    public int scoreWin = 100;
+    public int scoreLose = -30;
+    public int scoreCombo = 45;
 
     public Color buttonOkColor;
 	public Color buttonWrongColor;

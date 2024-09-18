@@ -52,13 +52,13 @@ public class TriviaButton : MonoBehaviour {
     {
         anim.Play("on");
     }
-	void Win () {		
-		Events.OnAnswer (true);
+    void Win() {
+        Events.OnAnswer(true, Input.mousePosition);
 		anim.Play ("buttonWin");
 	}
 	void Lose () {
 		
-		Events.OnAnswer (false);
+		Events.OnAnswer (false, Input.mousePosition);
 		anim.Play ("buttonLose");
 	}
 	public void DisableButton () {

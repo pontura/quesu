@@ -8,20 +8,37 @@ public class ResultsData : MonoBehaviour
 	public int answers_wrong;
 	public int score;
 	public int combos;
+    int scoreWin;
+    int scoreLose;
+    int scoreByTimeLostMult;
 
     void Start()
     {
-		Events.OnAnswer += OnAnswer;
+        Events.OnInitRonda += OnInitRonda;
+        Events.OnAnswer += OnAnswer;
 		Events.OnResetTrivia += OnResetTrivia;
 		Events.OnCombo += OnCombo;
+        scoreWin = Data.Instance.settings.scoreWin;
+        scoreLose = Data.Instance.settings.scoreLose;
+        scoreByTimeLostMult = Data.Instance.settings.scoreByTimeLostMult;
     }
 	void OnDestroy()
-	{
-		Events.OnAnswer -= OnAnswer;
+    {
+        Events.OnInitRonda -= OnInitRonda;
+        Events.OnAnswer -= OnAnswer;
 		Events.OnResetTrivia += OnResetTrivia;
 		Events.OnCombo -= OnCombo;
 	}
-	void OnCombo(int value)
+    float timer;
+    void OnInitRonda()
+    {
+        timer = 0;
+    }
+    private void Update()
+    {
+        timer += Time.deltaTime;
+    }
+    void OnCombo(int value)
 	{
 		combos++;
 		score += value * Data.Instance.settings.scoreCombo;
@@ -37,21 +54,33 @@ public class ResultsData : MonoBehaviour
 		answers_ok = 0;
 		answers_wrong = 0;
 	}
-	void OnAnswer(bool isOk)
+	void OnAnswer(bool isOk, Vector2 pos)
 	{
+        int newScore = 0;
 		if (isOk) {
 			answers_ok++;
-			score += Data.Instance.settings.scoreWin;           
-
+            newScore = scoreWin;
         }
 		else
 		{
-            score += Data.Instance.settings.scoreLose;
+            newScore = scoreLose;
             answers_wrong++;
 		}
+        int lostTime = (int)((float)scoreByTimeLostMult * timer);
+        newScore -= (int)lostTime;
+
+        print("lostTime " + lostTime + " timer: " + timer);
+        print("score " + newScore);
+
+        Events.OnFinalScoreByRonda(newScore, pos);
+
+        score += newScore;
+
         if (score < 0)
             score = 0;
-	}
+
+       
+    }
 	public int GetTotalAnswers()
 	{
 		return answers_ok + answers_wrong;

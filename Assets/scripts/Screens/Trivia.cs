@@ -70,7 +70,6 @@ public class Trivia : MainScreen
     }
     void Init()
     {
-        Events.OnSoundFX("swipe");
         container.transform.localPosition = new Vector2(0, container.transform.localPosition.y);
 
         pairID = rondaID = 0;
@@ -87,6 +86,7 @@ public class Trivia : MainScreen
 
     void SetRonda()
     {
+        Events.OnSoundFX("swipe");
         print("SetRonda");
         rondaID++;
         cache.GetRonda(rondaID, 2, OnRondaReady);

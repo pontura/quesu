@@ -12,7 +12,7 @@ public class Timeline : MainScreen
     }
     public void Next()
     {
-        LoadScreen(screens.CATEGORIES, true);
+        LoadScreen(screens.RANKING, true);
     }
 
 }

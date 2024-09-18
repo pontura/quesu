@@ -7,8 +7,9 @@ public static class Events {
     public static System.Action OnUserReady = delegate { };
 
     public static System.Action<bool> OnChooseLeft = delegate { };
-    public static System.Action<bool> OnAnswer = delegate { };
+    public static System.Action<bool, Vector2> OnAnswer = delegate { };
     public static System.Action<int> OnChangeTag = delegate { };
+    public static System.Action<int, Vector2> OnFinalScoreByRonda = delegate { };
     public static System.Action OnResetTrivia = delegate { };
 	public static System.Action<int> OnCombo = delegate { };
 	public static System.Action<string> OnServerResponse = delegate { };
