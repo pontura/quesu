@@ -32,6 +32,7 @@ public class TriviaButton : MonoBehaviour {
 
     }
 	public void Clicked () {
+
 		if (win)
 			Win ();
 		else
@@ -51,8 +52,7 @@ public class TriviaButton : MonoBehaviour {
     {
         anim.Play("on");
     }
-	void Win () {
-		
+	void Win () {		
 		Events.OnAnswer (true);
 		anim.Play ("buttonWin");
 	}

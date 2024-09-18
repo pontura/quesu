@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Trivia : MainScreen
 {
@@ -20,6 +21,7 @@ public class Trivia : MainScreen
     [HideInInspector] public TriviaPairButtons newPairButton;
     [HideInInspector] TriviaCache cache;
     [SerializeField] ButtonUI closeBtn;
+    [SerializeField] Image bg;
 
     private void Awake()
     {
@@ -45,6 +47,13 @@ public class Trivia : MainScreen
         timerManager.Init(Data.Instance.settings.triviaDuration);
         LoopUntilReady();
         feedbackManager.Init();
+        Data.Instance.settings.GetCategoryData(Data.Instance.triviaData.tag_id, SetBG);
+    }
+    void SetBG(Settings.CategorieData data)
+    {
+        Color c = data.color;
+        c.a = 0.8f;
+        bg.color = c;
     }
     public override void OnReset()
     {
@@ -88,7 +97,7 @@ public class Trivia : MainScreen
         newPairButton.Init(this, rondaItems[0], rondaItems[1]);
         timerManager.SetState(true);
         pairTimer.SetState(true);
-
+        Events.OnInitRonda();
         Events.OnMusic("clock");
     }
 

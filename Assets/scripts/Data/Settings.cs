@@ -11,6 +11,7 @@ public class Settings : MonoBehaviour
         public int id;
         public Sprite logo;
         public Color color;
+        public string rankingTitle;
     }
 
     [SerializeField] float d_timeForFeedback;

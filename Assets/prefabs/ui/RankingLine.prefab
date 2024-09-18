@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9019608, g: 0.8666667, b: 0.9490196, a: 1}
+  m_Color: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 0.40392157}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1042,6 +1042,7 @@ MonoBehaviour:
   field: {fileID: 8775058190040116599}
   shortName: {fileID: 2089882416444821875}
   score: {fileID: 7425711800698128183}
+  IconBG: {fileID: 4533858931886971976}
 --- !u!1 &7308784237946043368
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,8 @@ public static class Events {
 
     public static System.Action OnUserReady = delegate { };
 
-	public static System.Action<bool> OnAnswer = delegate { };
+    public static System.Action<bool> OnChooseLeft = delegate { };
+    public static System.Action<bool> OnAnswer = delegate { };
     public static System.Action<int> OnChangeTag = delegate { };
     public static System.Action OnResetTrivia = delegate { };
 	public static System.Action<int> OnCombo = delegate { };
@@ -19,5 +20,9 @@ public static class Events {
 	public static System.Action<string> OnMusic = delegate { };
 	public static System.Action<string> OnSoundFX = delegate { };
 	public static System.Action<string> OnUIFX = delegate { };
+
+	public static System.Action OnInitRonda = delegate { };
+    public static System.Action OnTimeOver = delegate { };
+
 
 }

@@ -41,6 +41,7 @@ public class PairTimer : MonoBehaviour
 
         if (value <= 0)
         {
+            Events.OnTimeOver();
             Events.OnSoundFX("timeOver");
             SetState(false);
             GetComponent<FeedbackManager>().SetTimeOut();

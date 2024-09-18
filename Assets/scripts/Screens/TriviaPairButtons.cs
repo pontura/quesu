@@ -70,12 +70,13 @@ public class TriviaPairButtons : MonoBehaviour
         anim.Play("buttonsEnter");
     }
     public void OnButtonSelected(TriviaButton button)
-	{
-        if(flechas != null)
-            flechas.GetComponent<Animator> ().Play ("flechasOff");
-
-        if(button)
-		    button.Ready ();
+    {
+        print("OnButtonSelected");
+        if (button)
+        {
+            Events.OnChooseLeft(button.transform.position.x < Screen.width / 2);
+            button.Ready();
+        }
 
 		trivia.PairDone ();
 		button1.DisableButton() ;
@@ -84,6 +85,7 @@ public class TriviaPairButtons : MonoBehaviour
             button3.DisableButton();
         if (button4 != null)
             button4.DisableButton();
+
     }
     public void SetTimeOut()
     {
