@@ -233,8 +233,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 22.375, y: 3.9485}
-  m_SizeDelta: {x: -84.7499, y: -7.897}
+  m_AnchoredPosition: {x: 22.375, y: 0}
+  m_SizeDelta: {x: -84.7499, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1987579957899730279
 CanvasRenderer:
@@ -266,8 +266,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: jugar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: db07a7af9b8653e4d9c09f46f98f222e, type: 2}
-  m_sharedMaterial: {fileID: 1310677666855358690, guid: db07a7af9b8653e4d9c09f46f98f222e,
+  m_fontAsset: {fileID: 11400000, guid: 980d2bc99d694814988e63dddcaf80c9, type: 2}
+  m_sharedMaterial: {fileID: 7238894170463440530, guid: 980d2bc99d694814988e63dddcaf80c9,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -292,12 +292,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.5
+  m_fontSize: 18
   m_fontSizeBase: 28.1
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 12
-  m_fontSizeMax: 22.5
+  m_fontSizeMax: 18
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
