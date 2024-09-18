@@ -20,7 +20,7 @@ public class CategoryIcon : MonoBehaviour
         if(Data.Instance.triviaData.IsLoaded())
              OnChangeTag(Data.Instance.triviaData.tag_id);
     }
-    private void OnChangeTag(int tag_id)
+    public void OnChangeTag(int tag_id)
     {
         Data.Instance.settings.GetCategoryData(tag_id, OnLogoDone);
     }
