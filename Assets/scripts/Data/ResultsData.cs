@@ -8,6 +8,7 @@ public class ResultsData : MonoBehaviour
 	public int answers_wrong;
 	public int score;
 	public int combos;
+
     int scoreWin;
     int scoreLose;
     int scoreByTimeLostMult;
@@ -18,6 +19,7 @@ public class ResultsData : MonoBehaviour
         Events.OnAnswer += OnAnswer;
 		Events.OnResetTrivia += OnResetTrivia;
 		Events.OnCombo += OnCombo;
+
         scoreWin = Data.Instance.settings.scoreWin;
         scoreLose = Data.Instance.settings.scoreLose;
         scoreByTimeLostMult = Data.Instance.settings.scoreByTimeLostMult;
@@ -53,7 +55,9 @@ public class ResultsData : MonoBehaviour
 	{
 		answers_ok = 0;
 		answers_wrong = 0;
-	}
+        score = 0;
+        combos = 0;
+    }
 	void OnAnswer(bool isOk, Vector2 pos)
 	{
         int newScore = 0;
@@ -69,17 +73,12 @@ public class ResultsData : MonoBehaviour
         int lostTime = (int)((float)scoreByTimeLostMult * timer);
         newScore -= (int)lostTime;
 
-        print("lostTime " + lostTime + " timer: " + timer);
-        print("score " + newScore);
-
         Events.OnFinalScoreByRonda(newScore, pos);
 
         score += newScore;
 
         if (score < 0)
             score = 0;
-
-       
     }
 	public int GetTotalAnswers()
 	{

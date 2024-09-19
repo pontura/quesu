@@ -26,7 +26,6 @@ public class ScreensManager : MonoBehaviour
         print("OnUserReady");
         LoadScreen(MainScreen.screens.MAIN, true);
     }
-
     void Start()
 	{
 		int id = 0;
@@ -35,7 +34,6 @@ public class ScreensManager : MonoBehaviour
 			id++;
 		}
 		ResetAll ();
-        LoadScreen(MainScreen.screens.MAIN, true);
     }
 	public void LoadScreen(MainScreen.screens screen, bool isRight)
 	{

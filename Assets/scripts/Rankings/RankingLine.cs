@@ -5,18 +5,25 @@ using UnityEngine.UI;
 
 public class RankingLine : MonoBehaviour
 {
+    [SerializeField] GameObject win;
     [SerializeField] TMPro.TMP_Text field;
     [SerializeField] TMPro.TMP_Text shortName;
     [SerializeField] TMPro.TMP_Text score;
     [SerializeField] Image IconBG;
 
-    public void Init(RankingData data, int id, Color color)
+    public void Init(RankingData data, int id, Color color, bool isYou)
     {
         field.color = color;
         score.color = color;
         IconBG.color = color;
 
-        field.text = id.ToString()+ " - " + data.username;
+        win.SetActive(id == 1);
+
+        if (isYou)
+            field.text = data.username + " (Puesto " + id.ToString() + ")";
+        else
+            field.text = id.ToString() + "- " + data.username;
+
         score.text = Utils.FormatNumbers(data.score);
         string[] arr = data.username.Split(" ");
         string shortNameText = "";

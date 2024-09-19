@@ -12,6 +12,13 @@ public class RankingsManager : MonoBehaviour
     public class RankingsData
     {
         public List<RankingData> all;
+        public List<MyRanking> myranking;
+    }
+    [Serializable]
+    public class MyRanking
+    {
+        public int rank;
+        public int score;
     }
 
     private void Start()

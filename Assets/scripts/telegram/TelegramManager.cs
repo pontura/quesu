@@ -41,20 +41,18 @@ namespace Telegram
 
 
     }
-    public void ReceiveUserData(string data) // comes from the js in the HTML
+        public void ReceiveUserData(string data) // comes from the js in the HTML
         {
             ParseURL(data);
-            debugText.text += userName;
+            debugText.text = "HOLA, " + userName;
         }
         public void ReceiveReferral(string data)// comes from the js in the HTML
         {
             print("ReceiveReferral " + data);
-            debugText.text += data + " ";
             this.referral = data;
         }
         public void ReceiveInitData(string data)// comes from the js in the HTML
         {
-            debugText.text += data + " ";
             this.initData = data;
         }
         public void ParseURL(string text)

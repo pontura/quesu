@@ -31,6 +31,13 @@ public class UserData : MonoBehaviour
     }
     void Awake()
     {
+#if UNITY_EDITOR
+        username = "";
+        userID = "";
+#else
+        username = "";
+        userID = "";
+#endif
         mInstance = this;		
         if (RESET_ALL_DATA)
             PlayerPrefs.DeleteAll();

@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static RankingsManager;
 
 public class Ranking : MonoBehaviour
 {
+    [SerializeField] RankingLine myLine;
     [SerializeField] RankingLine line;
     [SerializeField] Transform container;
     [SerializeField] GameObject loading;
@@ -33,11 +35,22 @@ public class Ranking : MonoBehaviour
     {
         loading.SetActive(false);
         int id = 1;
+        if (Data.Instance.rankingsManager.data.myranking.Count > 0 && Data.Instance.rankingsManager.data.myranking[0].rank > 0)
+        {
+            RankingLine rankingLine = Instantiate(myLine, container);
+            RankingData rd = new RankingData();
+            MyRanking mr = Data.Instance.rankingsManager.data.myranking[0];
+            rd.num = mr.rank;
+            rd.score = mr.score;
+            rd.username = UserData.Instance.username;
+            rankingLine.Init(rd, mr.rank, categoryData.color, true);
+        }
         foreach (RankingData l in Data.Instance.rankingsManager.data.all)
         {
             RankingLine rankingLine = Instantiate(line, container);
-            rankingLine.Init(l, id, categoryData.color);
+            rankingLine.Init(l, id, categoryData.color, false);
             id++;
         }
+       
     }
 }

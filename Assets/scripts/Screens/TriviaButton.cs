@@ -33,7 +33,8 @@ public class TriviaButton : MonoBehaviour {
     }
 	public void Clicked () {
 
-		if (win)
+        if (!isYetActive()) return;
+        if (win)
 			Win ();
 		else
 			Lose ();
@@ -44,28 +45,43 @@ public class TriviaButton : MonoBehaviour {
 		if (newSprite != null)
 			image.sprite = newSprite;
 	}
+    bool isYetActive()
+    {
+        if (!isActiveAndEnabled) return false;
+        if (anim == null) return false;
+        return true;
+    }
     public void SetInit()
     {
+        if (!isYetActive()) return;
         anim.Play("off");
     }
     public void SetOn()
     {
+        if (!isYetActive()) return;
         anim.Play("on");
     }
-    void Win() {
+    void Win()
+    {
+        if (!isYetActive()) return;
         Events.OnAnswer(true, Input.mousePosition);
 		anim.Play ("buttonWin");
 	}
-	void Lose () {
-		
-		Events.OnAnswer (false, Input.mousePosition);
+	void Lose ()
+    {
+        if (!isYetActive()) return;
+        Events.OnAnswer (false, Input.mousePosition);
 		anim.Play ("buttonLose");
 	}
-	public void DisableButton () {
-		GetComponent<Button> ().interactable = false;
+	public void DisableButton ()
+    {
+        if (!isYetActive()) return;
+        GetComponent<Button> ().interactable = false;
 		textField.text = data.year.ToString ();
 	}
 	public void Ready () {
+
+        if (!isYetActive()) return;
         if (anim == null)
             return;
 		if (win) {

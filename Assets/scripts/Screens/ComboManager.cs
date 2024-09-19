@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ComboManager : MonoBehaviour
 {
 	public GameObject panel;
-	public Text field;
+	public TMPro.TMP_Text field;
 	public int combos;
 
     void Start()
