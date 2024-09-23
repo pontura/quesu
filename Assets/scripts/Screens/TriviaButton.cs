@@ -54,24 +54,24 @@ public class TriviaButton : MonoBehaviour {
     public void SetInit()
     {
         if (!isYetActive()) return;
-        anim.Play("off");
+        PlayAnim("off");
     }
     public void SetOn()
     {
         if (!isYetActive()) return;
-        anim.Play("on");
+        PlayAnim("on");
     }
     void Win()
     {
         if (!isYetActive()) return;
         Events.OnAnswer(true, Input.mousePosition);
-		anim.Play ("buttonWin");
+        PlayAnim("buttonWin");
 	}
 	void Lose ()
     {
         if (!isYetActive()) return;
         Events.OnAnswer (false, Input.mousePosition);
-		anim.Play ("buttonLose");
+        PlayAnim("buttonLose");
 	}
 	public void DisableButton ()
     {
@@ -86,13 +86,13 @@ public class TriviaButton : MonoBehaviour {
             return;
 		if (win) {
             if (Data.Instance.format == Data.formats.STANDALONE)
-                anim.Play("butonWinStandalone");
+                PlayAnim("butonWinStandalone");
             else
                 Events.OnSoundFX ("correct");
             resultImage.color = Data.Instance.settings.buttonOkColor;
 		} else {
             if (Data.Instance.format == Data.formats.STANDALONE)
-                anim.Play("butonLoseStandalone");
+                PlayAnim("butonLoseStandalone");
             else
                 Events.OnSoundFX ("wrong");
             resultImage.color = Data.Instance.settings.buttonWrongColor;
@@ -101,5 +101,18 @@ public class TriviaButton : MonoBehaviour {
 		textField.color = textDoneColor;
 		resultImage.color = resultImage.color;
         textField.text = data.year.ToString();
+    }
+    private void PlayAnim(string a)
+    {
+        try
+        {
+            if(gameObject.activeSelf)
+                anim.Play(a);
+        }
+        catch (System.Exception)
+        {
+
+            throw;
+        }
     }
 }

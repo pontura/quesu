@@ -35,7 +35,7 @@ public class RankingLine : MonoBehaviour
             foreach (string s in arr)
             {
                 num++;
-                if (num <= 2)
+                if (num <= 2 && s.Length>0)
                     shortNameText += s[0];
             }
         }
